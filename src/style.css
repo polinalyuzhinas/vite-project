@@ -5,8 +5,9 @@ body {
 }
 
 #map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
+    width: 1107px; /* imageWidth / 3 (3322 / 3) */
+    height: 671px; /* imageHeight / 3 (2014 / 3) */
+    margin: 0; /* убрать отступы */
+    position: absolute; top: 15%; left: 15%;
+    border: 1px solid black; /* рамочка */
 }
