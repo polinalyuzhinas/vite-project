@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "ol": "^10.5.0",
+    "proj4": "^2.15.0"
+  },
+  "name": "user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^6.3.4"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git"
+  }
+}
