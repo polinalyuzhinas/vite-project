@@ -11,3 +11,13 @@ body {
     position: absolute; top: 15%; left: 15%;
     border: 1px solid black; /* рамочка */
 }
+
+.ol-popup { /* стилизация всплывающей надписи */
+  position: absolute;
+  background-color: rgb(247, 255, 255); /* заливка */
+  padding: 8px;
+  border: 1px solid #000000; /* рамка */
+  bottom: 8px;
+  left: -50px;
+  min-width: 15px
+}
