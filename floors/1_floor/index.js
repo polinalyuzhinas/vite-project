@@ -354,6 +354,32 @@ const polygonFeature_elevator4 = new Feature({ // лифт справа сниз
     });
 polygonFeature_elevator4.set('description', 'лифт'); // надпись при наведении на выделении курсора
 
+const polygonFeature_toilet1 = new Feature({ // туалет слева
+    geometry: new Polygon([
+        [
+            [637, 1320],
+            [801, 1320],
+            [801, 1136],
+            [637, 1136],
+            [637, 1320]
+        ]
+    ])
+    });
+polygonFeature_toilet1.set('description', 'туалет мужской'); // надпись при наведении на выделении курсора
+
+const polygonFeature_toilet2 = new Feature({ // туалет справа
+    geometry: new Polygon([
+        [
+            [2581, 1726],
+            [2740, 1726],
+            [2740, 1525],
+            [2581, 1525],
+            [2581, 1726]
+        ]
+    ])
+    });
+polygonFeature_toilet2.set('description', 'туалет женский'); // надпись при наведении на выделении курсора
+
 // лестницы
 polygonFeature_centralstairs1.setStyle(defaultStyle);
 polygonFeature_centralstairs2.setStyle(defaultStyle);
@@ -401,6 +427,12 @@ vectorSource.addFeature(polygonFeature_elevator1);
 vectorSource.addFeature(polygonFeature_elevator2);
 vectorSource.addFeature(polygonFeature_elevator3);
 vectorSource.addFeature(polygonFeature_elevator4);
+
+// туалеты
+polygonFeature_toilet1.setStyle(defaultStyle);
+polygonFeature_toilet2.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_toilet1);
+vectorSource.addFeature(polygonFeature_toilet2);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
