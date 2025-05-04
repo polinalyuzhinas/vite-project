@@ -15,9 +15,11 @@ body {
 .ol-popup { /* стилизация всплывающей надписи */
   position: absolute;
   background-color: rgb(247, 255, 255); /* заливка */
-  padding: 8px;
+  padding: 8px 8px; /* отступы вокруг текста */
   border: 1px solid #000000; /* рамка */
   bottom: 8px;
   left: -50px;
-  min-width: 15px
+  width: auto;
+  height: auto;
+  white-space: nowrap; /* предотвращает перенос длинных слов */
 }
