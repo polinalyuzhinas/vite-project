@@ -421,6 +421,161 @@ polygonFeature_407.set('description', '407 (серверная)'); // надпи
 polygonFeature_407.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_407);
 
+const polygonFeature_406 = new Feature({ // 406
+    geometry: new Polygon([
+        [
+            [178, 682],
+            [475, 682],
+            [475, 481],
+            [178, 481],
+            [178, 682]
+        ]
+    ])
+});
+polygonFeature_406.set('description', '406 (научно-образовательный центр экономического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_406.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_406);
+
+const polygonFeature_405 = new Feature({ // 405
+    geometry: new Polygon([
+        [
+            [178, 478],
+            [475, 478],
+            [475, 610],
+            [633, 610],
+            [633, 374],
+            [511, 374],
+            [511, 255],
+            [178, 255],
+            [178, 478]
+        ]
+    ])
+});
+polygonFeature_405.set('description', '405 (деканат экономического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_405.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_405);
+
+const polygonFeature_413 = new Feature({ // 413
+    geometry: new Polygon([
+        [
+            [886, 1097],
+            [1073, 1097],
+            [1073, 778],
+            [886, 778],
+            [886, 1097]
+        ]
+    ])
+});
+polygonFeature_413.set('description', '413 (учебная лаборатория Базальт СПО)'); // надпись при наведении на выделении курсора
+polygonFeature_413.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_413);
+
+const polygonFeature_414 = new Feature({ // 414
+    geometry: new Polygon([
+        [
+            [1076, 1097],
+            [1244, 1097],
+            [1244, 778],
+            [1076, 778],
+            [1076, 1097]
+        ]
+    ])
+});
+polygonFeature_414.set('description', '414 (учебная лаборатория Совкомбанк)'); // надпись при наведении на выделении курсора
+polygonFeature_414.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_414);
+
+const polygonFeature_415 = new Feature({ // 415
+    geometry: new Polygon([
+        [
+            [1247, 1097],
+            [1458, 1097],
+            [1458, 778],
+            [1247, 778],
+            [1247, 1097]
+        ]
+    ])
+});
+polygonFeature_415.set('description', '415 (учебная лаборатория Grid Dynamics, искусственного интеллекта, машинного обучения)'); // надпись при наведении на выделении курсора
+polygonFeature_415.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_415);
+
+const polygonFeature_404 = new Feature({ // 404
+    geometry: new Polygon([
+        [
+            [632, 631],
+            [918, 631],
+            [918, 373],
+            [632, 373],
+            [632, 631]
+        ]
+    ])
+});
+polygonFeature_404.set('description', '404'); // надпись при наведении на выделении курсора
+polygonFeature_404.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_404);
+
+const polygonFeature_403 = new Feature({ // 403
+    geometry: new Polygon([
+        [
+            [921, 631],
+            [1163, 631],
+            [1163, 373],
+            [921, 373],
+            [921, 631]
+        ]
+    ])
+});
+polygonFeature_403.set('description', '403 (компьютерный класс экономического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_403.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_403);
+
+const polygonFeature_402 = new Feature({ // 402
+    geometry: new Polygon([
+        [
+            [1166, 631],
+            [1361, 631],
+            [1361, 373],
+            [1166, 373],
+            [1166, 631]
+        ]
+    ])
+});
+polygonFeature_402.set('description', '402 (компьютерный класс экономического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_402.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_402);
+
+const polygonFeature_401 = new Feature({ // 401
+    geometry: new Polygon([
+        [
+            [1364, 635],
+            [1518, 635],
+            [1518, 373],
+            [1364, 373],
+            [1364, 635]
+        ]
+    ])
+});
+polygonFeature_401.set('description', '401 (учебная лаборатория информационных технологий в экономике)'); // надпись при наведении на выделении курсора
+polygonFeature_401.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_401);
+
+const polygonFeature_433 = new Feature({ // 433/434
+    geometry: new Polygon([
+        [
+            [1521, 635],
+            [1816, 635],
+            [1816, 373],
+            [1521, 373],
+            [1521, 635]
+        ]
+    ])
+});
+
+polygonFeature_433.set('description', '433/434'); // надпись при наведении на выделении курсора
+polygonFeature_433.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_433);
+
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
     autoPan: {
