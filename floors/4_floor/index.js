@@ -78,7 +78,7 @@ geometry: new Polygon([
     ]
 ])
 });
-polygonFeature_centralstairs1.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_centralstairs1.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_centralstairs2 = new Feature({ // центральная лестница в центре
 geometry: new Polygon([
@@ -91,7 +91,7 @@ geometry: new Polygon([
     ]
 ])
 });
-polygonFeature_centralstairs2.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_centralstairs2.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_centralstairs3 = new Feature({ // центральная лестница справа
 geometry: new Polygon([
@@ -104,7 +104,7 @@ geometry: new Polygon([
     ]
 ])
 });
-polygonFeature_centralstairs3.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_centralstairs3.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_rightstairs = new Feature({ // лестница в правом крыле (у лифта)
     geometry: new Polygon([
@@ -195,7 +195,7 @@ const polygonFeature_gymstairs = new Feature({ // лестница к спорт
         ]
     ])
     });
-polygonFeature_gymstairs.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_gymstairs.set('description', 'лестница к спортзалу'); // надпись при наведении на выделении курсора
 
 const polygonFeature_elevator1 = new Feature({ // лифт слева сверху
     geometry: new Polygon([
@@ -327,6 +327,99 @@ polygonFeature_toiletgym.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_toilet1);
 vectorSource.addFeature(polygonFeature_toilet2);
 vectorSource.addFeature(polygonFeature_toiletgym);
+
+
+// аудитории левого крыла
+
+const polygonFeature_411 = new Feature({ // 411 (наверное)
+    geometry: new Polygon([
+        [
+            [178, 1949],
+            [686, 1949],
+            [686, 1551],
+            [178, 1551],
+            [178, 1949]
+        ]
+    ])
+});
+polygonFeature_411.set('description', 'конференц-зал экономического факультета'); // надпись при наведении на выделении курсора
+polygonFeature_411.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_411);
+
+const polygonFeature_410 = new Feature({ // 410
+    geometry: new Polygon([
+        [
+            [318, 1546],
+            [492, 1546],
+            [492, 1429],
+            [318, 1429],
+            [318, 1546]
+        ]
+    ])
+});
+polygonFeature_410.set('description', '410 (архив экономического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_410.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_410);
+
+const polygonFeature_300 = new Feature({ // 300
+    geometry: new Polygon([
+        [
+            [239, 1409],
+            [306, 1409],
+            [306, 1325],
+            [239, 1325],
+            [239, 1409]
+        ]
+    ])
+});
+polygonFeature_300.set('description', '300 (находится между 3 и 4 этажами)'); // надпись при наведении на выделении курсора
+polygonFeature_300.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_300);
+
+const polygonFeature_409 = new Feature({ // 409
+    geometry: new Polygon([
+        [
+            [178, 1320],
+            [475, 1320],
+            [475, 987],
+            [178, 987],
+            [178, 1320]
+        ]
+    ])
+});
+polygonFeature_409.set('description', '409 (деканат экономического факультета, заочное отделение)'); // надпись при наведении на выделении курсора
+polygonFeature_409.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_409);
+
+const polygonFeature_408 = new Feature({ // 408
+    geometry: new Polygon([
+        [
+            [178, 983],
+            [475, 983],
+            [475, 785],
+            [178, 785],
+            [178, 983]
+        ]
+    ])
+});
+polygonFeature_408.set('description', '408 (деканат экономического факультета, дневное отделение)'); // надпись при наведении на выделении курсора
+polygonFeature_408.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_408);
+
+const polygonFeature_407 = new Feature({ // 407
+    geometry: new Polygon([
+        [
+            [178, 782],
+            [475, 782],
+            [475, 685],
+            [178, 685],
+            [178, 782]
+        ]
+    ])
+});
+polygonFeature_407.set('description', '407 (серверная)'); // надпись при наведении на выделении курсора
+polygonFeature_407.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_407);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup

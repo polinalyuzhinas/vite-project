@@ -15,7 +15,6 @@ import Style from 'ol/style/Style';
 import Fill from 'ol/style/Fill';
 
 import Overlay from 'ol/Overlay'; // нужно для всплывающей надписи
-import { coordinateRelationship } from 'ol/extent';
 
 const imageWidth = 3322;
 const imageHeight = 2014;
@@ -68,44 +67,47 @@ fill: new Fill({
 });
 
 // cоздание и добавление объектов
+
+// лестницы
+
 const polygonFeature_centralstairs1 = new Feature({ // центральная лестница слева
-geometry: new Polygon([
-    [
-    [1479, 1027],
-    [1600, 1027],
-    [1600, 944],
-    [1479, 944],
-    [1479, 1027]
-    ]
-])
+    geometry: new Polygon([
+        [
+            [1479, 1027],
+            [1600, 1027],
+            [1600, 944],
+            [1479, 944],
+            [1479, 1027]
+        ]
+    ])
 });
-polygonFeature_centralstairs1.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_centralstairs1.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_centralstairs2 = new Feature({ // центральная лестница в центре
-geometry: new Polygon([
-    [
-    [1604, 1001],
-    [1769, 1001],
-    [1769, 873],
-    [1604, 873],
-    [1604, 1001]
-    ]
-])
+    geometry: new Polygon([
+        [
+            [1604, 1001],
+            [1769, 1001],
+            [1769, 873],
+            [1604, 873],
+            [1604, 1001]
+        ]
+    ])
 });
-polygonFeature_centralstairs2.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_centralstairs2.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_centralstairs3 = new Feature({ // центральная лестница справа
-geometry: new Polygon([
-    [
-        [1772, 1027],
-        [1892, 1027],
-        [1892, 944],
-        [1772, 944],
-        [1772, 1027]
-    ]
-])
+    geometry: new Polygon([
+        [
+            [1772, 1027],
+            [1892, 1027],
+            [1892, 944],
+            [1772, 944],
+            [1772, 1027]
+        ]
+    ])
 });
-polygonFeature_centralstairs3.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_centralstairs3.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_rightstairs = new Feature({ // лестница в правом крыле (у лифта)
     geometry: new Polygon([
@@ -117,7 +119,7 @@ const polygonFeature_rightstairs = new Feature({ // лестница в прав
             [2494, 1088]
         ]
     ])
-    });
+});
 polygonFeature_rightstairs.set('description', 'лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_farrightstairs = new Feature({ // лестница в правом крыле
@@ -130,7 +132,7 @@ const polygonFeature_farrightstairs = new Feature({ // лестница в пр�
             [2587, 1916]
         ]
     ])
-    });
+});
 polygonFeature_farrightstairs.set('description', 'лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_leftstairs = new Feature({ // лестница в левом крыле (у лифта)
@@ -143,7 +145,7 @@ const polygonFeature_leftstairs = new Feature({ // лестница в лево�
             [737, 1079]
         ]
     ])
-    });
+});
 polygonFeature_leftstairs.set('description', 'лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_farleftstairs1 = new Feature({ // лестница в левом крыле сверху
@@ -156,7 +158,7 @@ const polygonFeature_farleftstairs1 = new Feature({ // лестница в ле�
             [133, 1548]
         ]
     ])
-    });
+});
 polygonFeature_farleftstairs1.set('description', 'лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_farleftstairs2 = new Feature({ // лестница в левом крыле слева
@@ -169,7 +171,7 @@ const polygonFeature_farleftstairs2 = new Feature({ // лестница в ле�
             [62, 1466]
         ]
     ])
-    });
+});
 polygonFeature_farleftstairs2.set('description', 'лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_farleftstairs3 = new Feature({ // лестница в левом крыле снизу
@@ -182,88 +184,9 @@ const polygonFeature_farleftstairs3 = new Feature({ // лестница в ле�
             [131, 1396]
         ]
     ])
-    });
+});
 polygonFeature_farleftstairs3.set('description', 'лестница'); // надпись при наведении на выделении курсора
 
-const polygonFeature_elevator1 = new Feature({ // лифт слева сверху
-    geometry: new Polygon([
-        [
-            [643, 1122],
-            [730, 1122],
-            [730, 1024],
-            [643, 1024],
-            [643, 1122]
-        ]
-    ])
-    });
-polygonFeature_elevator1.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-const polygonFeature_elevator2 = new Feature({ // лифт слева снизу
-    geometry: new Polygon([
-        [
-            [645, 887],
-            [735, 887],
-            [735, 790],
-            [645, 790],
-            [645, 887]
-        ]
-    ])
-    });
-polygonFeature_elevator2.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-const polygonFeature_elevator3 = new Feature({ // лифт справа сверху
-    geometry: new Polygon([
-        [
-            [2642, 1123],
-            [2729, 1123],
-            [2729, 1027],
-            [2642, 1027],
-            [2642, 1123]
-        ]
-    ])
-    });
-polygonFeature_elevator3.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-const polygonFeature_elevator4 = new Feature({ // лифт справа снизу
-    geometry: new Polygon([
-        [
-            [2638, 889],
-            [2727, 889],
-            [2727, 792],
-            [2638, 792],
-            [2638, 889]
-        ]
-    ])
-    });
-polygonFeature_elevator4.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-const polygonFeature_toilet1 = new Feature({ // туалет слева
-    geometry: new Polygon([
-        [
-            [637, 1320],
-            [801, 1320],
-            [801, 1136],
-            [637, 1136],
-            [637, 1320]
-        ]
-    ])
-    });
-polygonFeature_toilet1.set('description', 'туалет женский'); // надпись при наведении на выделении курсора
-
-const polygonFeature_toilet2 = new Feature({ // туалет справа
-    geometry: new Polygon([
-        [
-            [2581, 1726],
-            [2740, 1726],
-            [2740, 1525],
-            [2581, 1525],
-            [2581, 1726]
-        ]
-    ])
-    });
-polygonFeature_toilet2.set('description', 'туалет женский'); // надпись при наведении на выделении курсора
-
-// лестницы
 polygonFeature_centralstairs1.setStyle(defaultStyle);
 polygonFeature_centralstairs2.setStyle(defaultStyle);
 polygonFeature_centralstairs3.setStyle(defaultStyle);
@@ -284,6 +207,58 @@ vectorSource.addFeature(polygonFeature_farleftstairs2);
 vectorSource.addFeature(polygonFeature_farleftstairs3);
 
 // лифты
+const polygonFeature_elevator1 = new Feature({ // лифт слева сверху
+    geometry: new Polygon([
+        [
+            [643, 1122],
+            [730, 1122],
+            [730, 1024],
+            [643, 1024],
+            [643, 1122]
+        ]
+    ])
+});
+polygonFeature_elevator1.set('description', 'лифт'); // надпись при наведении на выделении курсора
+
+const polygonFeature_elevator2 = new Feature({ // лифт слева снизу
+    geometry: new Polygon([
+        [
+            [645, 887],
+            [735, 887],
+            [735, 790],
+            [645, 790],
+            [645, 887]
+        ]
+    ])
+});
+polygonFeature_elevator2.set('description', 'лифт'); // надпись при наведении на выделении курсора
+
+const polygonFeature_elevator3 = new Feature({ // лифт справа сверху
+    geometry: new Polygon([
+        [
+            [2642, 1123],
+            [2729, 1123],
+            [2729, 1027],
+            [2642, 1027],
+            [2642, 1123]
+        ]
+    ])
+});
+polygonFeature_elevator3.set('description', 'лифт'); // надпись при наведении на выделении курсора
+
+const polygonFeature_elevator4 = new Feature({ // лифт справа снизу
+    geometry: new Polygon([
+        [
+            [2638, 889],
+            [2727, 889],
+            [2727, 792],
+            [2638, 792],
+            [2638, 889]
+        ]
+    ])
+});
+polygonFeature_elevator4.set('description', 'лифт'); // надпись при наведении на выделении курсора
+
 polygonFeature_elevator1.setStyle(defaultStyle);
 polygonFeature_elevator2.setStyle(defaultStyle);
 polygonFeature_elevator3.setStyle(defaultStyle);
@@ -294,10 +269,83 @@ vectorSource.addFeature(polygonFeature_elevator3);
 vectorSource.addFeature(polygonFeature_elevator4);
 
 // туалеты
+const polygonFeature_toilet1 = new Feature({ // туалет слева
+    geometry: new Polygon([
+        [
+            [637, 1320],
+            [801, 1320],
+            [801, 1136],
+            [637, 1136],
+            [637, 1320]
+        ]
+    ])
+});
+polygonFeature_toilet1.set('description', 'туалет женский'); // надпись при наведении на выделении курсора
+
+const polygonFeature_toilet2 = new Feature({ // туалет справа
+    geometry: new Polygon([
+        [
+            [2581, 1726],
+            [2740, 1726],
+            [2740, 1525],
+            [2581, 1525],
+            [2581, 1726]
+        ]
+    ])
+});
+polygonFeature_toilet2.set('description', 'туалет женский'); // надпись при наведении на выделении курсора
+
 polygonFeature_toilet1.setStyle(defaultStyle);
 polygonFeature_toilet2.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_toilet1);
 vectorSource.addFeature(polygonFeature_toilet2);
+
+// аудитории левого крыла
+
+const polygonFeature_508 = new Feature({ // 508
+    geometry: new Polygon([
+        [
+            [178, 1320],
+            [475, 1320],
+            [475, 1084],
+            [178, 1084],
+            [178, 1320]
+        ]
+    ])
+});
+polygonFeature_508.set('description', '508'); // надпись при наведении на выделении курсора
+polygonFeature_508.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_508);
+
+const polygonFeature_507 = new Feature({ // 507
+    geometry: new Polygon([
+        [
+            [178, 1081],
+            [475, 1081],
+            [475, 954],
+            [178, 954],
+            [178, 1081]
+        ]
+    ])
+});
+polygonFeature_507.set('description', '507 (совет студентов и аспирантов юридического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_507.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_507);
+
+const polygonFeature_506 = new Feature({ // 506
+    geometry: new Polygon([
+        [
+            [178, 950],
+            [475, 950],
+            [475, 604],
+            [178, 604],
+            [178, 950]
+        ]
+    ])
+});
+polygonFeature_506.set('description', '506'); // надпись при наведении на выделении курсора
+polygonFeature_506.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_506);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup

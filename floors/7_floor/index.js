@@ -92,7 +92,7 @@ const polygonFeature_stairs1 = new Feature({ // лестница слева
         ]
     ])
     });
-polygonFeature_stairs1.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_stairs1.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 const polygonFeature_stairs2 = new Feature({ // лестница в центре
     geometry: new Polygon([
@@ -105,7 +105,7 @@ const polygonFeature_stairs2 = new Feature({ // лестница в центре
         ]
     ])
     });
-polygonFeature_stairs2.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_stairs2.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
     
 const polygonFeature_stairs3 = new Feature({ // лестница справа
     geometry: new Polygon([
@@ -118,7 +118,7 @@ const polygonFeature_stairs3 = new Feature({ // лестница справа
         ]
     ])
     });
-polygonFeature_stairs3.set('description', 'лестница'); // надпись при наведении на выделении курсора
+polygonFeature_stairs3.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
 
 polygonFeature_701.setStyle(defaultStyle);
 polygonFeature_stairs1.setStyle(defaultStyle);
