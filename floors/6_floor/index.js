@@ -495,7 +495,7 @@ const polygonFeature_602 = new Feature({ // 602
         ]
     ])
 });
-polygonFeature_602.set('description', '602 (кафедра педагогики и психологии профессионального образования, центр профессиональной переподготовки)'); // надпись при наведении на выделении курсора
+polygonFeature_602.set('description', '602 (кафедра педагогики и психологии профессионального образования)'); // надпись при наведении на выделении курсора
 polygonFeature_602.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_602);
 
@@ -510,7 +510,7 @@ const polygonFeature_601 = new Feature({ // 601
         ]
     ])
 });
-polygonFeature_601.set('description', '601 (кафедра менеджмента в образовании, центр повышения квалификации)'); // надпись при наведении на выделении курсора
+polygonFeature_601.set('description', '601 (кафедра менеджмента в образовании)'); // надпись при наведении на выделении курсора
 polygonFeature_601.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_601);
 
@@ -528,6 +528,81 @@ const polygonFeature_639 = new Feature({ // 639
 polygonFeature_639.set('description', '639 (учебная аудитория)'); // надпись при наведении на выделении курсора
 polygonFeature_639.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_639);
+
+const polygonFeature_637 = new Feature({ // 637
+    geometry: new Polygon([
+        [
+            [1901, 635],
+            [2051, 635],
+            [2051, 373],
+            [1901, 373],
+            [1901, 635]
+        ]
+    ])
+});
+polygonFeature_637.set('description', '637 (диссертационный совет по педагогическим наукам)'); // надпись при наведении на выделении курсора
+polygonFeature_637.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_637);
+
+const polygonFeature_636 = new Feature({ // 636
+    geometry: new Polygon([
+        [
+            [2055, 635],
+            [2160, 635],
+            [2160, 373],
+            [2055, 373],
+            [2055, 635]
+        ]
+    ])
+});
+polygonFeature_636.set('description', '636 (кафедра методологии образования)'); // надпись при наведении на выделении курсора
+polygonFeature_636.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_636);
+
+const polygonFeature_635 = new Feature({ // 635
+    geometry: new Polygon([
+        [
+            [2163, 635],
+            [2267, 635],
+            [2267, 373],
+            [2163, 373],
+            [2163, 635]
+        ]
+    ])
+});
+polygonFeature_635.set('description', '635 (кафедра логопедии и психолингвистики)'); // надпись при наведении на выделении курсора
+polygonFeature_635.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_635);
+
+const polygonFeature_634 = new Feature({ // 634
+    geometry: new Polygon([
+        [
+            [2270, 635],
+            [2400, 635],
+            [2400, 373],
+            [2270, 373],
+            [2270, 635]
+        ]
+    ])
+});
+polygonFeature_634.set('description', '634'); // надпись при наведении на выделении курсора
+polygonFeature_634.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_634);
+
+const polygonFeature_633 = new Feature({ // 633
+    geometry: new Polygon([
+        [
+            [2403, 635],
+            [2751, 635],
+            [2751, 373],
+            [2403, 373],
+            [2403, 635]
+        ]
+    ])
+});
+polygonFeature_633.set('description', '633 (дирекция педагогического института)'); // надпись при наведении на выделении курсора
+polygonFeature_633.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_633);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup

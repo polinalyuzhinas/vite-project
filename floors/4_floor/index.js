@@ -576,6 +576,113 @@ polygonFeature_433.set('description', '433/434'); // надпись при на�
 polygonFeature_433.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_433);
 
+// аудитории правого крыла
+
+const polygonFeature_431 = new Feature({ // 431
+    geometry: new Polygon([
+        [
+            [1819, 635],
+            [1995, 635],
+            [1995, 373],
+            [1819, 373],
+            [1819, 635]
+        ]
+    ])
+});
+polygonFeature_431.set('description', '431'); // надпись при наведении на выделении курсора
+polygonFeature_431.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_431);
+
+const polygonFeature_430 = new Feature({ // 430
+    geometry: new Polygon([
+        [
+            [1998, 635],
+            [2230, 635],
+            [2230, 373],
+            [1998, 373],
+            [1998, 635]
+        ]
+    ])
+});
+polygonFeature_430.set('description', '430'); // надпись при наведении на выделении курсора
+polygonFeature_430.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_430);
+
+const polygonFeature_429 = new Feature({ // 429
+    geometry: new Polygon([
+        [
+            [2233, 635],
+            [2504, 635],
+            [2504, 373],
+            [2233, 373],
+            [2233, 635]
+        ]
+    ])
+});
+polygonFeature_429.set('description', '429'); // надпись при наведении на выделении курсора
+polygonFeature_429.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_429);
+
+const polygonFeature_428 = new Feature({ // 428
+    geometry: new Polygon([
+        [
+            [2507, 635],
+            [2749, 635],
+            [2749, 373],
+            [2507, 373],
+            [2507, 635]
+        ]
+    ])
+});
+polygonFeature_428.set('description', '428'); // надпись при наведении на выделении курсора
+polygonFeature_428.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_428);
+
+const polygonFeature_416 = new Feature({ // 416
+    geometry: new Polygon([
+        [
+            [1915, 1097],
+            [2163, 1097],
+            [2163, 778],
+            [1915, 778],
+            [1915, 1097]
+        ]
+    ])
+});
+polygonFeature_416.set('description', '416 (компьютерный класс факультета КНиИТ)'); // надпись при наведении на выделении курсора
+polygonFeature_416.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_416);
+
+const polygonFeature_417 = new Feature({ // 417
+    geometry: new Polygon([
+        [
+            [2166, 1097],
+            [2300, 1097],
+            [2300, 778],
+            [2166, 778],
+            [2166, 1097]
+        ]
+    ])
+});
+polygonFeature_417.set('description', '417 (лаборатория системного программирования)'); // надпись при наведении на выделении курсора
+polygonFeature_417.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_417);
+
+const polygonFeature_418 = new Feature({ // 418
+    geometry: new Polygon([
+        [
+            [2303, 1097],
+            [2488, 1097],
+            [2488, 778],
+            [2303, 778],
+            [2303, 1097]
+        ]
+    ])
+});
+polygonFeature_418.set('description', '418 (компьютерный класс факультета КНиИТ)'); // надпись при наведении на выделении курсора
+polygonFeature_418.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_418);
+
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
     autoPan: {

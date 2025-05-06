@@ -484,6 +484,113 @@ polygonFeature_530.set('description', '530/531'); // надпись при на�
 polygonFeature_530.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_530);
 
+// аудитории правого крыла
+
+const polygonFeature_529 = new Feature({ // 529
+    geometry: new Polygon([
+        [
+            [1827, 635],
+            [1995, 635],
+            [1995, 373],
+            [1827, 373],
+            [1827, 635]
+        ]
+    ])
+});
+polygonFeature_529.set('description', '529'); // надпись при наведении на выделении курсора
+polygonFeature_529.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_529);
+
+const polygonFeature_528 = new Feature({ // 528
+    geometry: new Polygon([
+        [
+            [1998, 635],
+            [2230, 635],
+            [2230, 373],
+            [1998, 373],
+            [1998, 635]
+        ]
+    ])
+});
+polygonFeature_528.set('description', '528 (зал судебных заседаний)'); // надпись при наведении на выделении курсора
+polygonFeature_528.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_528);
+
+const polygonFeature_527 = new Feature({ // 527
+    geometry: new Polygon([
+        [
+            [2233, 635],
+            [2504, 635],
+            [2504, 373],
+            [2233, 373],
+            [2233, 635]
+        ]
+    ])
+});
+polygonFeature_527.set('description', '527'); // надпись при наведении на выделении курсора
+polygonFeature_527.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_527);
+
+const polygonFeature_526 = new Feature({ // 526
+    geometry: new Polygon([
+        [
+            [2507, 635],
+            [2749, 635],
+            [2749, 373],
+            [2507, 373],
+            [2507, 635]
+        ]
+    ])
+});
+polygonFeature_526.set('description', '526 (компьютерный класс юридического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_526.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_526);
+
+const polygonFeature_513 = new Feature({ // 513
+    geometry: new Polygon([
+        [
+            [1915, 1097],
+            [2163, 1097],
+            [2163, 778],
+            [1915, 778],
+            [1915, 1097]
+        ]
+    ])
+});
+polygonFeature_513.set('description', '513'); // надпись при наведении на выделении курсора
+polygonFeature_513.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_513);
+
+const polygonFeature_514 = new Feature({ // 514
+    geometry: new Polygon([
+        [
+            [2166, 1097],
+            [2300, 1097],
+            [2300, 778],
+            [2166, 778],
+            [2166, 1097]
+        ]
+    ])
+});
+polygonFeature_514.set('description', '514'); // надпись при наведении на выделении курсора
+polygonFeature_514.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_514);
+
+const polygonFeature_515 = new Feature({ // 515
+    geometry: new Polygon([
+        [
+            [2303, 1097],
+            [2488, 1097],
+            [2488, 778],
+            [2303, 778],
+            [2303, 1097]
+        ]
+    ])
+});
+polygonFeature_515.set('description', '515 (учебная лаборатория криминалистики и судебных экспертиз)'); // надпись при наведении на выделении курсора
+polygonFeature_515.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_515);
+
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
     autoPan: {

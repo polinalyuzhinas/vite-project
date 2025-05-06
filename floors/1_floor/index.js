@@ -554,7 +554,7 @@ const polygonFeature_113 = new Feature({ // 113
         ]
     ])
 });
-polygonFeature_113.set('description', '113 (тренинг-зал)'); // надпись при наведении на выделении курсора
+polygonFeature_113.set('description', '113 (аудитория им. А.А. Понукалина, тренинг-зал)'); // надпись при наведении на выделении курсора
 polygonFeature_113.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_113);
 
@@ -630,9 +630,56 @@ const polygonFeature_security = new Feature({ // охрана
         ]
     ])
 });
-polygonFeature_security.set('description', 'охрана (тут можно взять ключи)'); // надпись при наведении на выделении курсора
+polygonFeature_security.set('description', 'охрана (тут можно попросить ключи)'); // надпись при наведении на выделении курсора
 polygonFeature_security.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_security);
+
+// аудитории правого крыла
+
+const polygonFeature_135 = new Feature({ // 135
+    geometry: new Polygon([
+        [
+            [2022, 635],
+            [2243, 635],
+            [2243, 373],
+            [2022, 373],
+            [2022, 635]
+        ]
+    ])
+});
+polygonFeature_135.set('description', '135 (кафедра общей и консультативной психологии)'); // надпись при наведении на выделении курсора
+polygonFeature_135.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_135);
+
+const polygonFeature_134 = new Feature({ // 134
+    geometry: new Polygon([
+        [
+            [2246, 635],
+            [2495, 635],
+            [2495, 373],
+            [2246, 373],
+            [2246, 635]
+        ]
+    ])
+});
+polygonFeature_134.set('description', '134 (аудитория им. С.Л. Франка)'); // надпись при наведении на выделении курсора
+polygonFeature_134.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_134);
+
+const polygonFeature_133 = new Feature({ // 133
+    geometry: new Polygon([
+        [
+            [2498, 635],
+            [2749, 635],
+            [2749, 373],
+            [2498, 373],
+            [2498, 635]
+        ]
+    ])
+});
+polygonFeature_133.set('description', '133 (аудитория им. Л.Г. Вяткина)'); // надпись при наведении на выделении курсора
+polygonFeature_133.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_133);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
