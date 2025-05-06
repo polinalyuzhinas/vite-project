@@ -313,7 +313,7 @@ const polygonFeature_508 = new Feature({ // 508
         ]
     ])
 });
-polygonFeature_508.set('description', '508'); // надпись при наведении на выделении курсора
+polygonFeature_508.set('description', '508 (кафедры теории государства и права, социальных коммуникаций)'); // надпись при наведении на выделении курсора
 polygonFeature_508.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_508);
 
@@ -343,7 +343,7 @@ const polygonFeature_506 = new Feature({ // 506
         ]
     ])
 });
-polygonFeature_506.set('description', '506'); // надпись при наведении на выделении курсора
+polygonFeature_506.set('description', '506 (кафедра конституционного и муниципального права)'); // надпись при наведении на выделении курсора
 polygonFeature_506.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_506);
 
@@ -360,7 +360,7 @@ const polygonFeature_505 = new Feature({ // 505
         ]
     ])
 });
-polygonFeature_505.set('description', '505'); // надпись при наведении на выделении курсора
+polygonFeature_505.set('description', '505 (деканат юридического факультета)'); // надпись при наведении на выделении курсора
 polygonFeature_505.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_505);
 
@@ -542,7 +542,7 @@ const polygonFeature_526 = new Feature({ // 526
         ]
     ])
 });
-polygonFeature_526.set('description', '526 (компьютерный класс юридического факультета)'); // надпись при наведении на выделении курсора
+polygonFeature_526.set('description', '526 (компьютерный класс юридического <br> факультета)'); // надпись при наведении на выделении курсора
 polygonFeature_526.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_526);
 
@@ -587,9 +587,131 @@ const polygonFeature_515 = new Feature({ // 515
         ]
     ])
 });
-polygonFeature_515.set('description', '515 (учебная лаборатория криминалистики и судебных экспертиз)'); // надпись при наведении на выделении курсора
+polygonFeature_515.set('description', '515 (учебная лаборатория криминалистики и <br> судебных экспертиз)'); // надпись при наведении на выделении курсора
 polygonFeature_515.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_515);
+
+const polygonFeature_525 = new Feature({ // 525
+    geometry: new Polygon([
+        [
+            [2894, 565],
+            [3193, 565],
+            [3193, 251],
+            [2863, 251],
+            [2863, 373],
+            [2894, 373],
+            [2894, 565]
+        ]
+    ])
+});
+polygonFeature_525.set('description', '525 (кафедры таможенного, <br> административного и <br> финансового права и <br> уголовного, экологического <br> права и криминологии)'); // надпись при наведении на выделении курсора
+polygonFeature_525.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_525);
+
+const polygonFeature_524 = new Feature({ // 524
+    geometry: new Polygon([
+        [
+            [2894, 568],
+            [3193, 568],
+            [3193, 929],
+            [2894, 929],
+            [2894, 568]
+        ]
+    ])
+});
+polygonFeature_524.set('description', '524 (кафедра гражданского <br> права и процесса)'); // надпись при наведении на выделении курсора
+polygonFeature_524.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_524);
+
+const polygonFeature_523 = new Feature({ // 523
+    geometry: new Polygon([
+        [
+            [2894, 1318],
+            [3193, 1318],
+            [3193, 932],
+            [2894, 932],
+            [2894, 1318]
+        ]
+    ])
+});
+polygonFeature_523.set('description', '523 (кафедра политических <br> наук)'); // надпись при наведении на выделении курсора
+polygonFeature_523.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_523);
+
+const polygonFeature_521 = new Feature({ // 521/522
+    geometry: new Polygon([
+        [
+            [2894, 1550],
+            [3310, 1550],
+            [3310, 1320],
+            [2894, 1320],
+            [2894, 1550]
+        ]
+    ])
+});
+polygonFeature_521.set('description', '521/522'); // надпись при наведении на выделении курсора
+polygonFeature_521.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_521);
+
+const polygonFeature_520 = new Feature({ // 520
+    geometry: new Polygon([
+        [
+            [2894, 1628],
+            [3193, 1628],
+            [3193, 1552],
+            [2894, 1552],
+            [2894, 1628]
+        ]
+    ])
+});
+polygonFeature_520.set('description', '520'); // надпись при наведении на выделении курсора
+polygonFeature_520.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_520);
+
+const polygonFeature_519 = new Feature({ // 519
+    geometry: new Polygon([
+        [
+            [2894, 1717],
+            [3193, 1717],
+            [3193, 1630],
+            [2894, 1630],
+            [2894, 1717]
+        ]
+    ])
+});
+polygonFeature_519.set('description', '519'); // надпись при наведении на выделении курсора
+polygonFeature_519.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_519);
+
+const polygonFeature_518 = new Feature({ // 518
+    geometry: new Polygon([
+        [
+            [2894, 1832],
+            [3315, 1832],
+            [3315, 1719],
+            [2894, 1719],
+            [2894, 1832]
+        ]
+    ])
+});
+polygonFeature_518.set('description', '518'); // надпись при наведении на выделении курсора
+polygonFeature_518.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_518);
+
+const polygonFeature_517 = new Feature({ // 517
+    geometry: new Polygon([
+        [
+            [2894, 1948],
+            [3315, 1948],
+            [3315, 1832],
+            [2894, 1832],
+            [2894, 1948]
+        ]
+    ])
+});
+polygonFeature_517.set('description', '517'); // надпись при наведении на выделении курсора
+polygonFeature_517.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_517);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup

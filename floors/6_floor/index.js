@@ -373,7 +373,7 @@ const polygonFeature_607 = new Feature({ // 607
         ]
     ])
 });
-polygonFeature_607.set('description', '607 (учебный и научный раздел института дополнительного профессионального образования)'); // надпись при наведении на выделении курсора
+polygonFeature_607.set('description', '607 (учебный и научный раздел ИДПО)'); // надпись при наведении на выделении курсора
 polygonFeature_607.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_607);
 
@@ -405,7 +405,7 @@ const polygonFeature_605 = new Feature({ // 605 (наверное)
         ]
     ])
 });
-polygonFeature_605.set('description', 'директор института дополнительного профессионального образования'); // надпись при наведении на выделении курсора
+polygonFeature_605.set('description', '605 (директор ИДПО)'); // надпись при наведении на выделении курсора
 polygonFeature_605.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_605);
 
@@ -495,7 +495,7 @@ const polygonFeature_602 = new Feature({ // 602
         ]
     ])
 });
-polygonFeature_602.set('description', '602 (кафедра педагогики и психологии профессионального образования)'); // надпись при наведении на выделении курсора
+polygonFeature_602.set('description', '602 (кафедра педагогики и психологии профессионального образования, <br> центр проыессиональной переподготовки)'); // надпись при наведении на выделении курсора
 polygonFeature_602.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_602);
 
@@ -510,7 +510,7 @@ const polygonFeature_601 = new Feature({ // 601
         ]
     ])
 });
-polygonFeature_601.set('description', '601 (кафедра менеджмента в образовании)'); // надпись при наведении на выделении курсора
+polygonFeature_601.set('description', '601 (кафедра менеджмента в образовании, <br> центр повышения квалификации )'); // надпись при наведении на выделении курсора
 polygonFeature_601.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_601);
 
@@ -630,7 +630,7 @@ const polygonFeature_616 = new Feature({ // 616
         ]
     ])
 });
-polygonFeature_616.set('description', '616 (кафедра английского языка для гуманитарных направлений и специальностей)'); // надпись при наведении на выделении курсора
+polygonFeature_616.set('description', '616 (кафедра английского языка для гуманитарных <br> направлений и специальностей)'); // надпись при наведении на выделении курсора
 polygonFeature_616.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_616);
 
@@ -680,6 +680,175 @@ const polygonFeature_619 = new Feature({ // 619
 polygonFeature_619.set('description', '619 (декан факультета физической культуры и спорта)'); // надпись при наведении на выделении курсора
 polygonFeature_619.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_619);
+
+const polygonFeature_632 = new Feature({ // 632
+    geometry: new Polygon([
+        [
+            [2894, 565],
+            [3193, 565],
+            [3193, 251],
+            [2863, 251],
+            [2863, 373],
+            [2894, 373],
+            [2894, 565]
+        ]
+    ])
+});
+polygonFeature_632.set('description', '632 (профсоюзный комитет <br> работников СГУ)'); // надпись при наведении на выделении курсора
+polygonFeature_632.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_632);
+
+const polygonFeature_631 = new Feature({ // 631
+    geometry: new Polygon([
+        [
+            [2894, 568],
+            [3193, 568],
+            [3193, 824],
+            [2894, 824],
+            [2894, 568]
+        ]
+    ])
+});
+polygonFeature_631.set('description', '631 (аудитория им. <br> К.Ф. Седова)'); // надпись при наведении на выделении курсора
+polygonFeature_631.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_631);
+
+const polygonFeature_630 = new Feature({ // 630
+    geometry: new Polygon([
+        [
+            [2894, 932],
+            [3193, 932],
+            [3193, 827],
+            [2894, 827],
+            [2894, 932]
+        ]
+    ])
+});
+polygonFeature_630.set('description', '630 (заместитель по <br> социально-воспитательной <br> работе факультета ППиСО и <br> профбюро ППиСО)'); // надпись при наведении на выделении курсора
+polygonFeature_630.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_630);
+
+const polygonFeature_629 = new Feature({ // 629
+    geometry: new Polygon([
+        [
+            [2894, 1223],
+            [3193, 1223],
+            [3193, 934],
+            [2894, 934],
+            [2894, 1223]
+        ]
+    ])
+});
+polygonFeature_629.set('description', '629 (деканат ППиСО)'); // надпись при наведении на выделении курсора
+polygonFeature_629.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_629);
+
+const polygonFeature_628 = new Feature({ // 628
+    geometry: new Polygon([
+        [
+            [2894, 1320],
+            [3193, 1320],
+            [3193, 1227],
+            [2894, 1227],
+            [2894, 1320]
+        ]
+    ])
+});
+polygonFeature_628.set('description', '628 (заместитель по <br> учебной работе ППиСО)'); // надпись при наведении на выделении курсора
+polygonFeature_628.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_628);
+
+const polygonFeature_627 = new Feature({ // 627
+    geometry: new Polygon([
+        [
+            [2894, 1440],
+            [3310, 1440],
+            [3310, 1324],
+            [2894, 1324],
+            [2894, 1440]
+        ]
+    ])
+});
+polygonFeature_627.set('description', '627 (архив ППиСО)'); // надпись при наведении на выделении курсора
+polygonFeature_627.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_627);
+
+const polygonFeature_626 = new Feature({ // 626
+    geometry: new Polygon([
+        [
+            [2894, 1552],
+            [3310, 1552],
+            [3310, 1444],
+            [2894, 1444],
+            [2894, 1552]
+        ]
+    ])
+});
+polygonFeature_626.set('description', '626 (деканат ППиСО <br> учебная часть)'); // надпись при наведении на выделении курсора
+polygonFeature_626.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_626);
+
+const polygonFeature_625 = new Feature({ // 625
+    geometry: new Polygon([
+        [
+            [2894, 1628],
+            [3193, 1628],
+            [3193, 1552],
+            [2894, 1552],
+            [2894, 1628]
+        ]
+    ])
+});
+polygonFeature_625.set('description', '625 (председатель <br> профкома студентов)'); // надпись при наведении на выделении курсора
+polygonFeature_625.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_625);
+
+const polygonFeature_624 = new Feature({ // 624
+    geometry: new Polygon([
+        [
+            [2894, 1717],
+            [3193, 1717],
+            [3193, 1637],
+            [2894, 1637],
+            [2894, 1717]
+        ]
+    ])
+});
+polygonFeature_624.set('description', '624 (профком студентов)'); // надпись при наведении на выделении курсора
+polygonFeature_624.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_624);
+
+const polygonFeature_623 = new Feature({ // 623
+    geometry: new Polygon([
+        [
+            [2894, 1832],
+            [3087, 1832],
+            [3087, 1948],
+            [3315, 1948],
+            [3315, 1724],
+            [2894, 1724],
+            [2894, 1832]
+        ]
+    ])
+});
+polygonFeature_623.set('description', '623 (отдел по техническому <br> учёту объектов <br> недвижимости'); // надпись при наведении на выделении курсора
+polygonFeature_623.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_623);
+
+const polygonFeature_622 = new Feature({ // 622
+    geometry: new Polygon([
+        [
+            [2894, 1948],
+            [3084, 1948],
+            [3084, 1834],
+            [2894, 1834],
+            [2894, 1948]
+        ]
+    ])
+});
+polygonFeature_622.set('description', '622'); // надпись при наведении на выделении курсора
+polygonFeature_622.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_622);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
