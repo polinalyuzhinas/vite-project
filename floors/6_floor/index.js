@@ -604,6 +604,83 @@ polygonFeature_633.set('description', '633 (дирекция педагогич�
 polygonFeature_633.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_633);
 
+const polygonFeature_615 = new Feature({ // 615
+    geometry: new Polygon([
+        [
+            [1914, 1098],
+            [1991, 1098],
+            [1991, 777],
+            [1914, 777],
+            [1914, 1098]
+        ]
+    ])
+});
+polygonFeature_615.set('description', '615 (кабинет английского языка)'); // надпись при наведении на выделении курсора
+polygonFeature_615.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_615);
+
+const polygonFeature_616 = new Feature({ // 616
+    geometry: new Polygon([
+        [
+            [1994, 1098],
+            [2152, 1098],
+            [2152, 777],
+            [1994, 777],
+            [1994, 1098]
+        ]
+    ])
+});
+polygonFeature_616.set('description', '616 (кафедра английского языка для гуманитарных направлений и специальностей)'); // надпись при наведении на выделении курсора
+polygonFeature_616.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_616);
+
+const polygonFeature_617 = new Feature({ // 617
+    geometry: new Polygon([
+        [
+            [2156, 927],
+            [2271, 927],
+            [2271, 777],
+            [2156, 777],
+            [2156, 927]
+        ]
+    ])
+});
+polygonFeature_617.set('description', '617 (архив факультета физической культуры и спорта)'); // надпись при наведении на выделении курсора
+polygonFeature_617.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_617);
+
+const polygonFeature_618 = new Feature({ // 618
+    geometry: new Polygon([
+        [
+            [2159, 1098],
+            [2355, 1098],
+            [2355, 777],
+            [2274, 777],
+            [2274, 927],
+            [2152, 927],
+            [2159, 1098]
+        ]
+    ])
+});
+polygonFeature_618.set('description', '618 (деканат факультета физической культуры и спорта)'); // надпись при наведении на выделении курсора
+polygonFeature_618.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_618);
+
+const polygonFeature_619 = new Feature({ // 619
+    geometry: new Polygon([
+        [
+            [2358, 1098],
+            [2485, 1098],
+            [2485, 777],
+            [2358, 777],
+            [2358, 1098]
+        ]
+    ])
+});
+polygonFeature_619.set('description', '619 (декан факультета физической культуры и спорта)'); // надпись при наведении на выделении курсора
+polygonFeature_619.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_619);
+
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
     autoPan: {
