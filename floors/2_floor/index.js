@@ -575,7 +575,7 @@ polygonFeature_217.set('description', '217 (центр олимпиадной п
 polygonFeature_217.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_217);
 
-const polygonFeature_428 = new Feature({ // 227
+const polygonFeature_227 = new Feature({ // 227
     geometry: new Polygon([
         [
             [2894, 565],
@@ -588,9 +588,9 @@ const polygonFeature_428 = new Feature({ // 227
         ]
     ])
 });
-polygonFeature_428.set('description', '227 (деканат <br> факультета физико- <br> математических и <br> естественно-научных <br> дисциплин, базовая кафедра <br> ГАОУ СО "ФТЛ лицей №1")'); // надпись при наведении на выделении курсора
-polygonFeature_428.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_428);
+polygonFeature_227.set('description', '227 (деканат <br> факультета физико- <br> математических и <br> естественно-научных <br> дисциплин, базовая кафедра <br> ГАОУ СО "ФТЛ лицей №1")'); // надпись при наведении на выделении курсора
+polygonFeature_227.setStyle(defaultStyle);
+vectorSource.addFeature(polygonFeature_227);
 
 const polygonFeature_226 = new Feature({ // 226
     geometry: new Polygon([

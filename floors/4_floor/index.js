@@ -807,6 +807,7 @@ polygonFeature_lockerroommale.set('description', 'раздевалка мужс�
 polygonFeature_lockerroommale.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_lockerroommale);
 
+/*
 const polygonFeature_lockerroomfemale = new Feature({ // раздевалка женская
     geometry: new Polygon([
         [
@@ -821,6 +822,21 @@ const polygonFeature_lockerroomfemale = new Feature({ // раздевалка ж
 polygonFeature_lockerroomfemale.set('description', 'раздевалка женская'); // надпись при наведении на выделении курсора
 polygonFeature_lockerroomfemale.setStyle(defaultStyle);
 vectorSource.addFeature(polygonFeature_lockerroomfemale);
+*/
+
+const polygonFeatures = new Map(); // cловарь для хранения полигонов
+
+function template_PolygonFeature(coordinates, description, featureID) { // создает объект OpenLayers Feature по коррдинатам, описанию и ID и сохраняет его в словаре 
+    const feature = new Feature({
+        geometry: new Polygon(coordinates)
+    });
+    feature.set('description', description); // надпись при наведении на выделении курсора
+    feature.setStyle(defaultStyle); // стиль по умолчанию
+    vectorSource.addFeature(feature); // добавляем в векторный слой
+    polygonFeatures.set(featureID, feature); // добавляем полигон в словарь, чтобы потом к нему обращаться
+}
+
+template_PolygonFeature([[[1538, 1465], [1677, 1465], [1677, 1230], [1538, 1230], [1538, 1465]]], 'раздевалка женская', 'lockerroomfemale');
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
@@ -848,7 +864,6 @@ map.addOverlay(popup);
 // состояние для хранения текущего выделенного объекта
 let highlightedFeature = null;
 
-// обработчик события наведения курсора мыши
 map.on('pointermove', function (evt) {
     if (evt.dragging) {
         return;
@@ -857,36 +872,33 @@ map.on('pointermove', function (evt) {
     const pixel = map.getEventPixel(evt.originalEvent);
     map.getTargetElement().style.cursor = map.hasFeatureAtPixel(pixel) ? 'pointer' : '';
 
-    // получаем все объекты под курсором в массив
     const features = [];
     map.forEachFeatureAtPixel(pixel, function (feature) {
         features.push(feature);
     });
 
-    // сбрасываем стиль с предыдущего выделенного объекта (если есть)
+    // Сбрасываем стиль с предыдущего выделенного объекта
     if (highlightedFeature && !features.includes(highlightedFeature)) {
         highlightedFeature.setStyle(defaultStyle);
         highlightedFeature = null;
     }
 
-    // выделяем все объекты, на которые наведен курсор
-    let featureToShowPopup = null; // объект, для которого нужно показать Popup
+    let featureToShowPopup = null;
     features.forEach(feature => {
         if (feature) {
-            feature.setStyle(highlightStyle); // применяем стиль выделения
-            highlightedFeature = feature; //  запоминаем последний выделенный объект
-            featureToShowPopup = feature; // запоминаем объект для отображения Popup
+            feature.setStyle(highlightStyle);
+            highlightedFeature = feature;
+            featureToShowPopup = feature;
         }
     });
 
-    // отображаем Popup (если есть объект под курсором)
+
+    // Отображаем Popup (если есть объект под курсором)
     if (featureToShowPopup) {
-        // получаем координаты объекта
-        const coordinate = evt.coordinate; // координаты курсора
-        popup.getElement().innerHTML = featureToShowPopup.get('description'); // устанавливаем текст для Popup
-        popup.setPosition(coordinate); // позиционируем Popup рядом с курсором
+        const coordinate = evt.coordinate;
+        popup.getElement().innerHTML = featureToShowPopup.get('description');
+        popup.setPosition(coordinate);
     } else {
-        // если курсор не на объекте, скрываем Popup
         popup.setPosition(undefined);
     }
 });
