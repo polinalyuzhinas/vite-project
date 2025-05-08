@@ -67,68 +67,24 @@ fill: new Fill({
 })
 });
 
-// cоздание и добавление объектов
-const polygonFeature_701 = new Feature({ // 701
-geometry: new Polygon([
-    [
-    [1558, 1203],
-    [1815, 1203],
-    [1815, 1435],
-    [1558, 1435],
-    [1558, 1203]
-    ]
-])
-});
-polygonFeature_701.set('description', '701'); // надпись при наведении на выделении курсора
+const polygonFeatures = new Map(); // cловарь для хранения полигонов
 
-const polygonFeature_stairs1 = new Feature({ // лестница слева
-    geometry: new Polygon([
-        [
-        [1480, 1061],
-        [1600, 1061],
-        [1600, 979],
-        [1480, 979],
-        [1480, 1061]
-        ]
-    ])
+function template_PolygonFeature(coordinates, description, featureID) { // создает объект OpenLayers Feature по коррдинатам, описанию и ID и сохраняет его в словаре 
+    const feature = new Feature({
+        geometry: new Polygon(coordinates)
     });
-polygonFeature_stairs1.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
+    feature.set('description', description); // надпись при наведении на выделении курсора
+    feature.setStyle(defaultStyle); // стиль по умолчанию
+    vectorSource.addFeature(feature); // добавляем в векторный слой
+    polygonFeatures.set(featureID, feature); // добавляем полигон в словарь, чтобы потом к нему обращаться
+}
 
-const polygonFeature_stairs2 = new Feature({ // лестница в центре
-    geometry: new Polygon([
-        [
-        [1604, 958],
-        [1769, 958],
-        [1769, 1088],
-        [1604, 1088],
-        [1604, 958]
-        ]
-    ])
-    });
-polygonFeature_stairs2.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
-    
-const polygonFeature_stairs3 = new Feature({ // лестница справа
-    geometry: new Polygon([
-        [
-        [1773, 979],
-        [1895, 979],
-        [1895, 1061],
-        [1773, 1061],
-        [1773, 979]
-        ]
-    ])
-    });
-polygonFeature_stairs3.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
+// лестницы
+template_PolygonFeature([[[1480, 1061],[1600, 1061],[1600, 979],[1480, 979],[1480, 1061]]], 'центральная лестница', 'centralstairs1');
+template_PolygonFeature([[[1604, 958],[1769, 958],[1769, 1088],[1604, 1088],[1604, 958]]], 'центральная лестница', 'centralstairs2');
+template_PolygonFeature([[[1773, 979],[1895, 979],[1895, 1061],[1773, 1061],[1773, 979]]], 'центральная лестница', 'centralstairs3');
 
-polygonFeature_701.setStyle(defaultStyle);
-polygonFeature_stairs1.setStyle(defaultStyle);
-polygonFeature_stairs2.setStyle(defaultStyle);
-polygonFeature_stairs3.setStyle(defaultStyle);
-
-vectorSource.addFeature(polygonFeature_701);
-vectorSource.addFeature(polygonFeature_stairs1);
-vectorSource.addFeature(polygonFeature_stairs2);
-vectorSource.addFeature(polygonFeature_stairs3);
+template_PolygonFeature([[[1558, 1203],[1815, 1203],[1815, 1435],[1558, 1435],[1558, 1203]]], '701', '701');
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup

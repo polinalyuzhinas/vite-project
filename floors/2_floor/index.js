@@ -66,621 +66,67 @@ fill: new Fill({
 })
 });
 
-// cоздание и добавление объектов
+const polygonFeatures = new Map(); // cловарь для хранения полигонов
+
+function template_PolygonFeature(coordinates, description, featureID) { // создает объект OpenLayers Feature по коррдинатам, описанию и ID и сохраняет его в словаре 
+    const feature = new Feature({
+        geometry: new Polygon(coordinates)
+    });
+    feature.set('description', description); // надпись при наведении на выделении курсора
+    feature.setStyle(defaultStyle); // стиль по умолчанию
+    vectorSource.addFeature(feature); // добавляем в векторный слой
+    polygonFeatures.set(featureID, feature); // добавляем полигон в словарь, чтобы потом к нему обращаться
+}
 
 // лестницы
-const polygonFeature_centralstairs1 = new Feature({ // центральная лестница слева
-    geometry: new Polygon([
-        [
-            [1479, 1027],
-            [1600, 1027],
-            [1600, 944],
-            [1479, 944],
-            [1479, 1027]
-        ]
-    ])
-});
-polygonFeature_centralstairs1.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_centralstairs2 = new Feature({ // центральная лестница в центре
-    geometry: new Polygon([
-        [
-            [1604, 1001],
-            [1769, 1001],
-            [1769, 873],
-            [1604, 873],
-            [1604, 1001]
-        ]
-    ])
-});
-polygonFeature_centralstairs2.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_centralstairs3 = new Feature({ // центральная лестница справа
-    geometry: new Polygon([
-        [
-            [1772, 1027],
-            [1892, 1027],
-            [1892, 944],
-            [1772, 944],
-            [1772, 1027]
-        ]
-    ])
-});
-polygonFeature_centralstairs3.set('description', 'центральная лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_rightstairs = new Feature({ // лестница в правом крыле (у лифта)
-    geometry: new Polygon([
-        [
-            [2494, 1088],
-            [2637, 1088],
-            [2637, 947],
-            [2494, 947],
-            [2494, 1088]
-        ]
-    ])
-});
-polygonFeature_rightstairs.set('description', 'лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_farrightstairs = new Feature({ // лестница в правом крыле
-    geometry: new Polygon([
-        [
-            [2587, 1916],
-            [2730, 1916],
-            [2730, 1844],
-            [2587, 1844],
-            [2587, 1916]
-        ]
-    ])
-});
-polygonFeature_farrightstairs.set('description', 'лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_leftstairs = new Feature({ // лестница в левом крыле (у лифта)
-    geometry: new Polygon([
-        [
-            [737, 1079],
-            [876, 1079],
-            [876, 940],
-            [737, 940],
-            [737, 1079]
-        ]
-    ])
-});
-polygonFeature_leftstairs.set('description', 'лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_farleftstairs1 = new Feature({ // лестница в левом крыле сверху
-    geometry: new Polygon([
-        [
-            [133, 1548],
-            [201, 1548],
-            [201, 1468],
-            [133, 1468],
-            [133, 1548]
-        ]
-    ])
-});
-polygonFeature_farleftstairs1.set('description', 'лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_farleftstairs2 = new Feature({ // лестница в левом крыле слева
-    geometry: new Polygon([
-        [
-            [62, 1466],
-            [134, 1466],
-            [134, 1398],
-            [62, 1398],
-            [62, 1466]
-        ]
-    ])
-});
-polygonFeature_farleftstairs2.set('description', 'лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_farleftstairs3 = new Feature({ // лестница в левом крыле снизу
-    geometry: new Polygon([
-        [
-            [131, 1396],
-            [201, 1396],
-            [201, 1320],
-            [131, 1320],
-            [131, 1396]
-        ]
-    ])
-});
-polygonFeature_farleftstairs3.set('description', 'лестница'); // надпись при наведении на выделении курсора
-
-const polygonFeature_gymstairs = new Feature({ // лестница к спортзалу
-    geometry: new Polygon([
-        [
-            [1928, 1382],
-            [2043, 1382],
-            [2043, 1292],
-            [1928, 1292],
-            [1928, 1382]
-        ]
-    ])
-});
-polygonFeature_gymstairs.set('description', 'лестница к спортзалу'); // надпись при наведении на выделении курсора
-
-polygonFeature_centralstairs1.setStyle(defaultStyle);
-polygonFeature_centralstairs2.setStyle(defaultStyle);
-polygonFeature_centralstairs3.setStyle(defaultStyle);
-polygonFeature_rightstairs.setStyle(defaultStyle);
-polygonFeature_farrightstairs.setStyle(defaultStyle);
-polygonFeature_leftstairs.setStyle(defaultStyle);
-polygonFeature_farleftstairs1.setStyle(defaultStyle);
-polygonFeature_farleftstairs2.setStyle(defaultStyle);
-polygonFeature_farleftstairs3.setStyle(defaultStyle);
-polygonFeature_gymstairs.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_centralstairs1);
-vectorSource.addFeature(polygonFeature_centralstairs2);
-vectorSource.addFeature(polygonFeature_centralstairs3);
-vectorSource.addFeature(polygonFeature_rightstairs);
-vectorSource.addFeature(polygonFeature_farrightstairs);
-vectorSource.addFeature(polygonFeature_leftstairs);
-vectorSource.addFeature(polygonFeature_farleftstairs1);
-vectorSource.addFeature(polygonFeature_farleftstairs2);
-vectorSource.addFeature(polygonFeature_farleftstairs3);
-vectorSource.addFeature(polygonFeature_gymstairs);
+template_PolygonFeature([[[1479, 1027],[1600, 1027],[1600, 944],[1479, 944],[1479, 1027]]], 'центральная лестница', 'centralstairs1');
+template_PolygonFeature([[[1604, 1001],[1769, 1001],[1769, 873],[1604, 873],[1604, 1001]]], 'центральная лестница', 'centralstairs2');
+template_PolygonFeature([[[1772, 1027],[1892, 1027],[1892, 944],[1772, 944],[1772, 1027]]], 'центральная лестница', 'centralstairs3');
+template_PolygonFeature([[[2494, 1088],[2637, 1088],[2637, 947],[2494, 947],[2494, 1088]]], 'лестница', 'rightstairs');
+template_PolygonFeature([[[2587, 1916],[2730, 1916],[2730, 1844],[2587, 1844],[2587, 1916]]], 'лестница', 'farrightstairs');
+template_PolygonFeature([[[737, 1079],[876, 1079],[876, 940],[737, 940],[737, 1079]]], 'лестница', 'leftstairs');
+template_PolygonFeature([[[133, 1548],[201, 1548],[201, 1468],[133, 1468],[133, 1548]]], 'лестница', 'farleftstairs1');
+template_PolygonFeature([[[62, 1466],[134, 1466],[134, 1398],[62, 1398],[62, 1466]]], 'лестница', 'farleftstairs2');
+template_PolygonFeature([[[131, 1396],[201, 1396],[201, 1320],[131, 1320],[131, 1396]]], 'лестница', 'farleftstairs3');
+template_PolygonFeature([[[1928, 1382],[2043, 1382],[2043, 1292],[1928, 1292],[1928, 1382]]], 'лестница к спортзалу', 'gymstairs');
 
 // лифты
-const polygonFeature_elevator1 = new Feature({ // лифт слева сверху
-    geometry: new Polygon([
-        [
-            [643, 1122],
-            [730, 1122],
-            [730, 1024],
-            [643, 1024],
-            [643, 1122]
-        ]
-    ])
-});
-polygonFeature_elevator1.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-const polygonFeature_elevator2 = new Feature({ // лифт слева снизу
-    geometry: new Polygon([
-        [
-            [645, 887],
-            [735, 887],
-            [735, 790],
-            [645, 790],
-            [645, 887]
-        ]
-    ])
-});
-polygonFeature_elevator2.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-const polygonFeature_elevator3 = new Feature({ // лифт справа сверху
-    geometry: new Polygon([
-        [
-            [2642, 1123],
-            [2729, 1123],
-            [2729, 1027],
-            [2642, 1027],
-            [2642, 1123]
-        ]
-    ])
-});
-polygonFeature_elevator3.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-const polygonFeature_elevator4 = new Feature({ // лифт справа снизу
-    geometry: new Polygon([
-        [
-            [2638, 889],
-            [2727, 889],
-            [2727, 792],
-            [2638, 792],
-            [2638, 889]
-        ]
-    ])
-});
-polygonFeature_elevator4.set('description', 'лифт'); // надпись при наведении на выделении курсора
-
-polygonFeature_elevator1.setStyle(defaultStyle);
-polygonFeature_elevator2.setStyle(defaultStyle);
-polygonFeature_elevator3.setStyle(defaultStyle);
-polygonFeature_elevator4.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_elevator1);
-vectorSource.addFeature(polygonFeature_elevator2);
-vectorSource.addFeature(polygonFeature_elevator3);
-vectorSource.addFeature(polygonFeature_elevator4);
+template_PolygonFeature([[[643, 1122],[730, 1122],[730, 1024],[643, 1024],[643, 1122]]], 'лифт', 'elevator1');
+template_PolygonFeature([[[645, 887],[735, 887],[735, 790],[645, 790],[645, 887]]], 'лифт', 'elevator2');
+template_PolygonFeature([[[2642, 1123],[2729, 1123],[2729, 1027],[2642, 1027],[2642, 1123]]], 'лифт', 'elevator3');
+template_PolygonFeature([[[2638, 889],[2727, 889],[2727, 792],[2638, 792],[2638, 889]]], 'лифт', 'elevator4');
 
 // туалеты
-const polygonFeature_toilet1 = new Feature({ // туалет слева
-    geometry: new Polygon([
-        [
-            [637, 1320],
-            [801, 1320],
-            [801, 1136],
-            [637, 1136],
-            [637, 1320]
-        ]
-    ])
-});
-polygonFeature_toilet1.set('description', '208 (ремонт)'); // надпись при наведении на выделении курсора
-
-const polygonFeature_toilet2 = new Feature({ // туалет справа
-    geometry: new Polygon([
-        [
-            [2581, 1726],
-            [2740, 1726],
-            [2740, 1525],
-            [2581, 1525],
-            [2581, 1726]
-        ]
-    ])
-});
-polygonFeature_toilet2.set('description', 'туалет мужской'); // надпись при наведении на выделении курсора
-
-polygonFeature_toilet1.setStyle(defaultStyle);
-polygonFeature_toilet2.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_toilet1);
-vectorSource.addFeature(polygonFeature_toilet2);
+template_PolygonFeature([[[637, 1320],[801, 1320],[801, 1136],[637, 1136],[637, 1320]]], '208 (ремонт)', 'toilet1');
+template_PolygonFeature([[[2581, 1726],[2740, 1726],[2740, 1525],[2581, 1525],[2581, 1726]]], 'туалет мужской', 'toilet2');
 
 // аудитории левого крыла
-
-const polygonFeature_207 = new Feature({ // 207
-    geometry: new Polygon([
-        [
-            [178, 1320],
-            [475, 1320],
-            [475, 950],
-            [178, 950],
-            [178, 1320]
-        ]
-    ])
-});
-polygonFeature_207.set('description', '207 (кафедра философии культуры и культорологии, центр Артефакт)'); // надпись при наведении на выделении курсора
-polygonFeature_207.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_207);
-
-const polygonFeature_206 = new Feature({ // 206
-    geometry: new Polygon([
-        [
-            [178, 947],
-            [475, 947],
-            [475, 830],
-            [178, 830],
-            [178, 947]
-        ]
-    ])
-});
-polygonFeature_206.set('description', '206 (совет студентов философского факультета)'); // надпись при наведении на выделении курсора
-polygonFeature_206.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_206);
-
-const polygonFeature_205 = new Feature({ // 205
-    geometry: new Polygon([
-        [
-            [178, 828],
-            [475, 828],
-            [475, 602],
-            [178, 602],
-            [178, 828]
-        ]
-    ])
-});
-polygonFeature_205.set('description', '205 (кафедра теоретической и социальной философии, учебно-научная лаборатория ЦИФРА)'); // надпись при наведении на выделении курсора
-polygonFeature_205.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_205);
-
-const polygonFeature_204 = new Feature({ // 204
-    geometry: new Polygon([
-        [
-            [178, 600],
-            [632, 600],
-            [632, 373],
-            [510, 373],
-            [510, 250],
-            [178, 250], 
-            [178, 600]
-        ]
-    ])
-});
-polygonFeature_204.set('description', '204 (деканат философского факультета'); // надпись при наведении на выделении курсора
-polygonFeature_204.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_204);
-
-const polygonFeature_209 = new Feature({ // 209
-    geometry: new Polygon([
-        [
-            [886, 1097],
-            [1073, 1097],
-            [1073, 778],
-            [886, 778],
-            [886, 1097]
-        ]
-    ])
-});
-polygonFeature_209.set('description', '209'); // надпись при наведении на выделении курсора
-polygonFeature_209.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_209);
-
-const polygonFeature_210 = new Feature({ // 210
-    geometry: new Polygon([
-        [
-            [1076, 1097],
-            [1244, 1097],
-            [1244, 778],
-            [1076, 778],
-            [1076, 1097]
-        ]
-    ])
-});
-polygonFeature_210.set('description', '210'); // надпись при наведении на выделении курсора
-polygonFeature_210.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_210);
-
-const polygonFeature_211 = new Feature({ // 211
-    geometry: new Polygon([
-        [
-            [1247, 1097],
-            [1348, 1097],
-            [1348, 778],
-            [1247, 778],
-            [1247, 1097]
-        ]
-    ])
-});
-polygonFeature_211.set('description', '211 (кафедра теологии и религиоведения)'); // надпись при наведении на выделении курсора
-polygonFeature_211.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_211);
-
-const polygonFeature_212 = new Feature({ // 212
-    geometry: new Polygon([
-        [
-            [1351, 1097],
-            [1458, 1097],
-            [1458, 778],
-            [1351, 778],
-            [1351, 1097]
-        ]
-    ])
-});
-polygonFeature_212.set('description', '212 (заведующий кафедрой теологии и религиоведения)'); // надпись при наведении на выделении курсора
-polygonFeature_212.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_212);
-
-const polygonFeature_203 = new Feature({ // 203
-    geometry: new Polygon([
-        [
-            [632, 631],
-            [918, 631],
-            [918, 373],
-            [632, 373],
-            [632, 631]
-        ]
-    ])
-});
-polygonFeature_203.set('description', '203 (аудитория им. А.Ф. Аскина)'); // надпись при наведении на выделении курсора
-polygonFeature_203.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_203);
-
-const polygonFeature_202 = new Feature({ // 202
-    geometry: new Polygon([
-        [
-            [921, 631],
-            [1163, 631],
-            [1163, 373],
-            [921, 373],
-            [921, 631]
-        ]
-    ])
-});
-polygonFeature_202.set('description', '202 (аудитория им. С.Л. Франка)'); // надпись при наведении на выделении курсора
-polygonFeature_202.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_202);
-
-const polygonFeature_201 = new Feature({ // 201
-    geometry: new Polygon([
-        [
-            [1166, 631],
-            [1361, 631],
-            [1361, 373],
-            [1166, 373],
-            [1166, 631]
-        ]
-    ])
-});
-polygonFeature_201.set('description', '201'); // надпись при наведении на выделении курсора
-polygonFeature_201.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_201);
+template_PolygonFeature([[[178, 1320],[475, 1320],[475, 950],[178, 950],[178, 1320]]], '207 (кафедра философии культуры и культорологии, центр Артефакт)', '207');
+template_PolygonFeature([[[178, 947],[475, 947],[475, 830],[178, 830],[178, 947]]], '206 (совет студентов философского факультета)', '206');
+template_PolygonFeature([[[178, 828],[475, 828],[475, 602],[178, 602],[178, 828]]], '205 (кафедра теоретической и социальной философии, учебно-научная лаборатория ЦИФРА)', '205');
+template_PolygonFeature([[[178, 600],[632, 600],[632, 373],[510, 373],[510, 250],[178, 250], [178, 600]]], '204 (деканат философского факультета)', '204');
+template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 1097]]], '209', '209');
+template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[1076, 1097]]], '210', '210');
+template_PolygonFeature([[[1247, 1097],[1348, 1097],[1348, 778],[1247, 778],[1247, 1097]]], '211 (кафедра теологии и религиоведения)', '211');
+template_PolygonFeature([[[1351, 1097],[1458, 1097],[1458, 778],[1351, 778],[1351, 1097]]], '212 (заведующий кафедрой теологии и религиоведения)', '212');
+template_PolygonFeature([[[632, 631],[918, 631],[918, 373],[632, 373],[632, 631]]], '203 (аудитория им. А.Ф. Аскина)', '203');
+template_PolygonFeature([[[921, 631],[1163, 631],[1163, 373],[921, 373],[921, 631]]], '202 (аудитория им. С.Л. Франка)', '202');
+template_PolygonFeature([[[1166, 631],[1361, 631],[1361, 373],[1166, 373],[1166, 631]]], '201', '201');
 
 // аудитории правого крыла
-
-const polygonFeature_230 = new Feature({ // 230
-    geometry: new Polygon([
-        [
-            [1998, 635],
-            [2230, 635],
-            [2230, 373],
-            [1998, 373],
-            [1998, 635]
-        ]
-    ])
-});
-polygonFeature_230.set('description', '230 (лаборатория аудиовизуальных средств обучения)'); // надпись при наведении на выделении курсора
-polygonFeature_230.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_230);
-
-const polygonFeature_229 = new Feature({ // 229
-    geometry: new Polygon([
-        [
-            [2233, 635],
-            [2504, 635],
-            [2504, 373],
-            [2233, 373],
-            [2233, 635]
-        ]
-    ])
-});
-polygonFeature_229.set('description', '229 (лаборатория информационных технологий 2)'); // надпись при наведении на выделении курсора
-polygonFeature_229.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_229);
-
-const polygonFeature_228 = new Feature({ // 228
-    geometry: new Polygon([
-        [
-            [2507, 635],
-            [2749, 635],
-            [2749, 373],
-            [2507, 373],
-            [2507, 635]
-        ]
-    ])
-});
-polygonFeature_228.set('description', '228 (лаборатория информационных <br> технологий 1)'); // надпись при наведении на выделении курсора
-polygonFeature_228.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_228);
-
-const polygonFeature_215 = new Feature({ // 215
-    geometry: new Polygon([
-        [
-            [1915, 1097],
-            [2148, 1097],
-            [2148, 778],
-            [1915, 778],
-            [1915, 1097]
-        ]
-    ])
-});
-polygonFeature_215.set('description', '215 (лаборатория информационных технологий 3)'); // надпись при наведении на выделении курсора
-polygonFeature_215.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_215);
-
-const polygonFeature_216 = new Feature({ // 216
-    geometry: new Polygon([
-        [
-            [2151, 1097],
-            [2300, 1097],
-            [2300, 778],
-            [2151, 778],
-            [2151, 1097]
-        ]
-    ])
-});
-polygonFeature_216.set('description', '216 (лаборатория технической диагностики)'); // надпись при наведении на выделении курсора
-polygonFeature_216.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_216);
-
-const polygonFeature_217 = new Feature({ // 217
-    geometry: new Polygon([
-        [
-            [2303, 1097],
-            [2488, 1097],
-            [2488, 778],
-            [2303, 778],
-            [2303, 1097]
-        ]
-    ])
-});
-polygonFeature_217.set('description', '217 (центр олимпиадной подготовки программистов <br> им. Н.Л. Андреевой)'); // надпись при наведении на выделении курсора
-polygonFeature_217.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_217);
-
-const polygonFeature_227 = new Feature({ // 227
-    geometry: new Polygon([
-        [
-            [2894, 565],
-            [3193, 565],
-            [3193, 251],
-            [2863, 251],
-            [2863, 373],
-            [2894, 373],
-            [2894, 565]
-        ]
-    ])
-});
-polygonFeature_227.set('description', '227 (деканат <br> факультета физико- <br> математических и <br> естественно-научных <br> дисциплин, базовая кафедра <br> ГАОУ СО "ФТЛ лицей №1")'); // надпись при наведении на выделении курсора
-polygonFeature_227.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_227);
-
-const polygonFeature_226 = new Feature({ // 226
-    geometry: new Polygon([
-        [
-            [2894, 568],
-            [3193, 568],
-            [3193, 929],
-            [2894, 929],
-            [2894, 568]
-        ]
-    ])
-});
-polygonFeature_226.set('description', '226 (базовые кафедры <br> Мирантис ИТ, филиала № 2 <br> ООО "РНТ")'); // надпись при наведении на выделении курсора
-polygonFeature_226.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_226);
-
-const polygonFeature_225 = new Feature({ // 225
-    geometry: new Polygon([
-        [
-            [2894, 1318],
-            [3193, 1318],
-            [3193, 932],
-            [2894, 932],
-            [2894, 1318]
-        ]
-    ])
-});
-polygonFeature_225.set('description', '225 (кафедра системного <br> анализа и автоматического <br> управления)'); // надпись при наведении на выделении курсора
-polygonFeature_225.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_225);
-
-const polygonFeature_224 = new Feature({ // 223/224
-    geometry: new Polygon([
-        [
-            [2894, 1550],
-            [3310, 1550],
-            [3310, 1320],
-            [2894, 1320],
-            [2894, 1550]
-        ]
-    ])
-});
-polygonFeature_224.set('description', '223/224'); // надпись при наведении на выделении курсора
-polygonFeature_224.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_224);
-
-const polygonFeature_222 = new Feature({ // 222
-    geometry: new Polygon([
-        [
-            [2894, 1628],
-            [3193, 1628],
-            [3193, 1552],
-            [2894, 1552],
-            [2894, 1628]
-        ]
-    ])
-});
-polygonFeature_222.set('description', '222'); // надпись при наведении на выделении курсора
-polygonFeature_222.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_222);
-
-const polygonFeature_221 = new Feature({ // 221
-    geometry: new Polygon([
-        [
-            [2894, 1717],
-            [3193, 1717],
-            [3193, 1630],
-            [2894, 1630],
-            [2894, 1717]
-        ]
-    ])
-});
-polygonFeature_221.set('description', '221'); // надпись при наведении на выделении курсора
-polygonFeature_221.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_221);
-
-const polygonFeature_220 = new Feature({ // 220
-    geometry: new Polygon([
-        [
-            [2894, 1948],
-            [3315, 1948],
-            [3315, 1719],
-            [2894, 1719],
-            [2894, 1948]
-        ]
-    ])
-});
-polygonFeature_220.set('description', '220'); // надпись при наведении на выделении курсора
-polygonFeature_220.setStyle(defaultStyle);
-vectorSource.addFeature(polygonFeature_220);
+template_PolygonFeature([[[1998, 635],[2230, 635],[2230, 373],[1998, 373],[1998, 635]]], '230 (лаборатория аудиовизуальных средств обучения)', '230');
+template_PolygonFeature([[[2233, 635],[2504, 635],[2504, 373],[2233, 373],[2233, 635]]], '229 (лаборатория информационных технологий 2)', '229');
+template_PolygonFeature([[[2507, 635],[2749, 635],[2749, 373],[2507, 373],[2507, 635]]], '228 (лаборатория информационных <br> технологий 1)', '228');
+template_PolygonFeature([[[1915, 1097],[2148, 1097],[2148, 778],[1915, 778],[1915, 1097]]], '215 (лаборатория информационных технологий 3)', '215');
+template_PolygonFeature([[[2151, 1097],[2300, 1097],[2300, 778],[2151, 778],[2151, 1097]]], '216 (лаборатория технической диагностики)', '216');
+template_PolygonFeature([[[2303, 1097],[2488, 1097],[2488, 778],[2303, 778],[2303, 1097]]], '217 (центр олимпиадной подготовки программистов <br> им. Н.Л. Андреевой)', '217');
+template_PolygonFeature([[[2894, 565],[3193, 565],[3193, 251],[2863, 251],[2863, 373],[2894, 373],[2894, 565]]], '227 (деканат <br> факультета физико- <br> математических и <br> естественно-научных <br> дисциплин, базовая кафедра <br> ГАОУ СО "ФТЛ лицей №1")', '227');
+template_PolygonFeature([[[2894, 568],[3193, 568],[3193, 929],[2894, 929],[2894, 568]]], '226 (базовые кафедры <br> Мирантис ИТ, филиала № 2 <br> ООО "РНТ")', '226');
+template_PolygonFeature([[[2894, 1318],[3193, 1318],[3193, 932],[2894, 932],[2894, 1318]]], '225 (кафедра системного <br> анализа и автоматического <br> управления)', '225');
+template_PolygonFeature([[[2894, 1550],[3310, 1550],[3310, 1320],[2894, 1320],[2894, 1550]]], '223/224', '224');
+template_PolygonFeature([[[2894, 1628],[3193, 1628],[3193, 1552],[2894, 1552],[2894, 1628]]], '222', '222');
+template_PolygonFeature([[[2894, 1717],[3193, 1717],[3193, 1630],[2894, 1630],[2894, 1717]]], '221', '221');
+template_PolygonFeature([[[2894, 1948],[3315, 1948],[3315, 1719],[2894, 1719],[2894, 1948]]], '220', '220');
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
