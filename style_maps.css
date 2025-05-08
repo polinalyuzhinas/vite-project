@@ -1,14 +1,22 @@
 html,
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1;
+    font-weight: 400;
+}
+
 body {
-  margin: 0;
-  height: 100%;
+    margin: 0;
+    position: absolute;
 }
 
 #map {
-    width: 1107px; /* imageWidth / 3 (3322 / 3) */
-    height: 671px; /* imageHeight / 3 (2014 / 3) */
+    width: 80vw; /* 80% от ширины окна браузера */
+    height: 80vh; /* 80% от высоты окна браузера */
     margin: 0; /* убрать отступы */
-    position: absolute; top: 15%; left: 15%;
+    position: absolute;
+    top: 5vw; /* 5% от ширины окна брузера*/
+    left: 10vw; /* 10% от ширины окна браузера */
     border: 1px solid black; /* рамочка */
 }
 
@@ -18,8 +26,43 @@ body {
   padding: 8px 8px; /* отступы вокруг текста */
   border: 1px solid #000000; /* рамка */
   bottom: 8px;
-  left: -50px;
+  left: -45px;
   width: auto;
   height: auto;
   white-space: nowrap; /* предотвращает перенос длинных слов */
 }
+
+.popup-content {
+    background-color: rgb(247, 255, 255);
+}
+
+.popup-title {
+    font-weight: normal; /* убираем жирность */
+    font-size: inherit; /* наследуем размер шрифта из :root */
+}
+
+.popup-table {
+    width: 100%;
+    border: 1px solid #000000; /* рамка */
+    border-collapse: collapse; /* соседние ячейки таблицы соединены */
+}
+
+    .popup-table th {
+        border: 1px solid #000000; /* рамка ячеек */
+        font-size: inherit; /* наследуем размер шрифта из :root */
+        text-align: left;
+    }
+
+    .popup-table td {
+        border: 1px solid #000000; /* рамка ячеек */
+        font-size: inherit; /* наследуем размер шрифта из :root */
+        text-align: left;
+    }
+
+        .popup-table td:first-child { /* первая колонка таблицы */
+        width: 80px;
+        }
+
+        .popup-table td:nth-child(2) { /* вторая колонка таблицы */
+            width: 200px;
+        }

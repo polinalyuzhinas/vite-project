@@ -2,7 +2,7 @@ import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import ImageLayer from 'ol/layer/Image.js';
 import StaticImage from 'ol/source/ImageStatic.js';
-import { Projection, get } from 'ol/proj.js';
+import { Projection, get, fromLonLat } from 'ol/proj.js';
 import 'ol/ol.css';
 import proj4 from 'proj4';
 
@@ -15,6 +15,7 @@ import Style from 'ol/style/Style';
 import Fill from 'ol/style/Fill';
 
 import Overlay from 'ol/Overlay'; // нужно для всплывающей надписи
+import { none } from 'ol/rotationconstraint';
 
 const imageWidth = 3322;
 const imageHeight = 2014;
@@ -32,8 +33,6 @@ const proj = new Projection({
     units: 'pixels',
     extent: imageExtent
 });
-
-get('pixel-image', proj);
 
 const imageLayer = new ImageLayer({ // слой с изображением (статичным)
     source: new StaticImage({
@@ -68,11 +67,12 @@ fill: new Fill({
 
 const polygonFeatures = new Map(); // cловарь для хранения полигонов
 
-function template_PolygonFeature(coordinates, description, featureID) { // создает объект OpenLayers Feature по коррдинатам, описанию и ID и сохраняет его в словаре 
+function template_PolygonFeature(coordinates, description, schedule=[], featureID) { // создает объект OpenLayers Feature по координатам, описанию и ID и сохраняет его в словаре 
     const feature = new Feature({
         geometry: new Polygon(coordinates)
     });
     feature.set('description', description); // надпись при наведении на выделении курсора
+    feature.set('schedule', schedule); // расписание (если есть)
     feature.setStyle(defaultStyle); // стиль по умолчанию
     vectorSource.addFeature(feature); // добавляем в векторный слой
     polygonFeatures.set(featureID, feature); // добавляем полигон в словарь, чтобы потом к нему обращаться
@@ -95,8 +95,8 @@ template_PolygonFeature([[[343, 1070],[382, 1070],[382, 931],[343, 931],[343, 10
 template_PolygonFeature([[[1481, 104],[1887, 104],[1887, 4],[1481, 4],[1481, 104]]], 'лестница ко входу в корпус', 'entrancestairs');
 template_PolygonFeature([[[1457, 617],[1914, 617],[1914, 578],[1457, 578],[1457, 617]]], 'лестница', 'precentralstairs1');
 template_PolygonFeature([[[1464, 799],[1907, 799],[1907, 739],[1464, 739],[1464, 799]]], 'лестница', 'precentralstairs2');
-template_PolygonFeature([[[1458, 1399],[1595, 1399],[1595, 1352],[1458, 1352],[1458, 1399]]], 'лестница к актовому залу', 'assemblyhallstairs1');
-template_PolygonFeature([[[1780, 1399],[1915, 1399],[1915, 1350],[1780, 1350],[1780, 1399]]], 'лестница к актовому залу', 'assemblyhallstairs2');
+template_PolygonFeature([[[1458, 1397],[1595, 1397],[1595, 1352],[1458, 1352],[1458, 1397]]], 'лестница к актовому залу', 'assemblyhallstairs1');
+template_PolygonFeature([[[1780, 1397],[1915, 1397],[1915, 1350],[1780, 1350],[1780, 1397]]], 'лестница к актовому залу', 'assemblyhallstairs2');
 
 // лифты
 template_PolygonFeature([[[643, 1122],[730, 1122],[730, 1024],[643, 1024],[643, 1122]]], 'лифт', 'elevator1');
@@ -109,7 +109,13 @@ template_PolygonFeature([[[637, 1320],[801, 1320],[801, 1136],[637, 1136],[637, 
 template_PolygonFeature([[[2581, 1726],[2740, 1726],[2740, 1525],[2581, 1525],[2581, 1726]]], 'туалет женский', 'toilet2');
 
 // аудитории левого крыла
-template_PolygonFeature([[[178, 1949],[686, 1949],[686, 1551],[178, 1551],[178, 1949]]], '110 (аудитория им. Р. Х. Тугушева)', '110');
+template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [178, 1949]]], '110 (аудитория им. Р. Х. Тугушева)', [
+    { time: "09:00", event: "Занятие 1" },
+    { time: "10:00", event: "Перерыв" },
+    { time: "10:30", event: "Занятие 2" },
+    { time: "12:00", event: "Обед" },
+    { time: "13:00", event: "Занятие 3" }
+], '110');
 template_PolygonFeature([[[318, 1546],[505, 1546],[505, 1419],[318, 1419],[318, 1546]]], '109 (полиграфическая лаборатория)', '109');
 template_PolygonFeature([[[183, 1316],[478, 1316],[478, 1194],[183, 1194],[183, 1316]]], '108 (кафедра психологии личности)', '108');
 template_PolygonFeature([[[183, 1190],[478, 1190],[478, 1073],[183, 1073],[183, 1190]]], '107 (кафедра социальной психологии)', '107');
@@ -117,7 +123,7 @@ template_PolygonFeature([[[180, 931],[478, 931],[478, 630],[180, 630],[180, 931]
 template_PolygonFeature([[[180, 627],[478, 627],[478, 374],[511, 374],[511, 249],[180, 249],[180, 627]]], '104 (деканат факультета психологии, заместители декана, секретарь)', '104');
 template_PolygonFeature([[[886, 1097],[1062, 1097],[1062, 778],[886, 778],[886, 1097]]], '112 (совет студентов факультета психологии)', '112');
 template_PolygonFeature([[[1067, 1097],[1241, 1097],[1241, 778],[1067, 778],[1067, 1097]]], '113 (аудитория им. А.А. Понукалина, тренинг-зал)', '113');
-template_PolygonFeature([[[1244, 1097],[1458, 1097],[1458, 778],[1244, 778],[1244, 1097]]], '114 (кафедра философии и методологии науки)', '114');
+template_PolygonFeature([[[1245, 1097],[1458, 1097],[1458, 778],[1245, 778],[1245, 1097]]], '114 (кафедра философии и методологии науки)', '114');
 template_PolygonFeature([[[632, 631],[882, 631],[882, 373],[632, 373],[632, 631]]], '103 (аудитория им. Л.П. Доблаева, комната истории психологии)', '103');
 template_PolygonFeature([[[885, 631],[1135, 631],[1135, 373],[885, 373],[885, 631]]], '102 (аудитория им. А.А. Крогиуса)', '102');
 template_PolygonFeature([[[1139, 631],[1353, 631],[1353, 373],[1139, 373],[1139, 631]]], '101', '101');
@@ -131,7 +137,7 @@ template_PolygonFeature([[[2859, 374],[3193, 374],[3193, 253],[2859, 253],[2859,
 template_PolygonFeature([[[2897, 630],[3193, 630],[3193, 379],[2897, 379],[2897, 630]]], '131 (юридическая <br> клиника)', '131');
 template_PolygonFeature([[[2897, 771],[3193, 771],[3193, 635],[2897, 635],[2897, 771]]], '130', '130');
 template_PolygonFeature([[[2897, 886],[3193, 886],[3193, 774],[2897, 774],[2897, 886]]], '129', '129');
-template_PolygonFeature([[[2897, 998],[3193, 998],[3193, 888],[2897, 888],[2897, 998]]], '128 (комната матери <br> и ребёнка)', '128');
+template_PolygonFeature([[[2897, 998],[3193, 998],[3193, 890],[2897, 890],[2897, 998]]], '128 (комната матери <br> и ребёнка)', '128');
 template_PolygonFeature([[[2894, 1550],[3310, 1550],[3310, 1324],[2894, 1324],[2894, 1550]]], '126 (кафедра английского <br> языка и мекультурной <br> коммуникации)', '126');
 template_PolygonFeature([[[2894, 1717],[3193, 1717],[3193, 1552],[2894, 1552],[2894, 1717]]], '125 (вход через 126)', '125');
 template_PolygonFeature([[[2740, 1948],[3315, 1948],[3315, 1719],[2894, 1719],[2894, 1795],[2740, 1795],[2740, 1948]]], '123/124', '123');
@@ -163,16 +169,19 @@ const popup = new Overlay({ // всплывающая надпись
   });
   popup.getElement().className = 'ol-popup'; // добавляем класс для стилизации (в CSS)
 
+const initialCenter = fromLonLat([imageWidth / 2, imageHeight / 2]);
+
 const map = new Map({
 target: "map",
-layers: [imageLayer, vectorLayer], 
-view: new View({
-    projection: proj,
-    center: [imageWidth / 2, imageHeight / 2], // центр карты в центре изображения
-    zoom: 0,
-    extent: imageExtent,
-}),
+    layers: [imageLayer, vectorLayer],
+    view: new View({
+        projection: proj,
+        center: initialCenter,
+        zoom: 0, // начальный зум
+    }),
 });
+
+map.getView().fit(imageExtent); // автоматический подбор масштаба карты
 
 map.addOverlay(popup);
 
@@ -212,12 +221,19 @@ map.on('pointermove', function (evt) {
 
     // отображаем Popup (если есть объект под курсором)
     if (featureToShowPopup) {
-        // получаем координаты объекта
-        const coordinate = evt.coordinate; // координаты курсора
-        popup.getElement().innerHTML = featureToShowPopup.get('description'); // устанавливаем текст для Popup
-        popup.setPosition(coordinate); // позиционируем Popup рядом с курсором
+        const coordinate = evt.coordinate;
+        let html = `<h1 class="popup-title">${featureToShowPopup.get('description')}</h1>`; // Используем featureToShowPopup
+        const schedule = featureToShowPopup.get('schedule'); // Используем featureToShowPopup
+        if (schedule && Array.isArray(schedule)) {
+            html += `<table class="popup-table"><thead><tr><th>Время</th><th>Событие</th></tr></thead><tbody>`;
+            schedule.forEach(item => {
+                html += `<tr><td>${item.time}</td><td>${item.event}</td></tr>`; // исправил item на item.time и item.event
+            });
+            html += `</tbody></table>`;
+        }
+        popup.getElement().innerHTML = html;
+        popup.setPosition(coordinate);
     } else {
-        // если курсор не на объекте, скрываем Popup
         popup.setPosition(undefined);
     }
 });
