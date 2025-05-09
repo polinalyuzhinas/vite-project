@@ -222,18 +222,53 @@ map.on('pointermove', function (evt) {
     // отображаем Popup (если есть объект под курсором)
     if (featureToShowPopup) {
         const coordinate = evt.coordinate;
-        let html = `<h1 class="popup-title">${featureToShowPopup.get('description')}</h1>`; // Используем featureToShowPopup
-        const schedule = featureToShowPopup.get('schedule'); // Используем featureToShowPopup
-        if (schedule && Array.isArray(schedule)) {
-            html += `<table class="popup-table"><thead><tr><th>Время</th><th>Событие</th></tr></thead><tbody>`;
-            schedule.forEach(item => {
-                html += `<tr><td>${item.time}</td><td>${item.event}</td></tr>`; // исправил item на item.time и item.event
-            });
-            html += `</tbody></table>`;
-        }
-        popup.getElement().innerHTML = html;
+        popup.getElement().innerHTML = `${featureToShowPopup.get('description')}`; // Используем featureToShowPopup;
         popup.setPosition(coordinate);
     } else {
         popup.setPosition(undefined);
     }
 });
+
+map.on('click', function (evt) {
+    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) { return feature; });
+
+    if (feature && feature.get('schedule') && feature.get('schedule').length > 0) {
+        const schedule = feature.get('schedule');
+        if (schedule && schedule.length > 0) {
+            showScheduleModal(feature.get('description'), schedule); // Вызов функции для отображения модального окна
+        }
+    }
+    else {
+
+    }
+});
+
+
+function showScheduleModal(description, schedule) {
+    const modal = document.createElement('div');
+    modal.id = `schedule-modal-${description}`;
+    modal.className = 'schedule-menu'; // Класс для стилей
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h1>Расписание для объекта <br> ${description}</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Время</th>
+                        <th>Событие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${schedule.map(item => `<tr><td>${item.time}</td><td>${item.event}</td></tr>`).join('')}
+                </tbody>
+            </table>
+            <button class="close-modal">Закрыть</button>
+        </div>
+    `;
+
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    document.body.appendChild(modal);
+}
