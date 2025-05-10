@@ -2,7 +2,7 @@ import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import ImageLayer from 'ol/layer/Image.js';
 import StaticImage from 'ol/source/ImageStatic.js';
-import { Projection, get } from 'ol/proj.js';
+import { Projection, get, fromLonLat } from 'ol/proj.js';
 import 'ol/ol.css';
 import proj4 from 'proj4';
 
@@ -32,8 +32,6 @@ const proj = new Projection({
     units: 'pixels',
     extent: imageExtent
 });
-
-get('pixel-image', proj);
 
 const imageLayer = new ImageLayer({ // слой с изображением (статичным)
     source: new StaticImage({
@@ -68,11 +66,12 @@ fill: new Fill({
 
 const polygonFeatures = new Map(); // cловарь для хранения полигонов
 
-function template_PolygonFeature(coordinates, description, featureID) { // создает объект OpenLayers Feature по коррдинатам, описанию и ID и сохраняет его в словаре 
+function template_PolygonFeature(coordinates, description, schedule=[], featureID) { // создает объект OpenLayers Feature по координатам, описанию и ID и сохраняет его в словаре 
     const feature = new Feature({
         geometry: new Polygon(coordinates)
     });
     feature.set('description', description); // надпись при наведении на выделении курсора
+    feature.set('schedule', schedule); // расписание (если есть)
     feature.setStyle(defaultStyle); // стиль по умолчанию
     vectorSource.addFeature(feature); // добавляем в векторный слой
     polygonFeatures.set(featureID, feature); // добавляем полигон в словарь, чтобы потом к нему обращаться
@@ -101,21 +100,93 @@ template_PolygonFeature([[[637, 1320],[801, 1320],[801, 1136],[637, 1136],[637, 
 template_PolygonFeature([[[2581, 1726],[2740, 1726],[2740, 1525],[2581, 1525],[2581, 1726]]], 'туалет женский', 'toilet2');
 
 // аудитории левого крыла
-template_PolygonFeature([[ [178, 1949],[686, 1949],[686, 1551],[178, 1551],[178, 1949]]], '310 (аудитория им. А. М. Богомолова)', '310');
+template_PolygonFeature([[ [178, 1949],[686, 1949],[686, 1551],[178, 1551],[178, 1949]]], '310 (аудитория им. А. М. Богомолова)',
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '331, 311', teacher: 'Молчанов В.А.', lesson: 'Прикладная универсальная алгебра', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '221, 241', teacher: 'Кудрина Е.В.', lesson: 'Структуры данных и алгоритмы', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '111, 151', teacher: 'Грецова А.П.', lesson: 'Введение в специальность', type: 'пр.', parity: 'чис.'},
+    { day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '111, 151', teacher: 'Грецова А.П.', lesson: 'Введение в специальность', type: 'лек.', parity: 'знам.'},
+    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '131, 132', teacher: 'Иванова А.С.', lesson: 'Информационные технологии и программирование', type: 'лек.', parity: '-'}], '310');
+
 template_PolygonFeature([[[318, 1546],[492, 1546],[492, 1429],[318, 1429],[318, 1546]]], '309', '309');
-template_PolygonFeature([[[239, 1409],[306, 1409],[306, 1325],[239, 1325],[239, 1409]]], '300 (находится между 3 и 4 этажами)', '300');
+
+template_PolygonFeature([[[239, 1409],[306, 1409],[306, 1325],[239, 1325],[239, 1409]]], '300 (находится между 3 и 4 этажами)',
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '331, 311', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 4 гр. ', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '5', department: 'фКНиИТ', group: '132', teacher: 'Грищенко А.А.', lesson: 'Информационные технологии и программирование 2 гр.', type: 'пр.', parity: '-'},
+    { day: 'Вторник', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Гортинский А.В.', lesson: 'Организационное и правовое обеспечение информационной безопасности 3 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Павлова О.В.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Павлова О.В.', lesson: 'Английский язык (переводчики) 3 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '3', department: 'фКНиИТ', group: '331', teacher: 'Гамова А.Н.', lesson: 'Сложность вычислений 1 гр.', type: 'пр.', parity: '-'}],'300');
+
 template_PolygonFeature([[[178, 1320],[475, 1320],[475, 950],[178, 950],[178, 1320]]], '308 (кафедры информатики и программирования, математической кибернетики и компьютерных наук)', '308');
 template_PolygonFeature([[[178, 947],[475, 947],[475, 830],[178, 830],[178, 947]]], '307 (заместитель по заочному отделению факультет КНиИТ)', '307');
 template_PolygonFeature([[[178, 828],[475, 828],[475, 602],[178, 602],[178, 828]]], '306 (кафедра дискретной математики и информационных технологий)', '306');
 template_PolygonFeature([[[178, 600],[632, 600],[632, 373],[510, 373],[510, 250],[178, 250], [178, 600]]], '305 (деканат факультета КНиИТ)', '305');
-template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 1097]]], '312', '312');
-template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[1076, 1097]]], '313', '313');
-template_PolygonFeature([[[1247, 1097],[1458, 1097],[1458, 778],[1247, 778],[1247, 1097]]], '314 (лаборатория компьютерной безопасности)', '314');
-template_PolygonFeature([[[632, 631],[918, 631],[918, 373],[632, 373],[632, 631]]], '304', '304');
-template_PolygonFeature([[[921, 631],[1163, 631],[1163, 373],[921, 373],[921, 631]]], '303', '303');
-template_PolygonFeature([[[1166, 631],[1361, 631],[1361, 373],[1166, 373],[1166, 631]]], '302', '302');
+
+template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 1097]]], '312', 
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Чумакова А.Ю.', lesson: 'Английский язык 6 гр.', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '132', teacher: 'Ушаков И.В.', lesson: 'Алгебра', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '131', teacher: 'Ушаков И.В.', lesson: 'Алгебра', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Кузьмина С.В.', lesson: 'Английский язык 7 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Кузьмина С.В.', lesson: 'Английский язык 7 гр.', type: 'лек.', parity: '-'}],'312');
+
+template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[1076, 1097]]], '313',
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Кузьмина С.В.', lesson: 'Английский язык 7 гр.', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Кузьмина С.В.', lesson: 'Английский язык 7 гр.', type: 'пр.', parity: '-'}], '313');
+
+template_PolygonFeature([[[1247, 1097],[1458, 1097],[1458, 778],[1247, 778],[1247, 1097]]], '314 (лаборатория компьютерной безопасности)', 
+    [{ day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '331', teacher: 'Молчанов В.А.', lesson: 'Прикладная универсальная алгебра 3 гр.', type: 'пр.', parity: '-'},
+    { day: 'Вторник', number: '1', department: 'фКНиИТ', group: '331', teacher: 'Гортинский А.В.', lesson: 'Организационное и правовое обеспечение информационной безопасности 1 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '3', department: 'фКНиИТ', group: '331', teacher: 'Молчанов В.А.', lesson: 'Прикладная универсальная алгебра 2 гр.', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '331', teacher: 'Гортинский А.В.', lesson: 'Организационное и правовое обеспечение информационной безопасности 2 гр.', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Молчанов В.А.', lesson: 'Прикладная универсальная алгебра 1 гр.', type: 'пр.', parity: '-'}], '314');
+
+template_PolygonFeature([[[632, 631],[918, 631],[918, 373],[632, 373],[632, 631]]], '304',
+    [{ day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '151', teacher: 'Молчанов В.А.', lesson: 'Математическая логика и теория алгоритмов', type: 'пр.', parity: 'чис.'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '111, 181', teacher: 'Молчанов В.А.', lesson: 'Математическая логика и теория алгоритмов', type: 'пр.', parity: 'знам.'},
+    { day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '211, 251', teacher: 'Миронов С.В.', lesson: 'Компьютерная графика', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '231', teacher: 'Стрыгина С.В.', lesson: 'Основы права и антикоррупционного поведения', type: 'лек.', parity: 'чис.'},
+    { day: 'Вторник', number: '2', department: 'фКНиИТ', group: '231', teacher: 'Чернышова Г.Ю.', lesson: 'Дискретная математика', type: 'пр.', parity: '-'},
+    { day: 'Вторник', number: '4', department: 'фКНиИТ', group: '331', teacher: 'Гортинский А.В.', lesson: 'Организационное и правовое обеспечение информационной безопасности', type: 'плек.', parity: '-'},
+    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '131, 132', teacher: 'Разумовская Е.В.', lesson: 'Математический анализ', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '231', teacher: 'Разумовская Е.В.', lesson: 'Математический анализ', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '4', department: 'фКНиИТ', group: '231', teacher: 'Разумовская Е.В.', lesson: 'Математический анализ', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '1', department: 'фКНиИТ', group: '131, 132', teacher: 'Соломонов В.А.', lesson: 'История России', type: 'пр.', parity: 'чис.'},
+    { day: 'Четверг', number: '1', department: 'фКНиИТ', group: '131', teacher: 'Хамутова М.В.', lesson: 'Информационные технологии и программирование', type: 'пр.', parity: 'знам.'},
+    { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '131, 132', teacher: 'Соломонов В.А.', lesson: 'История России', type: 'лек.', parity: '-'},
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '131, 132', teacher: 'Мещерякова О.В.', lesson: 'Аппаратные средства вычислительной техники', type: 'лек.', parity: '-'}], '304');
+
+template_PolygonFeature([[[921, 631],[1163, 631],[1163, 373],[921, 373],[921, 631]]], '303',
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '251', teacher: 'Сафрончик М.И.', lesson: 'НИР', type: 'пр.', parity: 'чис.'},
+    { day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '221', teacher: 'Станкевич Е.П.', lesson: 'НИР гр. САУ', type: 'пр.', parity: 'знам.'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '311', teacher: 'Иванова А.С.', lesson: 'Технологии программирования', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '221', teacher: 'Селифонова Е.И.', lesson: 'Безопасность жизнедеятельности', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '221', teacher: 'Селифонова Е.И.', lesson: 'Безопасность жизнедеятельности', type: 'пр.', parity: 'чис.'},
+    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '221', teacher: 'Кудрина Е.В.', lesson: 'Структуры данных и алгоритмы', type: 'пр.', parity: 'знам.'},
+    { day: 'Понедельник', number: '5', department: 'фКНиИТ', group: '221', teacher: 'Селифонова Е.И.', lesson: 'Безопасность жизнедеятельности', type: 'пр.', parity: 'знам.'},
+    { day: 'Вторник', number: '3', department: 'фКНиИТ', group: '331', teacher: 'Соловьёв В.М.', lesson: 'Операционные системы', type: 'лек.', parity: '-'},
+    { day: 'Вторник', number: '4', department: 'фКНиИТ', group: '131, 132', teacher: 'Кривобок В.В.', lesson: 'Алгебра', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '4', department: 'фКНиИТ', group: '131, 132', teacher: 'Абросимов М.Б.', lesson: 'Введение в специальность', type: 'лек.', parity: 'знам.'},
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '231', teacher: 'Лысикова Н.П.', lesson: 'Философия', type: 'пр.', parity: 'чис.'},
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '231', teacher: 'Дмитриев П.О.', lesson: 'Компьютерные сети', type: 'лек.', parity: '-'}], '303');
+
+template_PolygonFeature([[[1166, 631],[1361, 631],[1361, 373],[1166, 373],[1166, 631]]], '302', 
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'пр.', parity: '-'},
+    { day: 'Вторник', number: '1', department: 'фКНиИТ', group: '132', teacher: 'Тимофеев В.Г.', lesson: 'Математический анализ', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Исайкина М.А.', lesson: 'Английский язык 6 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Чумакова А.Ю.', lesson: 'Английский язык 6 гр.', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '3', department: 'фКНиИТ', group: '131', teacher: 'Разумовская Е.В.', lesson: 'Математический анализ', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '132', teacher: 'Хамутова М.В.', lesson: 'Информационные технологии и прогрпаммирование', type: 'пр.', parity: 'чис.'},
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '231', teacher: 'Жаркова А.В.', lesson: 'Ознакомительная практика', type: 'пр.', parity: 'знам.'}], '302');
+
 template_PolygonFeature([[[1364, 635],[1525, 635],[1525, 373],[1364, 373],[1364, 635]]], '301 (кафедра теоретических основ компьютерной безопасности и криптографии)', '301');
-template_PolygonFeature([[[1528, 635],[1815, 635],[1815, 373],[1528, 373],[1528, 635]]], '333');
+
+template_PolygonFeature([[[1528, 635],[1815, 635],[1815, 373],[1528, 373],[1528, 635]]], '333',
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '121', teacher: 'Крусс Ю.С.', lesson: 'Алгебра и геометрия', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '121', teacher: 'Лобов А.А.', lesson: 'Математическая логика и теория алгоритмов', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '231', teacher: 'Стрыгина С.В.', lesson: 'Основы права и антикоррупционного поведения', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Сафрончик М.И.', lesson: 'Системы управления базами данных', type: 'лек.', parity: '-'}], '333');
 
 // аудитории правого крыла
 template_PolygonFeature([[[1818, 635],[1995, 635],[1995, 373],[1818, 373],[1818, 635]]], '331', '331');
@@ -148,16 +219,19 @@ const popup = new Overlay({ // всплывающая надпись
   });
   popup.getElement().className = 'ol-popup'; // добавляем класс для стилизации (в CSS)
 
+const initialCenter = fromLonLat([imageWidth / 2, imageHeight / 2]);
+
 const map = new Map({
 target: "map",
-layers: [imageLayer, vectorLayer], 
-view: new View({
-    projection: proj,
-    center: [imageWidth / 2, imageHeight / 2], // центр карты в центре изображения
-    zoom: 0,
-    extent: imageExtent,
-}),
+    layers: [imageLayer, vectorLayer],
+    view: new View({
+        projection: proj,
+        center: initialCenter,
+        zoom: 0, // начальный зум
+    }),
 });
+
+map.getView().fit(imageExtent); // автоматический подбор масштаба карты
 
 map.addOverlay(popup);
 
@@ -206,3 +280,74 @@ map.on('pointermove', function (evt) {
         popup.setPosition(undefined);
     }
 });
+
+map.on('click', function (evt) {
+    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) { return feature; });
+
+    if (feature && feature.get('schedule') && feature.get('schedule').length > 0) {
+        const schedule = feature.get('schedule');
+        if (schedule && schedule.length > 0) {
+            showScheduleModal(feature.get('description'), schedule); // Вызов функции для отображения модального окна
+        }
+    }
+    else {
+
+    }
+});
+
+
+function showScheduleModal(description, schedule) {
+    const modal = document.createElement('div');
+    modal.id = `schedule-modal-${description}`;
+    modal.className = 'schedule-menu';
+    const scheduleByDay = schedule.reduce((acc, item) => {
+        const day = item.day;
+        if (!acc[day]) {
+            acc[day] = [];
+        }
+        acc[day].push(item);
+        return acc;
+    }, {});
+
+    let tablesHTML = '';
+
+    // Создаем таблицу для каждого дня
+    for (const day in scheduleByDay) {
+        tablesHTML += `
+            <div class="schedule-day">
+                <h1>${day}</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Номер <br> пары</th>
+                            <th>Факультет</th>
+                            <th>Группа</th>
+                            <th>Преподаватель</th>
+                            <th>Пара</th>
+                            <th>Тип</th>
+                            <th>Чётность</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
+                    </tbody>
+                </table>
+            </div>
+        `;
+    }
+
+
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h1>Расписание аудитории <br> ${description}</h1>
+            ${tablesHTML}
+            <button class="close-modal">Закрыть</button>
+        </div>
+    `;
+
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    document.body.appendChild(modal);
+}

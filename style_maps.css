@@ -11,12 +11,12 @@ body {
 }
 
 #map {
-    width: 70vw; /* 70% от ширины окна браузера */
+    width: 60vw; /* 60% от ширины окна браузера */
     height: 80vh; /* 80% от высоты окна браузера */
     margin: 0; /* убрать отступы */
     position: absolute;
     top: 5vw; /* 5% от ширины окна брузера*/
-    left: 25vw; /* 20% от ширины окна браузера */
+    left: 35vw; /* 35% от ширины окна браузера */
     border: 1px solid black; /* рамочка */
 }
 
@@ -43,39 +43,57 @@ body {
 
 .modal-content {
     position: absolute;
+    max-height: 100vh;
     background-color: rgb(255, 255, 255); /* заливка */
-    padding: 8px 8px; /* отступы вокруг текста */
+    padding: 8px; /* отступы вокруг текста */
+    overflow-y: scroll; /* добавляем вертикальную полосу прокрутки, когда контент превышает высоту */
     border: 1px solid #000000; /* рамка */
-    white-space: nowrap; /* предотвращает перенос длинных слов */
 }
 
 .modal-content h1 {
-    font-weight: normal; /* убираем жирность */
+    text-align:center;
     font-size: inherit; /* наследуем размер шрифта из :root */
 }
 
-.popup-table {
-    width: 100%;
+
+.schedule-menu table {
+    width: 75%;
     border: 1px solid #000000; /* рамка */
     border-collapse: collapse; /* соседние ячейки таблицы соединены */
 }
 
-    .popup-table th {
+    .schedule-menu th {
         border: 1px solid #000000; /* рамка ячеек */
         font-size: inherit; /* наследуем размер шрифта из :root */
         text-align: left;
     }
 
-    .popup-table td {
+    .schedule-menu td {
         border: 1px solid #000000; /* рамка ячеек */
         font-size: inherit; /* наследуем размер шрифта из :root */
         text-align: left;
     }
 
-        .popup-table td:first-child { /* первая колонка таблицы */
+        .schedule-menu td:first-child { /* первая колонка таблицы */
         width: 80px;
         }
 
-        .popup-table td:nth-child(2) { /* вторая колонка таблицы */
+        .schedule-menu td:nth-child(2) { /* вторая колонка таблицы */
             width: 200px;
+        }
+
+        .schedule-menu td:nth-child(3) {
+            width: 100px;
+        }
+
+        .schedule-menu td:nth-child(4) { 
+            width: 200px;
+        }
+
+        .schedule-menu td:nth-child(5) {
+            width: 80px;
+        }
+
+        .schedule-menu td:nth-child(6) {
+            width: 40x;
         }

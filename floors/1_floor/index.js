@@ -15,7 +15,6 @@ import Style from 'ol/style/Style';
 import Fill from 'ol/style/Fill';
 
 import Overlay from 'ol/Overlay'; // нужно для всплывающей надписи
-import { none } from 'ol/rotationconstraint';
 
 const imageWidth = 3322;
 const imageHeight = 2014;
@@ -109,13 +108,7 @@ template_PolygonFeature([[[637, 1320],[801, 1320],[801, 1136],[637, 1136],[637, 
 template_PolygonFeature([[[2581, 1726],[2740, 1726],[2740, 1525],[2581, 1525],[2581, 1726]]], 'туалет женский', 'toilet2');
 
 // аудитории левого крыла
-template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [178, 1949]]], '110 (аудитория им. Р. Х. Тугушева)', [
-    { time: "09:00", event: "Занятие 1" },
-    { time: "10:00", event: "Перерыв" },
-    { time: "10:30", event: "Занятие 2" },
-    { time: "12:00", event: "Обед" },
-    { time: "13:00", event: "Занятие 3" }
-], '110');
+// template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [178, 1949]]], '110 (аудитория им. Р. Х. Тугушева)', [{ time: "09:00", event: "Занятие 1" },{ time: "10:00", event: "Перерыв" },{ time: "10:30", event: "Занятие 2" },{ time: "12:00", event: "Обед" },{ time: "13:00", event: "Занятие 3" }], '110');
 template_PolygonFeature([[[318, 1546],[505, 1546],[505, 1419],[318, 1419],[318, 1546]]], '109 (полиграфическая лаборатория)', '109');
 template_PolygonFeature([[[183, 1316],[478, 1316],[478, 1194],[183, 1194],[183, 1316]]], '108 (кафедра психологии личности)', '108');
 template_PolygonFeature([[[183, 1190],[478, 1190],[478, 1073],[183, 1073],[183, 1190]]], '107 (кафедра социальной психологии)', '107');
@@ -138,8 +131,17 @@ template_PolygonFeature([[[2897, 630],[3193, 630],[3193, 379],[2897, 379],[2897,
 template_PolygonFeature([[[2897, 771],[3193, 771],[3193, 635],[2897, 635],[2897, 771]]], '130', '130');
 template_PolygonFeature([[[2897, 886],[3193, 886],[3193, 774],[2897, 774],[2897, 886]]], '129', '129');
 template_PolygonFeature([[[2897, 998],[3193, 998],[3193, 890],[2897, 890],[2897, 998]]], '128 (комната матери <br> и ребёнка)', '128');
-template_PolygonFeature([[[2894, 1550],[3310, 1550],[3310, 1324],[2894, 1324],[2894, 1550]]], '126 (кафедра английского <br> языка и мекультурной <br> коммуникации)', '126');
-template_PolygonFeature([[[2894, 1717],[3193, 1717],[3193, 1552],[2894, 1552],[2894, 1717]]], '125 (вход через 126)', '125');
+template_PolygonFeature([[[2894, 1550],[3310, 1550],[3310, 1324],[2894, 1324],[2894, 1550]]], '126 (кафедра английского <br> языка и мекультурной <br> коммуникации)',
+    [{ day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'лек.', parity: '-'}], '126');
+
+template_PolygonFeature([[[2894, 1717],[3193, 1717],[3193, 1552],[2894, 1552],[2894, 1717]]], '125 (вход через 126)', 
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '331, 311', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр. ', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '4', department: 'фКНиИТ', group: '331, 311', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр. ', type: 'пр.', parity: '-'}], '125');
+
 template_PolygonFeature([[[2740, 1948],[3315, 1948],[3315, 1719],[2894, 1719],[2894, 1795],[2740, 1795],[2740, 1948]]], '123/124', '123');
 
 // аудитории в служебном коридоре 
@@ -243,25 +245,51 @@ map.on('click', function (evt) {
     }
 });
 
-
 function showScheduleModal(description, schedule) {
     const modal = document.createElement('div');
     modal.id = `schedule-modal-${description}`;
-    modal.className = 'schedule-menu'; // Класс для стилей
+    modal.className = 'schedule-menu';
+    const scheduleByDay = schedule.reduce((acc, item) => {
+        const day = item.day;
+        if (!acc[day]) {
+            acc[day] = [];
+        }
+        acc[day].push(item);
+        return acc;
+    }, {});
+
+    let tablesHTML = '';
+
+    // Создаем таблицу для каждого дня
+    for (const day in scheduleByDay) {
+        tablesHTML += `
+            <div class="schedule-day">
+                <h1>${day}</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Номер <br> пары</th>
+                            <th>Факультет</th>
+                            <th>Группа</th>
+                            <th>Преподаватель</th>
+                            <th>Пара</th>
+                            <th>Тип</th>
+                            <th>Чётность</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
+                    </tbody>
+                </table>
+            </div>
+        `;
+    }
+
+
     modal.innerHTML = `
         <div class="modal-content">
-            <h1>Расписание для объекта <br> ${description}</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Время</th>
-                        <th>Событие</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${schedule.map(item => `<tr><td>${item.time}</td><td>${item.event}</td></tr>`).join('')}
-                </tbody>
-            </table>
+            <h1>Расписание аудитории <br> ${description}</h1>
+            ${tablesHTML}
             <button class="close-modal">Закрыть</button>
         </div>
     `;

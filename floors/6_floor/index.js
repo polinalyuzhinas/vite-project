@@ -2,7 +2,7 @@ import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import ImageLayer from 'ol/layer/Image.js';
 import StaticImage from 'ol/source/ImageStatic.js';
-import { Projection, get } from 'ol/proj.js';
+import { Projection, get, fromLonLat } from 'ol/proj.js';
 import 'ol/ol.css';
 import proj4 from 'proj4';
 
@@ -32,8 +32,6 @@ const proj = new Projection({
     units: 'pixels',
     extent: imageExtent
 });
-
-get('pixel-image', proj);
 
 const imageLayer = new ImageLayer({ // слой с изображением (статичным)
     source: new StaticImage({
@@ -70,11 +68,12 @@ fill: new Fill({
 
 const polygonFeatures = new Map(); // cловарь для хранения полигонов
 
-function template_PolygonFeature(coordinates, description, featureID) { // создает объект OpenLayers Feature по коррдинатам, описанию и ID и сохраняет его в словаре 
+function template_PolygonFeature(coordinates, description, schedule=[], featureID) { // создает объект OpenLayers Feature по координатам, описанию и ID и сохраняет его в словаре 
     const feature = new Feature({
         geometry: new Polygon(coordinates)
     });
     feature.set('description', description); // надпись при наведении на выделении курсора
+    feature.set('schedule', schedule); // расписание (если есть)
     feature.setStyle(defaultStyle); // стиль по умолчанию
     vectorSource.addFeature(feature); // добавляем в векторный слой
     polygonFeatures.set(featureID, feature); // добавляем полигон в словарь, чтобы потом к нему обращаться
@@ -151,16 +150,19 @@ const popup = new Overlay({ // всплывающая надпись
   });
   popup.getElement().className = 'ol-popup'; // добавляем класс для стилизации (в CSS)
 
+const initialCenter = fromLonLat([imageWidth / 2, imageHeight / 2]);
+
 const map = new Map({
 target: "map",
-layers: [imageLayer, vectorLayer], 
-view: new View({
-    projection: proj,
-    center: [imageWidth / 2, imageHeight / 2], // центр карты в центре изображения
-    zoom: 0,
-    extent: imageExtent,
-}),
+    layers: [imageLayer, vectorLayer],
+    view: new View({
+        projection: proj,
+        center: initialCenter,
+        zoom: 0, // начальный зум
+    }),
 });
+
+map.getView().fit(imageExtent); // автоматический подбор масштаба карты
 
 map.addOverlay(popup);
 
@@ -209,3 +211,74 @@ map.on('pointermove', function (evt) {
         popup.setPosition(undefined);
     }
 });
+
+map.on('click', function (evt) {
+    const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) { return feature; });
+
+    if (feature && feature.get('schedule') && feature.get('schedule').length > 0) {
+        const schedule = feature.get('schedule');
+        if (schedule && schedule.length > 0) {
+            showScheduleModal(feature.get('description'), schedule); // Вызов функции для отображения модального окна
+        }
+    }
+    else {
+
+    }
+});
+
+
+function showScheduleModal(description, schedule) {
+    const modal = document.createElement('div');
+    modal.id = `schedule-modal-${description}`;
+    modal.className = 'schedule-menu';
+    const scheduleByDay = schedule.reduce((acc, item) => {
+        const day = item.day;
+        if (!acc[day]) {
+            acc[day] = [];
+        }
+        acc[day].push(item);
+        return acc;
+    }, {});
+
+    let tablesHTML = '';
+
+    // Создаем таблицу для каждого дня
+    for (const day in scheduleByDay) {
+        tablesHTML += `
+            <div class="schedule-day">
+                <h1>${day}</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Номер <br> пары</th>
+                            <th>Факультет</th>
+                            <th>Группа</th>
+                            <th>Преподаватель</th>
+                            <th>Пара</th>
+                            <th>Тип</th>
+                            <th>Чётность</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
+                    </tbody>
+                </table>
+            </div>
+        `;
+    }
+
+
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h1>Расписание аудитории <br> ${description}</h1>
+            ${tablesHTML}
+            <button class="close-modal">Закрыть</button>
+        </div>
+    `;
+
+    modal.querySelector('.close-modal').addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    document.body.appendChild(modal);
+}
