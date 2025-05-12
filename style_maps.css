@@ -11,12 +11,12 @@ body {
 }
 
 #map {
-    width: 60vw; /* 60% от ширины окна браузера */
+    width: 50vw; /* 50% от ширины окна браузера */
     height: 80vh; /* 80% от высоты окна браузера */
     margin: 0; /* убрать отступы */
     position: absolute;
     top: 5vw; /* 5% от ширины окна брузера*/
-    left: 35vw; /* 35% от ширины окна браузера */
+    left: 45vw; /* 35% от ширины окна браузера */
     border: 1px solid black; /* рамочка */
 }
 
@@ -42,12 +42,14 @@ body {
 }
 
 .modal-content {
-    position: absolute;
-    max-height: 100vh;
-    background-color: rgb(255, 255, 255); /* заливка */
+    position: fixed;
+    width: 43%;
+    max-height: 90vh; /* ограничение по высоте */
+    background-color: #F5F5F5; /* заливка */
     padding: 8px; /* отступы вокруг текста */
     overflow-y: scroll; /* добавляем вертикальную полосу прокрутки, когда контент превышает высоту */
     border: 1px solid #000000; /* рамка */
+    z-index: 1000; /* важно, чтобы расписание было поверх карты */
 }
 
 .modal-content h1 {
@@ -55,6 +57,11 @@ body {
     font-size: inherit; /* наследуем размер шрифта из :root */
 }
 
+.modal-content p {
+    text-align: center;
+    font-size: inherit; /* наследуем размер шрифта из :root */
+    color: dimgray;
+}
 
 .schedule-menu table {
     width: 75%;
@@ -91,9 +98,15 @@ body {
         }
 
         .schedule-menu td:nth-child(5) {
-            width: 80px;
+            width: 100px;
         }
 
         .schedule-menu td:nth-child(6) {
-            width: 40x;
+            width: 80px;
+            text-align: center;
+        }
+
+        .schedule-menu td:nth-child(7) {
+            width: 80px;
+            text-align: center;
         }

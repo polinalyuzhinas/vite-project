@@ -66,7 +66,7 @@ fill: new Fill({
 
 const polygonFeatures = new Map(); // cловарь для хранения полигонов
 
-function template_PolygonFeature(coordinates, description, schedule=[], featureID) { // создает объект OpenLayers Feature по координатам, описанию и ID и сохраняет его в словаре 
+function template_PolygonFeature(coordinates, description, featureID, schedule = []) { // создает объект OpenLayers Feature по координатам, описанию и ID и сохраняет его в словаре
     const feature = new Feature({
         geometry: new Polygon(coordinates)
     });
@@ -108,7 +108,7 @@ template_PolygonFeature([[[637, 1320],[801, 1320],[801, 1136],[637, 1136],[637, 
 template_PolygonFeature([[[2581, 1726],[2740, 1726],[2740, 1525],[2581, 1525],[2581, 1726]]], 'туалет женский', 'toilet2');
 
 // аудитории левого крыла
-template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [178, 1949]]], '110 (аудитория им. Р. Х. Тугушева)', [], '110');
+template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [178, 1949]]], '110 (аудитория им. Р. Х. Тугушева)', '110');
 
 template_PolygonFeature([[[318, 1546],[505, 1546],[505, 1419],[318, 1419],[318, 1546]]], '109 (полиграфическая лаборатория)', '109');
 template_PolygonFeature([[[183, 1316],[478, 1316],[478, 1194],[183, 1194],[183, 1316]]], '108 (кафедра психологии личности)', '108');
@@ -132,21 +132,22 @@ template_PolygonFeature([[[2897, 630],[3193, 630],[3193, 379],[2897, 379],[2897,
 template_PolygonFeature([[[2897, 771],[3193, 771],[3193, 635],[2897, 635],[2897, 771]]], '130', '130');
 template_PolygonFeature([[[2897, 886],[3193, 886],[3193, 774],[2897, 774],[2897, 886]]], '129', '129');
 template_PolygonFeature([[[2897, 998],[3193, 998],[3193, 890],[2897, 890],[2897, 998]]], '128 (комната матери <br> и ребёнка)', '128');
-template_PolygonFeature([[[2894, 1550],[3310, 1550],[3310, 1324],[2894, 1324],[2894, 1550]]], '126 (кафедра английского <br> языка и мекультурной <br> коммуникации)',
-    [{ day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'лек.', parity: '-'}], '126');
 
-template_PolygonFeature([[[2894, 1717],[3193, 1717],[3193, 1552],[2894, 1552],[2894, 1717]]], '125 (вход через 126)', 
-    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
-    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
-    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 1 гр. ', type: 'пр.', parity: '-'},
-    { day: 'Понедельник', number: '5', department: 'фКНиИТ', group: '431, 441, 421, 411, 451, 481', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
-    { day: 'Вторник', number: '1', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-'},
-    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
-    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
-    { day: 'Среда', number: '3', department: 'фКНиИТ', group: '431, 441, 421, 411, 451, 481', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-'},
-    { day: 'Среда', number: '4', department: 'фКНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр. ', type: 'пр.', parity: '-'},
-    { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '171', teacher: 'Кузьмина С.В.', lesson: 'Деловой иностранный язык', type: 'пр.', parity: '-'},
-    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-'}], '125');
+template_PolygonFeature([[[2894, 1550], [3310, 1550], [3310, 1324], [2894, 1324], [2894, 1550]]], '126 (кафедра английского <br> языка и мекультурной <br> коммуникации)', '126',
+    [{ day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'лек.', parity: '-'}]);
+
+template_PolygonFeature([[[2894, 1717], [3193, 1717], [3193, 1552], [2894, 1552], [2894, 1717]]], '125 (вход через 126)', '125',
+    [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 1 гр. ', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '5', department: 'фКНиИТ', group: '431, 441, 421, 411, 451, 481', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '1', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '3', department: 'фКНиИТ', group: '431, 441, 421, 411, 451, 481', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '4', department: 'фКНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр. ', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '171', teacher: 'Кузьмина С.В.', lesson: 'Деловой иностранный язык', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[2740, 1948],[3315, 1948],[3315, 1719],[2894, 1719],[2894, 1795],[2740, 1795],[2740, 1948]]], '123/124', '123');
 
@@ -237,17 +238,23 @@ map.on('pointermove', function (evt) {
     }
 });
 
+let openModal = null; // глобальная переменная для отслеживания открытого расписания
+
 map.on('click', function (evt) {
     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) { return feature; });
 
-    if (feature && feature.get('schedule') && feature.get('schedule').length > 0) {
-        const schedule = feature.get('schedule');
-        if (schedule && schedule.length > 0) {
-            showScheduleModal(feature.get('description'), schedule); // Вызов функции для отображения модального окна
-        }
+    const description = feature.get('description');
+    const schedule = feature.get('schedule');
+    // Закрываем текущее открытое модальное окно, если оно есть
+    if (openModal) {
+        document.body.removeChild(openModal);
+        openModal = null; // Сбрасываем openModal после закрытия
     }
-    else {
 
+    if (schedule && schedule.length > 0) {
+        openModal = showScheduleModal(description, schedule); // запоминаем открытое модальное окно
+    } else {
+        openModal = showScheduleModal(description, []); // Вызываем функцию с пустым расписанием
     }
 });
 
@@ -291,18 +298,25 @@ function showScheduleModal(description, schedule) {
         `;
     }
 
+    let modalContent = '';
+    if (schedule && schedule.length > 0) {
+        // ... (ваш существующий код для генерации таблицы) ...
+        modalContent = `
+            <div class="modal-content">
+                <h1>Расписание аудитории <br> ${description}</h1>
+                ${tablesHTML}
+            </div>
+        `;
+    } else {
+        modalContent = `
+            <div class="modal-content">
+                <h1>Расписание аудитории <br> ${description}</h1>
+                <p>Для этого объекта расписание отсутствует.</p>
+            </div>
+        `;
+    }
 
-    modal.innerHTML = `
-        <div class="modal-content">
-            <h1>Расписание аудитории <br> ${description}</h1>
-            ${tablesHTML}
-            <button class="close-modal">Закрыть</button>
-        </div>
-    `;
-
-    modal.querySelector('.close-modal').addEventListener('click', () => {
-        document.body.removeChild(modal);
-    });
-
+    modal.innerHTML = modalContent;
     document.body.appendChild(modal);
+    return modal;
 }

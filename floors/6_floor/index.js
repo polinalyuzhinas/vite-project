@@ -68,7 +68,7 @@ fill: new Fill({
 
 const polygonFeatures = new Map(); // cловарь для хранения полигонов
 
-function template_PolygonFeature(coordinates, description, schedule=[], featureID) { // создает объект OpenLayers Feature по координатам, описанию и ID и сохраняет его в словаре 
+function template_PolygonFeature(coordinates, description, featureID, schedule=[]) { // создает объект OpenLayers Feature по координатам, описанию и ID и сохраняет его в словаре
     const feature = new Feature({
         geometry: new Polygon(coordinates)
     });
@@ -212,20 +212,25 @@ map.on('pointermove', function (evt) {
     }
 });
 
+let openModal = null; // глобальная переменная для отслеживания открытого расписания
+
 map.on('click', function (evt) {
     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) { return feature; });
 
-    if (feature && feature.get('schedule') && feature.get('schedule').length > 0) {
-        const schedule = feature.get('schedule');
-        if (schedule && schedule.length > 0) {
-            showScheduleModal(feature.get('description'), schedule); // Вызов функции для отображения модального окна
-        }
+    const description = feature.get('description');
+    const schedule = feature.get('schedule');
+    // Закрываем текущее открытое модальное окно, если оно есть
+    if (openModal) {
+        document.body.removeChild(openModal);
+        openModal = null; // Сбрасываем openModal после закрытия
     }
-    else {
 
+    if (schedule && schedule.length > 0) {
+        openModal = showScheduleModal(description, schedule); // запоминаем открытое модальное окно
+    } else {
+        openModal = showScheduleModal(description, []); // Вызываем функцию с пустым расписанием
     }
 });
-
 
 function showScheduleModal(description, schedule) {
     const modal = document.createElement('div');
@@ -267,18 +272,25 @@ function showScheduleModal(description, schedule) {
         `;
     }
 
+    let modalContent = '';
+    if (schedule && schedule.length > 0) {
+        // ... (ваш существующий код для генерации таблицы) ...
+        modalContent = `
+            <div class="modal-content">
+                <h1>Расписание аудитории <br> ${description}</h1>
+                ${tablesHTML}
+            </div>
+        `;
+    } else {
+        modalContent = `
+            <div class="modal-content">
+                <h1>Расписание аудитории <br> ${description}</h1>
+                <p>Для этого объекта расписание отсутствует.</p>
+            </div>
+        `;
+    }
 
-    modal.innerHTML = `
-        <div class="modal-content">
-            <h1>Расписание аудитории <br> ${description}</h1>
-            ${tablesHTML}
-            <button class="close-modal">Закрыть</button>
-        </div>
-    `;
-
-    modal.querySelector('.close-modal').addEventListener('click', () => {
-        document.body.removeChild(modal);
-    });
-
+    modal.innerHTML = modalContent;
     document.body.appendChild(modal);
+    return modal;
 }
