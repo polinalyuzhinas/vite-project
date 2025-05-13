@@ -112,19 +112,35 @@ template_PolygonFeature([[[239, 1409], [306, 1409], [306, 1325], [239, 1325], [2
     { day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'пр.', parity: '-' },
     { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 4 гр. ', type: 'пр.', parity: '-' },
     { day: 'Понедельник', number: '5', department: 'фКНиИТ', group: '132', teacher: 'Грищенко А.А.', lesson: 'Информационные технологии и программирование 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '5', department: 'фКНиИТ', group: '173', teacher: 'Андрейченко Д.К.', lesson: 'НИР', type: 'пр.', parity: 'знам.' },
     { day: 'Понедельник', number: '6', department: 'фКНиИТ', group: '531', teacher: 'Ионов К.И.', lesson: 'Java программирование 2 гр.', type: 'пр.', parity: '-' },
     { day: 'Вторник', number: '1', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Уколова М.В.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-' },
     { day: 'Вторник', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Гортинский А.В.', lesson: 'Организационное и правовое обеспечение информационной безопасности 3 гр.', type: 'пр.', parity: '-' },
     { day: 'Вторник', number: '3', department: 'фКНиИТ', group: '531', teacher: 'Бондарев Н.Н.', lesson: 'Техническая защита информации 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '4', department: 'фКНиИТ', group: '381', teacher: 'Сафрончик М.И.', lesson: 'Базы данных', type: 'пр.', parity: '-' },
     { day: 'Вторник', number: '6', department: 'фКНиИТ', group: '531', teacher: 'Ионов К.И.', lesson: 'Java программирование 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Вторник', number: '7', department: 'фКНиИТ', group: '171', teacher: 'Тананко И.Е.', lesson: 'Методы оптимизации 1 гр. Сети ЭВМ', type: 'пр.', parity: 'чис.' },
     { day: 'Среда', number: '1', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Павлова О.В.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Павлова О.В.', lesson: 'Английский язык (переводчики) 3 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '3', department: 'фКНиИТ', group: '331', teacher: 'Гамова А.Н.', lesson: 'Сложность вычислений 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '7', department: 'фКНиИТ', group: '171', teacher: 'Вешнева И.В.', lesson: 'Технологии построения микропроцессорной техники 2 гр. Анализ и синтез', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '311', teacher: 'Соловьёв В.М.', lesson: 'НИР', type: 'пр.', parity: 'чис.' },
+    { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '351', teacher: 'Соловьёв В.М.', lesson: 'НИР', type: 'пр.', parity: 'знам.' },
     { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '531', teacher: 'Иванов А.С.', lesson: 'Математические основы искусственного интеллекта 2 гр.', type: 'пр.', parity: 'чис.' },
+    { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '421', teacher: 'Станкевич Е.П.', lesson: 'Моделирование 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '5', department: 'фКНиИТ', group: '441', teacher: 'Соловьёв В.М.', lesson: 'Администрирование информационных систем 1 гр.', type: 'пр.', parity: 'чис.' },
     { day: 'Четверг', number: '5', department: 'фКНиИТ', group: '531', teacher: 'Иванов А.С.', lesson: 'Математические основы искусственного интеллекта 1 гр.', type: 'пр.', parity: 'знам.' },
-    { day: 'Пятница', number: '6', department: 'фКНиИТ', group: '171', teacher: 'Кирьяшкин в.В.', lesson: 'Современные операционные системы', type: 'пр.', parity: '-' }]);
+    { day: 'Пятница', number: '1', department: 'фКНиИТ', group: '351', teacher: 'Черноусова Е.М.', lesson: 'Параллельное и распределенное программирование 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '121', teacher: 'Черноусова Е.М.', lesson: 'Информационные технологии и программирование 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '311', teacher: 'Портенко М.С.', lesson: 'Параллельное и распределенное программирование 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '481', teacher: 'Портенко М.С.', lesson: 'Технологии программирования', type: 'лек.', parity: '-' },
+    { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '481', teacher: 'Портенко М.С.', lesson: 'Технологии программирования', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '6', department: 'фКНиИТ', group: '171', teacher: 'Кирьяшкин В.В.', lesson: 'Современные операционные системы', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '411', teacher: 'Филиппов Б.А.', lesson: 'Технологии программирования', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '411', teacher: 'Филиппов Б.А.', lesson: 'Программные решения математических задач', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '4', department: 'фКНиИТ', group: '451', teacher: 'Филиппов Б.А.', lesson: 'Программные решения математических задач', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '4', department: 'фКНиИТ', group: '191, 192, 291, 292, 392, 393, 394, 492, 494', teacher: '-', lesson: 'Самостоятельная работа аспирантов', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '5', department: 'фКНиИТ', group: '451', teacher: 'Филиппов Б.А.', lesson: 'Технологии программирования', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[178, 1320],[475, 1320],[475, 987],[178, 987],[178, 1320]]], '409 (деканат экономического факультета, заочное отделение)', '409');
 template_PolygonFeature([[[178, 983],[475, 983],[475, 785],[178, 785],[178, 983]]], '408 (деканат экономического факультета, дневное отделение)', '408');
@@ -143,10 +159,13 @@ template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 
     { day: 'Вторник', number: '7', department: 'фКНиИТ', group: '271', teacher: 'Тимофеева Н.Е.', lesson: 'Системное и прикладное программное обеспечение', type: 'пр.', parity: '-'},
     { day: 'Среда', number: '5', department: 'фКНиИТ', group: '321', teacher: 'Дмитриев П.О.', lesson: 'Сети и телекоммуникации 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '531', teacher: 'Новиков В.Е.', lesson: 'Введение в криптоанализ 2 гр.', type: 'пр.', parity: '-' },
-    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '331', teacher: 'Соловьёв В.М.', lesson: 'Операционные системы 1 гр.', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '421', teacher: 'Синельников Е.А.', lesson: 'Системы реального времени 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '5', department: 'фКНиИТ', group: '441', teacher: 'Синельников Е.А.', lesson: 'Системы реального времени 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '121', teacher: 'Портенко М.С.', lesson: 'Информационные технологии и программирование 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '331', teacher: 'Соловьёв В.М.', lesson: 'Операционные системы 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '331', teacher: 'Соловьёв В.М.', lesson: 'Операционные системы 3 гр.', type: 'пр.', parity: '-'},
-    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '231', teacher: 'Баталин В.В.', lesson: 'Компьютерные сети 1 гр.', type: 'лек.', parity: '-'},
-    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '231', teacher: 'Баталин В.В.', lesson: 'Компьютерные сети 2 гр.', type: 'лек.', parity: '-'}]);
+    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '231', teacher: 'Баталин В.В.', lesson: 'Компьютерные сети 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '441', teacher: 'Синельников Е.А.', lesson: 'Системы реального времени 1 гр.', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[1076, 1097]]], '414 (учебная лаборатория Совкомбанк)', '414',
     [{ day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '211, 231, 251', teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-'},
@@ -162,7 +181,19 @@ template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[107
     { day: 'Среда', number: '2', department: 'фКНиИТ', group: '131, 132, 111, 151', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'лек.', parity: '-'},
     { day: 'Среда', number: '3', department: 'фКНиИТ', group: '331', teacher: 'Кондратова Ю.Н.', lesson: 'Методы программирования 3 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '5', department: 'фКНиИТ', group: '411', teacher: 'Савинов А.О.', lesson: 'Интеллектуальные системы и технологии', type: 'пр.', parity: '-' },
-    { day: 'Среда', number: '6', department: 'фКНиИТ', group: '411', teacher: 'Савинов А.О.', lesson: 'Интеллектуальные системы и технологии', type: 'пр.', parity: 'чис.' }]);
+    { day: 'Среда', number: '6', department: 'фКНиИТ', group: '411', teacher: 'Савинов А.О.', lesson: 'Интеллектуальные системы и технологии', type: 'пр.', parity: 'чис.' },
+    { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '451', teacher: 'Тананко И.Е.', lesson: 'Моделирование', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '441', teacher: 'Соловьёв В.М.', lesson: 'Администрирование информационных систем 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '6', department: 'фКНиИТ', group: '481', teacher: 'Петров Д.Ю.', lesson: 'Имитационное моделирование систем', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '1', department: 'фКНиИТ', group: '351', teacher: 'Портенко М.С.', lesson: 'Параллельное и распределенное программирование 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '121', teacher: 'Латышева Е.В.', lesson: 'Инженерная графика 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '121', teacher: 'Латышева Е.В.', lesson: 'Инженерная графика 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '351', teacher: 'Кузнецов М.А.', lesson: 'Технологии программирования', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '311', teacher: 'Кузнецов М.А.', lesson: 'Технологии программирования', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '241', teacher: 'Мишин А.Д.', lesson: 'Программирование на языке Java 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '241', teacher: 'Мишин А.Д.', lesson: 'Программирование на языке Java 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '4', department: 'фКНиИТ', group: '241', teacher: 'Мишин А.Д.', lesson: 'Программирование на языке Java 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '5', department: 'фКНиИТ', group: '421', teacher: 'Барабанов Н.А.', lesson: 'Системы и сети передачи информации 2 гр.', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[1247, 1097],[1458, 1097],[1458, 778],[1247, 778],[1247, 1097]]], '415 (учебная лаборатория искусственного интеллекта, машинного обучения)', '415',
     [{ day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '431', teacher: 'Кондратова Ю.Н.', lesson: 'Использование методов машинного обучения в УПД (цифровая кафедра)', type: 'пр.', parity: 'знам.'},
@@ -173,9 +204,18 @@ template_PolygonFeature([[[1247, 1097],[1458, 1097],[1458, 778],[1247, 778],[124
     { day: 'Вторник', number: '3', department: 'фКНиИТ', group: '131', teacher: 'Романов В.А.', lesson: 'Информационные технологии и программирование 2 гр.', type: 'пр.', parity: '-'},
     { day: 'Вторник', number: '4', department: 'фКНиИТ', group: '231', teacher: 'Грищенко А.А.', lesson: 'Языки программирования 3 гр.', type: 'пр.', parity: '-'},
     { day: 'Вторник', number: '5', department: 'фКНиИТ', group: '411', teacher: 'Станкевич Е.П.', lesson: 'Моделирование 2 гр.', type: 'пр.', parity: '-' },
-    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '341', teacher: 'Батравеа И.А.', lesson: 'Базы данных 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '1', department: 'фКНиИТ', group: '341', teacher: 'Батраева И.А.', lesson: 'Базы данных 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '3', department: 'фКНиИТ', group: '141', teacher: 'Букушева А.В.', lesson: 'Разработка пользовательского интерфейса 3 гр.', type: 'пр.', parity: '-' },
-    { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '531', teacher: 'Новиков В.Е.', lesson: 'Введение в криптоанализ 1 гр.', type: 'пр.', parity: '-'}]);
+    { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '531', teacher: 'Новиков В.Е.', lesson: 'Введение в криптоанализ 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '451', teacher: 'Савинов А.О.', lesson: 'Интеллектуальные системы и технологии', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '5', department: 'фКНиИТ', group: '321', teacher: 'Сафрончик М.И.', lesson: 'Базы данных 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '241', teacher: 'Кудрина Е.В.', lesson: 'Структуры и алгоритмы компьютерной обработки данных 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '121', teacher: 'Черноусова Е.М.', lesson: 'Информационные технологии и программирование 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '341', teacher: 'Батраева И.А.', lesson: 'Базы данных 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '421', teacher: 'Белоконь М.В.', lesson: 'Распределенные базы данных 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '421', teacher: 'Белоконь М.В.', lesson: 'Распределенные базы данных 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '1', department: 'фКНиИТ', group: '351', teacher: 'Папшев С.В.', lesson: 'Проектирование архитектуры информационных систем 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '351', teacher: 'Папшев С.В.', lesson: 'Проектирование архитектуры информационных систем 2 гр.', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[632, 631],[918, 631],[918, 373],[632, 373],[632, 631]]], '404', '404');
 template_PolygonFeature([[[921, 631],[1163, 631],[1163, 373],[921, 373],[921, 631]]], '403 (компьютерный класс экономического факультета)', '403');
@@ -195,7 +235,8 @@ template_PolygonFeature([[[1521, 635],[1816, 635],[1816, 373],[1521, 373],[1521,
 
 // аудитории правого крыла
 template_PolygonFeature([[[2894, 1948],[3315, 1948],[3315, 1719],[2894, 1719], [2894, 1948]]], '420', '420',
-    [{ day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '241, 321, 381, 431', teacher: 'Лапшева Е.Е.', lesson: 'Библиотеки машинного и глубокого обучения в ПД (цифровая кафедра)', type: 'лек.', parity: '-'},
+    [{ day: 'Понедельник', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Андросов И.А.', lesson: 'Методы программирования', type: 'лек.', parity: '-' },
+    { day: 'Понедельник', number: '3', department: 'фКНиИТ', group: '241, 321, 381, 431', teacher: 'Лапшева Е.Е.', lesson: 'Библиотеки машинного и глубокого обучения в ПД (цифровая кафедра)', type: 'лек.', parity: '-' },
     { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '531', teacher: 'Бгашев М.В.', lesson: 'Основы управленческой деятельности', type: 'лек.', parity: 'чис.'},
     { day: 'Понедельник', number: '4', department: 'фКНиИТ', group: '531', teacher: 'Бгашев М.В.', lesson: 'Основы управленческой деятельности', type: 'пр.', parity: 'знам.'},
     { day: 'Понедельник', number: '5', department: 'фКНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Иванова Д.Н.', lesson: 'Теория перевода (переводчики)', type: 'лек.', parity: '-'},
@@ -215,9 +256,13 @@ template_PolygonFeature([[[2894, 1948],[3315, 1948],[3315, 1719],[2894, 1719], [
     { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '121, 141', teacher: 'Соломонов В.А.', lesson: 'История России', type: 'лек.', parity: '-' },
     { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '121', teacher: 'Соломонов В.А.', lesson: 'История России', type: 'пр.', parity: 'чис.' },
     { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '141', teacher: 'Соломонов В.А.', lesson: 'История России', type: 'пр.', parity: 'знам.' },
+    { day: 'Пятница', number: '1', department: 'фКНиИТ', group: '111, 151, 181', teacher: 'Молчанов В.А.', lesson: 'Математическая логика и теория алгоритмов', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '111, 151, 181', teacher: 'Зайцев М.В.', lesson: 'История России', type: 'лек.', parity: '-' },
     { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '331', teacher: 'Гамова А.Н.', lesson: 'Сложность вычислений', type: 'лек.', parity: '-' },
-    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '231', teacher: 'Папшев С.В.', lesson: 'Языки программирования', type: 'лек.', parity: '-'},
-    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Андросов И.А.', lesson: 'Методы программирования', type: 'лек.', parity: '-'}]);
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '231', teacher: 'Папшев С.В.', lesson: 'Языки программирования', type: 'лек.', parity: '-' },
+    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '441', teacher: 'Кузнецов А.В.', lesson: 'Промышленная разработка программного обеспечения', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '451', teacher: 'Кузнецов А.В.', lesson: 'Управление проектами', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '4', department: 'фКНиИТ', group: '411', teacher: 'Кузнецов А.В.', lesson: 'Промышленная разработка программного обеспечения', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[2894, 1717],[3193, 1717],[3193, 1630],[2894, 1630],[2894, 1717]]], '422 (образовательный центр <br> непрерывной подготовки <br> IT-специалистов)', '422');
 template_PolygonFeature([[[2894, 1628],[3193, 1628],[3193, 1552],[2894, 1552],[2894, 1628]]], '423', '423');
@@ -237,11 +282,13 @@ template_PolygonFeature([[[2894, 1550],[3310, 1550],[3310, 1320],[2894, 1320],[2
     { day: 'Среда', number: '4', department: 'фКНиИТ', group: '131, 132', teacher: 'Абросимов М.Б.', lesson: 'Введение в специальность', type: 'пр.', parity: 'чис.' },
     { day: 'Среда', number: '5', department: 'фКНиИТ', group: '231, 211, 251, 221, 241', teacher: 'Павлова О.В.', lesson: 'Основы литературного редактирования (переводчики)', type: 'лек.', parity: '-'},
     { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Кузьмина С.В.', lesson: 'Английский язык 8 гр.', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '411, 451, 421, 441', teacher: 'Тананко И.Е.', lesson: 'Моделирование', type: 'лек.', parity: '-' },
     { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '111, 181', teacher: 'Новиков В.Е.', lesson: 'Алгебра и геометрия', type: 'пр.', parity: '-' },
-    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '131, 132', teacher: 'Шаповалова Н.Г.', lesson: 'Русский язык и культура речи', type: 'лек.', parity: 'чис.' },
+    { day: 'Пятница', number: '1', department: 'фКНиИТ', group: '121', teacher: 'Латышева Е.В.', lesson: 'Инженерная графика', type: 'лек.', parity: 'чис.' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '131, 132, 121', teacher: 'Шаповалова Н.Г.', lesson: 'Русский язык и культура речи', type: 'лек.', parity: 'чис.' },
     { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '131', teacher: 'Шаповалова Н.Г.', lesson: 'Русский язык и культура речи', type: 'пр.', parity: 'знам.'},
     { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '132', teacher: 'Шаповалова Н.Г.', lesson: 'Русский язык и культура речи', type: 'пр.', parity: 'чис.'},
-    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '431', teacher: 'Пыжонков С.В.', lesson: 'Организация деятельности переводчика (1, 15, 22 марта, переводчики)', type: 'лек.', parity: '-'}]);
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '431, 411, 451, 421, 441, 481', teacher: 'Пыжонков С.В.', lesson: 'Организация деятельности переводчика (1, 15, 22 марта, переводчики)', type: 'лек.', parity: '-'}]);
 
 template_PolygonFeature([[[2894, 1318],[3193, 1318],[3193, 932],[2894, 932],[2894, 1318]]], '426', '426', 
     [{ day: 'Понедельник', number: '1', department: 'фКНиИТ', group: '181', teacher: 'Грецова А.П.', lesson: 'Информационные технологии и программирование', type: 'пр.', parity: '-'},
@@ -264,9 +311,15 @@ template_PolygonFeature([[[2894, 1318],[3193, 1318],[3193, 932],[2894, 932],[289
     { day: 'Среда', number: '5', department: 'фКНиИТ', group: '341', teacher: 'Сафрончик М.И.', lesson: 'Базы данных 2 гр.', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '1', department: 'фКНиИТ', group: '221, 241', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '411', teacher: 'Булавина Е.В.', lesson: 'Программирование и конфигурирование в корпоративных информационных системах 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '5', department: 'фКНиИТ', group: '451', teacher: 'Савинов А.О.', lesson: 'Интеллектуальные системы и технологии', type: 'пр.', parity: 'знам.' },
     { day: 'Четверг', number: '6', department: 'фКНиИТ', group: '273', teacher: 'Крючкова А.А.', lesson: 'Автоматизированное тестирование', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '7', department: 'фКНиИТ', group: '273', teacher: 'Крючкова А.А.', lesson: 'Автоматизированное тестирование', type: 'пр.', parity: '-' },
-    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '331', teacher: 'Гамова А.Н.', lesson: 'Сложность вычислений 3 гр.', type: 'пр.', parity: '-'}]);
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '241', teacher: 'Рогачко Е.С.', lesson: 'Методы оптимизации в анализе данных 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '331', teacher: 'Гамова А.Н.', lesson: 'Сложность вычислений 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '341', teacher: 'Андрейченко Д.К.', lesson: 'Параллельное и распределенное программирование 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '341', teacher: 'Казачкова А.А.', lesson: 'Машинное обучение и анализ данных 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '231', teacher: 'Баталин В.В.', lesson: 'Компьютерные сети 2 гр.', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[2894, 568],[3193, 568],[3193, 929],[2894, 929],[2894, 568]]], '427 (кафедра финансов <br> и кредита)', '427');
 template_PolygonFeature([[[2894, 565],[3193, 565],[3193, 251],[2863, 251],[2863, 373],[2894, 373],[2894, 565]]], '428 (кафедра <br> экономической теории и <br> национальной экономики)', '428');
@@ -287,10 +340,19 @@ template_PolygonFeature([[[2303, 1097],[2488, 1097],[2488, 778],[2303, 778],[230
     { day: 'Среда', number: '1', department: 'фКНиИТ', group: '151', teacher: 'Сафрончик М.И.', lesson: 'Информационные технологии и прогрпаммирование 3 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '3', department: 'фКНиИТ', group: '251', teacher: 'Иванова А.С.', lesson: 'Компьютерная графика 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '3', department: 'фКНиИТ', group: '251', teacher: 'Батраева И.А.', lesson: 'Компьютерная графика 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '1', department: 'фКНиИТ', group: '341', teacher: 'Андрейченко Д.К.', lesson: 'Параллельное и распределенное программирование 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '1', department: 'фКНиИТ', group: '341', teacher: 'Щуров Д.И.', lesson: 'Java-программирование 3 гр.', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '132', teacher: 'Соловьёв В.М.', lesson: 'Информационные технологии и программирование 1 гр.', type: 'пр.', parity: '-' },
-    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '131', teacher: 'Мещерякова О.В.', lesson: 'Аппаратные средства вычислительной техники 1 гр.', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '1', department: 'фКНиИТ', group: '241', teacher: 'Батраева И.А.', lesson: 'Реляционные базы данных 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '1', department: 'фКНиИТ', group: '241', teacher: 'Сафрончик М.И.', lesson: 'Реляционные базы данных 3 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '131', teacher: 'Мещерякова О.В.', lesson: 'Аппаратные средства вычислительной техники 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '131', teacher: 'Карташов Ф.С.', lesson: 'Аппаратные средства вычислительной техники 2 гр.', type: 'пр.', parity: '-'},
-    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '131', teacher: 'Мещерякова О.В.', lesson: 'Аппаратные средства вычислительной техники 1 гр.', type: 'пр.', parity: '-'}]);
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '131', teacher: 'Мещерякова О.В.', lesson: 'Аппаратные средства вычислительной техники 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '351', teacher: 'Чернигин М.А.', lesson: 'Языки программирования 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '351', teacher: 'Миронов С.В.', lesson: 'Языки программирования 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '311', teacher: 'Чернигин М.А.', lesson: 'Языки программирования 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '311', teacher: 'Крючкова А.А.', lesson: 'Языки программирования 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '421', teacher: 'Барабанов Н.А.', lesson: 'Системы и сети передачи информации 1 гр.', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[2166, 1097],[2300, 1097],[2300, 778],[2166, 778],[2166, 1097]]], '417 (лаборатория системного программирования)', '417');
 
@@ -320,12 +382,16 @@ template_PolygonFeature([[[1915, 1097],[2163, 1097],[2163, 778],[1915, 778],[191
     { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '251', teacher: 'Сафрончик М.И.', lesson: 'Структуры данных и алгоритмы 2 гр.', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '211', teacher: 'Кондратова Ю.Н.', lesson: 'Структуры данных и алгоритмы 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '211', teacher: 'Сафрончик М.И.', lesson: 'Структуры данных и алгоритмы 2 гр.', type: 'пр.', parity: '-' },
-    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '132', teacher: 'Карташов Ф.С.', lesson: 'Аппаратные средства вычислительной техники 2 гр.', type: 'пр.', parity: '-' },
-    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '132', teacher: 'Мещерякова О.В.', lesson: 'Аппаратные средства вычислительной техники 1 гр.', type: 'пр.', parity: '-'},
-    { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '173', teacher: 'Кудрина Е.В.', lesson: 'Методика преподавания компьютерных наук', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '2', department: 'фКНиИТ', group: '321', teacher: 'Батраева И.А.', lesson: 'Базы данных 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '241', teacher: 'Кудрина Е.В.', lesson: 'Структуры и алгоритмы компьютерной обработки данных 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '3', department: 'фКНиИТ', group: '241', teacher: 'Булавина Е.В.', lesson: 'Структуры и алгоритмы компьютерной обработки данных 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '111', teacher: 'Хамутова М.В.', lesson: 'Информационные технологии и программирование 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '4', department: 'фКНиИТ', group: '111', teacher: 'Романов В.А.', lesson: 'Информационные технологии и программирование 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '5', department: 'фКНиИТ', group: '173', teacher: 'Кудрина Е.В.', lesson: 'Методика преподавания компьютерных наук', type: 'пр.', parity: '-' },
     { day: 'Суббота', number: '1', department: 'фКНиИТ', group: '331', teacher: 'Садовников А.В.', lesson: 'Электроника и схемотехника 1 гр.', type: 'пр.', parity: '-'},
     { day: 'Суббота', number: '1', department: 'фКНиИТ', group: '331', teacher: 'Шещукова С.Е.', lesson: 'Электроника и схемотехника 3 гр.', type: 'пр.', parity: '-'},
-    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Садовников А.В.', lesson: 'Электроника и схемотехника 2 гр.', type: 'пр.', parity: '-'}]);
+    { day: 'Суббота', number: '2', department: 'фКНиИТ', group: '331', teacher: 'Садовников А.В.', lesson: 'Электроника и схемотехника 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: 'фКНиИТ', group: '441', teacher: 'Станкевич Е.П.', lesson: 'Моделирование 2 гр.', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[2507, 635],[2749, 635],[2749, 373],[2507, 373],[2507, 635]]], '429', '429');
 template_PolygonFeature([[[2233, 635],[2504, 635],[2504, 373],[2233, 373],[2233, 635]]], '430', '430');

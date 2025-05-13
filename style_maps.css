@@ -45,7 +45,7 @@ body {
     position: fixed;
     width: 43%;
     max-height: 90vh; /* ограничение по высоте */
-    background-color: #F5F5F5; /* заливка */
+    background-color: rgb(247, 255, 255); /* заливка */
     padding: 8px; /* отступы вокруг текста */
     overflow-y: scroll; /* добавляем вертикальную полосу прокрутки, когда контент превышает высоту */
     border: 1px solid #000000; /* рамка */
