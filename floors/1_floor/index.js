@@ -149,7 +149,9 @@ template_PolygonFeature([[[2894, 1717], [3193, 1717], [3193, 1552], [2894, 1552]
     { day: 'Среда', number: '4', department: 'фКНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр. ', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '1', department: 'фКНиИТ', group: '221, 241', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
     { day: 'Четверг', number: '2', department: 'фКНиИТ', group: '121, 141, 181', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
-    { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '171', teacher: 'Кузьмина С.В.', lesson: 'Деловой иностранный язык', type: 'пр.', parity: '-' }]);
+    { day: 'Четверг', number: '3', department: 'фКНиИТ', group: '171', teacher: 'Кузьмина С.В.', lesson: 'Деловой иностранный язык', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '4', department: 'фКНиИТ', group: '191, 192', teacher: 'Сокиркина Л.И.', lesson: 'Иностранный язык', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '5', department: 'фКНиИТ', group: '191, 192', teacher: 'Сокиркина Л.И.', lesson: 'Иностранный язык', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[2740, 1948],[3315, 1948],[3315, 1719],[2894, 1719],[2894, 1795],[2740, 1795],[2740, 1948]]], '123/124', '123');
 
@@ -313,7 +315,7 @@ function showScheduleModal(description, schedule) {
         modalContent = `
             <div class="modal-content">
                 <h1>Расписание аудитории <br> ${description}</h1>
-                <p>Для этого объекта расписание отсутствует.</p>
+                <p>Для этого объекта расписание отсутствует</p>
             </div>
         `;
     }
