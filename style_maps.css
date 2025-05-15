@@ -50,14 +50,14 @@ body {
 
 #filter-form select {
     display: inline-block; /* Размещаем элементы в строку */
-    width: 200px; /* Задайте желаемую ширину */
+    width: 200px;
     /* Остальные стили */
 }
 
 .modal-content {
     position: fixed;
     width: 43%;
-    max-height: 90vh; /* ограничение по высоте */
+    max-height: 95vh; /* ограничение по высоте */
     background-color: rgb(247, 255, 255); /* заливка */
     padding: 8px; /* отступы вокруг текста */
     overflow-y: scroll; /* добавляем вертикальную полосу прокрутки, когда контент превышает высоту */
