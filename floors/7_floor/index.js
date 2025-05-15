@@ -108,6 +108,8 @@ target: "map",
 
 map.getView().fit(imageExtent); // автоматический подбор масштаба карты
 
+fill_filter();
+
 map.addOverlay(popup);
 
 // состояние для хранения текущего выделенного объекта
@@ -161,64 +163,65 @@ let openModal = null; // глобальная переменная для отс
 map.on('click', function (evt) {
     const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) { return feature; });
 
-    const description = feature.get('description');
-    const schedule = feature.get('schedule');
-    // Закрываем текущее открытое модальное окно, если оно есть
-    if (openModal) {
-        document.body.removeChild(openModal);
-        openModal = null; // Сбрасываем openModal после закрытия
-    }
+    if (feature) {
+        const description = feature.get('description');
+        const schedule = feature.get('schedule');
 
-    if (schedule && schedule.length > 0) {
-        openModal = showScheduleModal(description, schedule); // запоминаем открытое модальное окно
-    } else {
-        openModal = showScheduleModal(description, []); // Вызываем функцию с пустым расписанием
+        // Закрываем текущее открытое модальное окно, если оно есть
+        if (openModal) {
+            document.body.removeChild(openModal);
+            openModal = null; // Сбрасываем openModal после закрытия
+        }
+
+        openModal = showScheduleModal(description, schedule, getFilters()); // Передаем все фильтры в функцию
     }
 });
 
-function showScheduleModal(description, schedule) {
+function showScheduleModal(description, schedule, filters = {}) {
     const modal = document.createElement('div');
     modal.id = `schedule-modal-${description}`;
     modal.className = 'schedule-menu';
-    const scheduleByDay = schedule.reduce((acc, item) => {
-        const day = item.day;
-        if (!acc[day]) {
-            acc[day] = [];
-        }
-        acc[day].push(item);
-        return acc;
-    }, {});
 
-    let tablesHTML = '';
-
-    // Создаем таблицу для каждого дня
-    for (const day in scheduleByDay) {
-        tablesHTML += `
-            <div class="schedule-day">
-                <h1>${day}</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Номер <br> пары</th>
-                            <th>Факультет</th>
-                            <th>Группа</th>
-                            <th>Преподаватель</th>
-                            <th>Пара</th>
-                            <th>Тип</th>
-                            <th>Чётность</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
-                    </tbody>
-                </table>
-            </div>
-        `;
-    }
+    const filteredSchedule = filterFeatures(description, schedule, filters);
 
     let modalContent = '';
-    if (schedule && schedule.length > 0) {
-        // ... (ваш существующий код для генерации таблицы) ...
+    if (filteredSchedule && filteredSchedule.length > 0) {
+        let tablesHTML = '';
+
+        const scheduleByDay = filteredSchedule.reduce((acc, item) => {
+            const day = item.day;
+            if (!acc[day]) {
+                acc[day] = [];
+            }
+            acc[day].push(item);
+            return acc;
+        }, {});
+
+        // Создаем таблицу для каждого дня
+        for (const day in scheduleByDay) {
+            tablesHTML += `
+                <div class="schedule-day">
+                    <h1>${day}</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Номер <br> пары</th>
+                                <th>Факультет</th>
+                                <th>Группа</th>
+                                <th>Преподаватель</th>
+                                <th>Пара</th>
+                                <th>Тип</th>
+                                <th>Чётность</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
         modalContent = `
             <div class="modal-content">
                 <h1>Расписание аудитории <br> ${description}</h1>
@@ -229,12 +232,116 @@ function showScheduleModal(description, schedule) {
         modalContent = `
             <div class="modal-content">
                 <h1>Расписание аудитории <br> ${description}</h1>
-                <p>Для этого объекта расписание отсутствует.</p>
+                <p>Для данного объекта нет расписания</p>
             </div>
         `;
     }
 
     modal.innerHTML = modalContent;
+
     document.body.appendChild(modal);
     return modal;
 }
+
+function fill_filter() {
+    const filterFields = ['department', 'group', 'teacher', 'lesson', 'type', 'parity'];
+    const allSchedules = [];
+
+    vectorSource.getFeatures().forEach(feature => {
+        const schedule = feature.get('schedule');
+        if (schedule && Array.isArray(schedule)) {
+            schedule.forEach(item => allSchedules.push(item));
+        }
+    });
+
+    filterFields.forEach(field => {
+        const selectElement = document.getElementById(`filter-${field}`);
+        const uniqueValues = new Set();
+
+        allSchedules.forEach(item => {
+            if (item && item[field]) {
+                uniqueValues.add(item[field]);
+            }
+        });
+
+        uniqueValues.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = value;
+            selectElement.appendChild(option);
+        });
+    });
+}
+
+const applyFiltersButton = document.getElementById('apply-filters');
+const filterForm = document.getElementById('filter-form');
+
+// включаем/выключаем кнопку применения фильтров при изменении фильтров
+filterForm.addEventListener('change', function () {
+    const selectedFilters = Array.from(filterForm.querySelectorAll('select'))
+        .some(select => select.value !== "");
+
+    applyFiltersButton.disabled = !selectedFilters;
+});
+
+// Обработчик для кнопки "Применить фильтры"
+applyFiltersButton.addEventListener('click', function () {
+    apply_filter();
+});
+
+function apply_filter() {
+    // Собираем значения фильтров из формы
+    const filters = getFilters();
+
+    // Получаем description и schedule объекта, который сейчас открыт
+    if (openModal) {
+        const description = openModal.id.replace('schedule-modal-', '');
+        const feature = polygonFeatures.get(description);
+        const schedule = feature.get('schedule');
+
+        // Закрываем старое окно
+        document.body.removeChild(openModal);
+
+        // Открываем новое окно с фильтрами
+        openModal = showScheduleModal(description, schedule, filters);
+    }
+}
+
+function getFilters() {
+    const filters = {};
+
+    // Собираем значения фильтров из формы
+    document.querySelectorAll('#filter-form select').forEach(select => {
+        const filterName = select.id.replace('filter-', '');
+        const selectedValue = select.value;
+        if (selectedValue) {
+            filters[filterName] = selectedValue;
+        }
+    });
+
+    return filters;
+}
+
+function filterFeatures(description, schedule, filters) {
+    if (!schedule || schedule.length === 0) {
+        return []; // Если расписания нет, возвращаем пустой массив
+    }
+
+    return schedule.filter(item => {
+        for (const filterName in filters) {
+            if (item[filterName] !== filters[filterName]) {
+                return false;
+            }
+        }
+        return true;
+    });
+}
+
+document.getElementById('reset-filters').addEventListener('click', function () { // настройка кнопки сброса фильтров
+    document.querySelectorAll('#filter-form select').forEach(select => {
+        select.value = "";
+    });
+    applyFiltersButton.disabled = true; // блокирует кнопку сброса
+    filterFeatures({}); // сбрасываем фильтры
+
+});
