@@ -134,24 +134,24 @@ template_PolygonFeature([[[2897, 886],[3193, 886],[3193, 774],[2897, 774],[2897,
 template_PolygonFeature([[[2897, 998],[3193, 998],[3193, 890],[2897, 890],[2897, 998]]], '128 (комната матери <br> и ребёнка)', '128');
 
 template_PolygonFeature([[[2894, 1550], [3310, 1550], [3310, 1324], [2894, 1324], [2894, 1550]]], '126 (кафедра английского <br> языка и мекультурной <br> коммуникации)', '126',
-    [{ day: 'Среда', number: '2', department: 'КНиИТ', group: '131, 132, 111, 151', teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'лек.', parity: '-'}]);
+    [{ day: 'Среда', number: '2', department: 'КНиИТ', group: ['131', '132', '111', '151'], teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'лек.', parity: '-'}]);
 
 template_PolygonFeature([[[2894, 1717], [3193, 1717], [3193, 1552], [2894, 1552], [2894, 1717]]], '125 (вход через 126)', '125',
-    [{ day: 'Понедельник', number: '1', department: 'КНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
-    { day: 'Понедельник', number: '2', department: 'КНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
-    { day: 'Понедельник', number: '4', department: 'КНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 1 гр. ', type: 'пр.', parity: '-' },
-    { day: 'Понедельник', number: '5', department: 'КНиИТ', group: '431, 441, 421, 411, 451, 481', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
-    { day: 'Вторник', number: '1', department: 'КНиИТ', group: '121, 141, 181', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
-    { day: 'Вторник', number: '2', department: 'КНиИТ', group: '221, 241', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
-    { day: 'Среда', number: '1', department: 'КНиИТ', group: '231, 211, 251', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
-    { day: 'Среда', number: '2', department: 'КНиИТ', group: '131, 132, 111, 151', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
-    { day: 'Среда', number: '3', department: 'КНиИТ', group: '431, 441, 421, 411, 451, 481', teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
-    { day: 'Среда', number: '4', department: 'КНиИТ', group: '331, 311, 321, 341, 351, 381', teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр. ', type: 'пр.', parity: '-' },
-    { day: 'Четверг', number: '1', department: 'КНиИТ', group: '221, 241', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
-    { day: 'Четверг', number: '2', department: 'КНиИТ', group: '121, 141, 181', teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
-    { day: 'Четверг', number: '3', department: 'КНиИТ', group: '171', teacher: 'Кузьмина С.В.', lesson: 'Деловой иностранный язык', type: 'пр.', parity: '-' },
-    { day: 'Четверг', number: '4', department: 'КНиИТ', group: '191, 192', teacher: 'Сокиркина Л.И.', lesson: 'Иностранный язык', type: 'пр.', parity: '-' },
-    { day: 'Четверг', number: '5', department: 'КНиИТ', group: '191, 192', teacher: 'Сокиркина Л.И.', lesson: 'Иностранный язык', type: 'пр.', parity: '-' }]);
+    [{ day: 'Понедельник', number: '1', department: 'КНиИТ', group: ['131', '132', '111', '151'], teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '2', department: 'КНиИТ', group: ['231', '211', '251'], teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '4', department: 'КНиИТ', group: ['331', '311', '321', '341', '351', '381'], teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '5', department: 'КНиИТ', group: ['431', '441', '421', '411', '451', '481'], teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '1', department: 'КНиИТ', group: ['121', '141', '181'], teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '2', department: 'КНиИТ', group: ['221', '241'], teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '1', department: 'КНиИТ', group: ['231', '211', '251'], teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '2', department: 'КНиИТ', group: ['131', '132', '111', '151'], teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '3', department: 'КНиИТ', group: ['431', '441', '421', '411', '451', '481'], teacher: 'Шилова С.А.', lesson: 'Английский язык (переводчики) 1 гр.', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '4', department: 'КНиИТ', group: ['331', '311', '321', '341', '351', '381'], teacher: 'Богатенко Т.Р.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '1', department: 'КНиИТ', group: ['221', '241'], teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '2', department: 'КНиИТ', group: ['121', '141', '181'], teacher: 'Китляр А.А.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '3', department: 'КНиИТ', group: ['171'], teacher: 'Кузьмина С.В.', lesson: 'Деловой иностранный язык', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '4', department: 'КНиИТ', group: ['191', '192'], teacher: 'Сокиркина Л.И.', lesson: 'Иностранный язык', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '5', department: 'КНиИТ', group: ['191', '192'], teacher: 'Сокиркина Л.И.', lesson: 'Иностранный язык', type: 'пр.', parity: '-' }]);
 
 template_PolygonFeature([[[2740, 1948],[3315, 1948],[3315, 1719],[2894, 1719],[2894, 1795],[2740, 1795],[2740, 1948]]], '123/124', '123');
 
@@ -301,7 +301,7 @@ function showScheduleModal(description, schedule, filters = {}) {
                             </tr>
                         </thead>
                         <tbody>
-                            ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
+                            ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group.join(', ')}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
                         </tbody>
                     </table>
                 </div>
@@ -329,14 +329,14 @@ function showScheduleModal(description, schedule, filters = {}) {
     return modal;
 }
 
-function fill_filter() {
+function fill_filter() { // заполняем всплывающие списки фильтров
     const filterFields = ['department', 'group', 'teacher', 'lesson', 'type', 'parity'];
     const allSchedules = [];
 
     vectorSource.getFeatures().forEach(feature => {
         const schedule = feature.get('schedule');
         if (schedule && Array.isArray(schedule)) {
-            schedule.forEach(item => allSchedules.push(item));
+            schedule.forEach(item => allSchedules.push(item)); // добавляем все расписания в список
         }
     });
 
@@ -346,11 +346,23 @@ function fill_filter() {
 
         allSchedules.forEach(item => {
             if (item && item[field]) {
-                uniqueValues.add(item[field]);
+                const fieldValue = item[field];
+
+                // проверяем, является ли значение массивом
+                if (Array.isArray(fieldValue)) {
+                    // если да, то во множество добавляем его каждый элемент
+                    fieldValue.forEach(value => uniqueValues.add(value));
+                } else {
+                    // если нет, то добавляем само значение
+                    uniqueValues.add(fieldValue);
+                }
             }
         });
 
-        uniqueValues.forEach(value => {
+        // преобразуем множество в массив и сортируем
+        const sortedValues = Array.from(uniqueValues).sort();
+
+        sortedValues.forEach(value => { // добавляем во всплывающие списки элементы из множества
             const option = document.createElement('option');
             option.value = value;
             option.textContent = value;
@@ -370,25 +382,25 @@ filterForm.addEventListener('change', function () {
     applyFiltersButton.disabled = !selectedFilters;
 });
 
-// Обработчик для кнопки "Применить фильтры"
+// обработчик для кнопки "Применить фильтры"
 applyFiltersButton.addEventListener('click', function () {
     apply_filter();
 });
 
 function apply_filter() {
-    // Собираем значения фильтров из формы
+    // собираем значения фильтров из формы
     const filters = getFilters();
 
-    // Получаем description и schedule объекта, который сейчас открыт
+    // получаем description и schedule объекта, который сейчас открыт
     if (openModal) {
         const description = openModal.id.replace('schedule-modal-', '');
         const feature = polygonFeatures.get(description);
         const schedule = feature.get('schedule');
 
-        // Закрываем старое окно
+        // закрываем старое окно
         document.body.removeChild(openModal);
 
-        // Открываем новое окно с фильтрами
+        // открываем новое окно с фильтрами
         openModal = showScheduleModal(description, schedule, filters);
     }
 }
@@ -396,7 +408,7 @@ function apply_filter() {
 function getFilters() {
     const filters = {};
 
-    // Собираем значения фильтров из формы
+    // собираем значения фильтров из формы
     document.querySelectorAll('#filter-form select').forEach(select => {
         const filterName = select.id.replace('filter-', '');
         const selectedValue = select.value;
@@ -409,14 +421,30 @@ function getFilters() {
 }
 
 function filterFeatures(description, schedule, filters) {
-    if (!schedule || schedule.length === 0) {
-        return []; // Если расписания нет, возвращаем пустой массив
+    if (!schedule || schedule.length === 0) { // если расписания у объекта нет, возвращаем пустой массив
+        return [];
     }
 
     return schedule.filter(item => {
         for (const filterName in filters) {
-            if (item[filterName] !== filters[filterName]) {
-                return false;
+            const filterValue = filters[filterName];
+
+            if (filterName === 'group') {
+                // обработка фильтра group (который массив)
+                if (Array.isArray(item.group)) {
+                    if (!item.group.includes(filterValue)) {
+                        return false;
+                    }
+                } else {
+                    if (item.group !== filterValue) {
+                        return false;
+                    }
+                }
+            } else {
+                // обработка других фильтров (которые не являются массивами)
+                if (item[filterName] !== filterValue) {
+                    return false;
+                }
             }
         }
         return true;
