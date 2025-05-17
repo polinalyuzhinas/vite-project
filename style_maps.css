@@ -78,9 +78,10 @@ body {
 }
 
 .schedule-menu table {
-    width: 75%;
+    width: 95%;
     border: 1px solid #000000; /* рамка */
     border-collapse: collapse; /* соседние ячейки таблицы соединены */
+    padding: 8px; /* отступы вокруг текста */
 }
 
     .schedule-menu th {
@@ -93,6 +94,7 @@ body {
         border: 1px solid #000000; /* рамка ячеек */
         font-size: inherit; /* наследуем размер шрифта из :root */
         text-align: left;
+        padding: 8px; /* отступы вокруг текста */
     }
 
         .schedule-menu td:first-child { /* первая колонка таблицы */
