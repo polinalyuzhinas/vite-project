@@ -59,6 +59,7 @@ body {
     position: fixed;
     width: 43%;
     max-height: 95vh; /* ограничение по высоте */
+    line-height: 1.5; /* междустрочный интервал */
     background-color: rgb(247, 255, 255); /* заливка */
     padding: 8px; /* отступы вокруг текста */
     overflow-y: scroll; /* добавляем вертикальную полосу прокрутки, когда контент превышает высоту */
@@ -85,6 +86,7 @@ body {
 }
 
     .schedule-menu th {
+        padding: 8px;
         border: 1px solid #000000; /* рамка ячеек */
         font-size: inherit; /* наследуем размер шрифта из :root */
         text-align: left;
