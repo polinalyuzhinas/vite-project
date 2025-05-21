@@ -103,8 +103,8 @@ template_PolygonFeature([[[178, 1320],[475, 1320],[475, 1084],[178, 1084],[178, 
 template_PolygonFeature([[[178, 1081],[475, 1081],[475, 954],[178, 954],[178, 1081]]], '507 (совет студентов и аспирантов юридического факультета)', '507');
 
 template_PolygonFeature([[[178, 950],[475, 950],[475, 604],[178, 604],[178, 950]]], '506 (кафедра конституционного и муниципального права)', '506',
-    [{ day: 'Среда', number: '5', department: 'ФМиЕНД', group: ['220'], teacher: 'Деманова С.В.', lesson: 'Право в сфере образования', type: 'лек.', parity: '-'},
-    { day: 'Среда', number: '6', department: 'ФМиЕНД', group: ['220'], teacher: 'Деманова С.В.', lesson: 'Право в сфере образования', type: 'пр.', parity: '-'},]);
+    [{ day: 'Среда', number: '5', department: ['ФМиЕНД'], group: ['220'], teacher: 'Деманова С.В.', lesson: 'Право в сфере образования', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '6', department: ['ФМиЕНД'], group: ['220'], teacher: 'Деманова С.В.', lesson: 'Право в сфере образования', type: 'пр.', parity: '-'},]);
 
 template_PolygonFeature([[[178, 600],[632, 600],[632, 373],[510, 373],[510, 250],[178, 250], [178, 600]]], '505 (деканат юридического факультета)', '505');
 template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 1097]]], '510 (зал заседаний советов)', '510');
@@ -254,7 +254,7 @@ function showScheduleModal(description, schedule, filters = {}) {
                     <table>
                         <thead>
                             <tr>
-                                <th>Номер <br> пары</th>
+                                <th>№</th>
                                 <th>Факультет</th>
                                 <th>Группа</th>
                                 <th>Преподаватель</th>
@@ -264,7 +264,7 @@ function showScheduleModal(description, schedule, filters = {}) {
                             </tr>
                         </thead>
                         <tbody>
-                            ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group.join(', ')}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
+                            ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department.join('\n')}</td><td>${item.group.join(', ')}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
                         </tbody>
                     </table>
                 </div>

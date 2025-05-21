@@ -1,7 +1,7 @@
 html,
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height: 1.5; /* междустрочный интервал */
     font-weight: 400;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 #filter-form {
-    top: 2%; 
+    top: 1%; 
     overflow-x: auto; /* добавляем горизонтальную полосу прокрутки, если не помещаются */
     position: fixed;
     left: 45%;
@@ -50,20 +50,19 @@ body {
 }
 
 #filter-form select {
-    display: inline-block; /* Размещаем элементы в строку */
+    display: inline-block; /* размещаем элементы в строку */
     width: 200px;
-    /* Остальные стили */
 }
 
 .modal-content {
     position: fixed;
     width: 43%;
+    font-size: 1.15rem;
     max-height: 95vh; /* ограничение по высоте */
-    line-height: 1.5; /* междустрочный интервал */
     background-color: rgb(247, 255, 255); /* заливка */
     padding: 8px; /* отступы вокруг текста */
     overflow-y: scroll; /* добавляем вертикальную полосу прокрутки, когда контент превышает высоту */
-    border: 1px solid #000000; /* рамка */
+    border: 1px solid #181818; /* рамка */
     z-index: 1000; /* важно, чтобы расписание было поверх карты */
 }
 
@@ -79,52 +78,33 @@ body {
 }
 
 .schedule-menu table {
-    width: 95%;
-    border: 1px solid #000000; /* рамка */
+    position: relative;
+    width: 97%;
+    table-layout: fixed; /* ширина таблиц должна быть одинаковая */
+    border: 1px solid #181818; /* рамка */
     border-collapse: collapse; /* соседние ячейки таблицы соединены */
+    white-space: normal; /* для переноса длинных слов */
+    word-wrap: break-word;
     padding: 8px; /* отступы вокруг текста */
+    text-align: left;
 }
 
     .schedule-menu th {
-        padding: 8px;
-        border: 1px solid #000000; /* рамка ячеек */
+        padding: 5px;
+        border: 1px solid #181818; /* рамка */
         font-size: inherit; /* наследуем размер шрифта из :root */
         text-align: left;
     }
 
     .schedule-menu td {
-        border: 1px solid #000000; /* рамка ячеек */
-        font-size: inherit; /* наследуем размер шрифта из :root */
-        text-align: left;
+        border: 1px solid #181818; /* рамка */
         padding: 8px; /* отступы вокруг текста */
     }
 
-        .schedule-menu td:first-child { /* первая колонка таблицы */
-        width: 80px;
-        }
-
-        .schedule-menu td:nth-child(2) { /* вторая колонка таблицы */
-            width: 200px;
-        }
-
-        .schedule-menu td:nth-child(3) {
-            width: 80px;
-        }
-
-        .schedule-menu td:nth-child(4) { 
-            width: 200px;
-        }
-
-        .schedule-menu td:nth-child(5) {
-            width: 100px;
-        }
-
-        .schedule-menu td:nth-child(6) {
-            width: 80px;
-            text-align: center;
-        }
-
-        .schedule-menu td:nth-child(7) {
-            width: 80px;
-            text-align: center;
-        }
+       .schedule-menu th:nth-child(1) { width: 3%; }
+        .schedule-menu th:nth-child(2) { width: 23%; }
+        .schedule-menu th:nth-child(3) { width: 12%; }
+        .schedule-menu th:nth-child(4) { width: 25%; }
+        .schedule-menu th:nth-child(5) { width: 42%; }
+        .schedule-menu th:nth-child(6) { width: 8%; text-align: center; }
+        .schedule-menu th:nth-child(7) { width: 10%; text-align: center;}

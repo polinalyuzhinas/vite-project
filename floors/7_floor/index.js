@@ -205,7 +205,7 @@ function showScheduleModal(description, schedule, filters = {}) {
                     <table>
                         <thead>
                             <tr>
-                                <th>Номер <br> пары</th>
+                                <th>№</th>
                                 <th>Факультет</th>
                                 <th>Группа</th>
                                 <th>Преподаватель</th>
@@ -215,7 +215,7 @@ function showScheduleModal(description, schedule, filters = {}) {
                             </tr>
                         </thead>
                         <tbody>
-                            ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department}</td><td>${item.group.join(', ')}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
+                            ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td><td>${item.department.join('\n')}</td><td>${item.group.join(', ')}</td><td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td><td>${item.parity}</td></tr>`).join('')}
                         </tbody>
                     </table>
                 </div>
