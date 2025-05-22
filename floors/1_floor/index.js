@@ -115,7 +115,8 @@ template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [1
     { day: 'Понедельник', number: '4', department: ['Психологии'], group: ['161', '162'], teacher: 'Калистратов П.Ю.', lesson: 'Педагогическая психология', type: 'лек.', parity: '-'},
     { day: 'Понедельник', number: '5', department: ['Психологии'], group: ['161', '162'], teacher: 'Калистратов П.Ю.', lesson: 'Педагогическая психология', type: 'лек.', parity: '-'},
     { day: 'Вторник', number: '1', department: ['Психологии'], group: ['261'], teacher: 'Лазунина Е.А.', lesson: 'Эмоционально-волевая регуляция деятельности', type: 'пр.', parity: '-'},
-    { day: 'Вторник', number: '2', department: ['Психологии'], group: ['161'], teacher: 'Мозговая О.С.', lesson: 'История России', type: 'пр.', parity: 'чис.'},
+    { day: 'Вторник', number: '1', department: ['Психологии'], group: ['361', '362'], teacher: 'Чернышова Г.Ю.', lesson: 'Использование методов машинного обучения в управлении профессиональной деятельностью (цифровая кафедра)', type: 'лек.', parity: '-' },
+    { day: 'Вторник', number: '2', department: ['Психологии'], group: ['161'], teacher: 'Мозговая О.С.', lesson: 'История России', type: 'пр.', parity: 'чис.' },
     { day: 'Вторник', number: '2', department: ['Психологии'], group: ['162'], teacher: 'Мозговая О.С.', lesson: 'История России', type: 'пр.', parity: 'знам.'},
     { day: 'Вторник', number: '3', department: ['Психологии'], group: ['161', '162'], teacher: 'Мозговая О.С.', lesson: 'История России', type: 'лек.', parity: '-'},
     { day: 'Вторник', number: '4', department: ['Психологии'], group: ['161'], teacher: 'Иванов А.В.', lesson: 'Философия', type: 'пр.', parity: 'чис.'},
@@ -124,7 +125,9 @@ template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [1
     { day: 'Вторник', number: '5', department: ['Психологии'], group: ['161'], teacher: 'Иванов А.В.', lesson: 'Философия', type: 'пр.', parity: 'чис.'},
     { day: 'Вторник', number: '5', department: ['Психологии'], group: ['162'], teacher: 'Иванов А.В.', lesson: 'Философия', type: 'пр.', parity: 'знам.'},
     { day: 'Среда', number: '2', department: ['Психологии'], group: ['161', '162'], teacher: 'Кубракова Н.А.', lesson: 'Иностранный язык', type: 'лек.', parity: '-'},
-    { day: 'Среда', number: '3', department: ['Психологии'], group: ['161', '162'], teacher: 'Кубракова Н.А.', lesson: 'Иностранный язык', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '3', department: ['Психологии'], group: ['161', '162'], teacher: 'Кубракова Н.А.', lesson: 'Иностранный язык', type: 'лек.', parity: '-' },
+    { day: 'Среда', number: '3', department: ['Психологии'], group: ['361', '362'], teacher: 'Романова Н.М.', lesson: 'Психология девиантного и криминального поведения', type: 'лек.', parity: '-' },
+    { day: 'Среда', number: '4', department: ['Психологии'], group: ['361'], teacher: 'Романова Н.М.', lesson: 'Психология девиантного и криминального поведения', type: 'пр.', parity: '-' },
     { day: 'Четверг', number: '1', department: ['Психологии'], group: ['261'], teacher: 'Лазунина Е.А.', lesson: 'Эмоционально-волевая регуляция деятельности', type: 'пр.', parity: '-'},
     { day: 'Четверг', number: '1', department: ['Психологии'], group: ['161'], teacher: 'Саранцева Е.И.', lesson: 'Физиология высшей нервной деятельности', type: 'пр.', parity: 'чис.'},
     { day: 'Четверг', number: '1', department: ['Психологии'], group: ['162'], teacher: 'Саранцева Е.И.', lesson: 'Физиология высшей нервной деятельности', type: 'пр.', parity: 'знам.'},
@@ -147,8 +150,22 @@ template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [1
     { day: 'Суббота', number: '5', department: ['Психологии'], group: ['162'], teacher: 'Мовсисян Г.С.', lesson: 'Математическая статистика', type: 'пр.', parity: 'знам.'},]);
 
 template_PolygonFeature([[[318, 1546],[505, 1546],[505, 1419],[318, 1419],[318, 1546]]], '109 (полиграфическая лаборатория)', '109');
-template_PolygonFeature([[[183, 1316],[478, 1316],[478, 1194],[183, 1194],[183, 1316]]], '108 (кафедра психологии личности)', '108');
-template_PolygonFeature([[[183, 1190],[478, 1190],[478, 1073],[183, 1073],[183, 1190]]], '107 (кафедра социальной психологии)', '107');
+template_PolygonFeature([[[183, 1316], [478, 1316], [478, 1194], [183, 1194], [183, 1316]]], '108 (кафедра психологии личности)', '108');
+
+template_PolygonFeature([[[183, 1190], [478, 1190], [478, 1073], [183, 1073], [183, 1190]]], '107 (кафедра социальной психологии)', '107',
+    [{ day: 'Вторник', number: '3', department: ['Психологии'], group: ['362'], teacher: 'Киселев К.А.', lesson: 'Психология девиантного и криминального поведения', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '6', department: ['Психологии'], group: ['268'], teacher: 'Романова Н.М.', lesson: 'Экспертиза психологического воздействия в судебной практике', type: 'лек.', parity: '-' },
+    { day: 'Вторник', number: '7', department: ['Психологии'], group: ['268'], teacher: 'Романова Н.М.', lesson: 'Экспертиза психологического воздействия в судебной практике', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '3', department: ['Психологии'], group: ['361', '362'], teacher: 'Киселев К.А.', lesson: 'Актуальные проблемы теоретической психологии', type: 'лек.', parity: '-' },
+    { day: 'Среда', number: '4', department: ['Психологии'], group: ['361'], teacher: 'Киселев К.А.', lesson: 'Актуальные проблемы теоретической психологии', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '6', department: ['Психологии'], group: ['163'], teacher: 'Бисенгалиев Р.С.', lesson: 'Управленческое консультирование и коучинг', type: 'лек.', parity: '-' },
+    { day: 'Среда', number: '6', department: ['Психологии'], group: ['265'], teacher: 'Романова Н.М.', lesson: 'Научно-исследовательская работа', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '7', department: ['Психологии'], group: ['163'], teacher: 'Бисенгалиев Р.С.', lesson: 'Управленческое консультирование и коучинг', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '7', department: ['Психологии'], group: ['265'], teacher: 'Романова Н.М.', lesson: 'Научно-исследовательская работа', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '6', department: ['Психологии'], group: ['268'], teacher: 'Романова Н.М.', lesson: 'Экспертиза психологического воздействия в судебной практике', type: 'лек.', parity: '-' },
+    { day: 'Пятница', number: '7', department: ['Психологии'], group: ['268'], teacher: 'Романова Н.М.', lesson: 'Экспертиза психологического воздействия в судебной практике', type: 'пр.', parity: '-' },    ]);
+
+
 template_PolygonFeature([[[180, 931],[478, 931],[478, 630],[180, 630],[180, 931]]], '105/106 (деканат факультета психологии)', '105');
 template_PolygonFeature([[[180, 627],[478, 627],[478, 374],[511, 374],[511, 249],[180, 249],[180, 627]]], '104 (деканат факультета психологии, заместители декана, секретарь)', '104');
 template_PolygonFeature([[[886, 1097],[1062, 1097],[1062, 778],[886, 778],[886, 1097]]], '112 (совет студентов факультета психологии)', '112');
@@ -174,8 +191,8 @@ template_PolygonFeature([[[1067, 1097],[1241, 1097],[1241, 778],[1067, 778],[106
     { day: 'Четверг', number: '7', department: ['Психологии'], group: ['163'], teacher: 'Бисенгалиев Р.С.', lesson: 'Психотехнология групповой работы', type: 'пр.', parity: 'чис.'},
     { day: 'Четверг', number: '7', department: ['Психологии'], group: ['163'], teacher: 'Понукалин А.А.', lesson: 'Психология управления персоналом', type: 'пр.', parity: 'знам.'},
     { day: 'Пятница', number: '4', department: ['Психологии'], group: ['361', '362'], teacher: 'Южанинова А.Л.', lesson: 'Психология общения', type: 'лек.', parity: '-'},
-    { day: 'Пятница', number: '5', department: ['Психологии'], group: ['361'], teacher: 'Южалинова А.Л.', lesson: 'Психология общения', type: 'пр.', parity: 'чис.'},
-    { day: 'Пятница', number: '5', department: ['Психологии'], group: ['362'], teacher: 'Южалинова А.Л.', lesson: 'Психология общения', type: 'пр.', parity: 'знам.'},
+    { day: 'Пятница', number: '5', department: ['Психологии'], group: ['361'], teacher: 'Южанинова А.Л.', lesson: 'Психология общения', type: 'пр.', parity: 'чис.'},
+    { day: 'Пятница', number: '5', department: ['Психологии'], group: ['362'], teacher: 'Южанинова А.Л.', lesson: 'Психология общения', type: 'пр.', parity: 'знам.'},
     { day: 'Пятница', number: '5', department: ['Психологии'], group: ['163'], teacher: 'Смирнова А.Ю.', lesson: 'Теория организации', type: 'лек.', parity: 'чис.'},
     { day: 'Пятница', number: '5', department: ['Психологии'], group: ['163'], teacher: 'Смирнова А.Ю.', lesson: 'Психология менеджмента', type: 'лек.', parity: 'знам.'},
     { day: 'Пятница', number: '6', department: ['Психологии'], group: ['163'], teacher: 'Смирнова А.Ю.', lesson: 'Теория организации', type: 'пр.', parity: 'чис.'},
@@ -211,28 +228,85 @@ template_PolygonFeature([[[1245, 1097],[1458, 1097],[1458, 778],[1245, 778],[124
     { day: 'Пятница', number: '4', department: ['Философский'], group: ['241', '251'], teacher: 'Шаткин М.А.', lesson: 'Философия религии', type: 'пр.', parity: '-'},]);
 
 template_PolygonFeature([[[632, 631],[882, 631],[882, 373],[632, 373],[632, 631]]], '103 (лекционная аудитория им. Л.П. Доблаева, <br> комната истории психологии)', '103',
-    [{ day: 'Понедельник', number: '4', department: ['Психологии'], group: ['262'], teacher: 'Разогреева В.С.', lesson: 'Эмоционально-волевая регуляция деятельности', type: 'пр.', parity: '-'},
-    { day: 'Вторник', number: '2', department: ['Психологии'], group: ['261'], teacher: 'Аранович Л.М.', lesson: 'Основы социальной психологии', type: 'пр.', parity: 'чис.'},
+    [{ day: 'Понедельник', number: '2', department: ['Психологии'], group: ['361'], teacher: 'Малюченко Г.Н.', lesson: 'Основы консультатичной психологии', type: 'пр.', parity: 'чис.' },
+    { day: 'Понедельник', number: '2', department: ['Психологии'], group: ['361'], teacher: 'Карелин А.А.', lesson: 'История и методология психологии в XX-XXI вв.', type: 'пр.', parity: 'знам.' },
+    { day: 'Понедельник', number: '3', department: ['Психологии'], group: ['361'], teacher: 'Малюченко Г.Н.', lesson: 'Основы консультатичной психологии', type: 'пр.', parity: 'чис.' },
+    { day: 'Понедельник', number: '3', department: ['Психологии'], group: ['361'], teacher: 'Карелин А.А.', lesson: 'История и методология психологии в XX-XXI вв.', type: 'пр.', parity: 'знам.' },
+    { day: 'Понедельник', number: '4', department: ['Психологии'], group: ['262'], teacher: 'Разогреева В.С.', lesson: 'Эмоционально-волевая регуляция деятельности', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '6', department: ['Психологии'], group: ['251'], teacher: 'Карелин А.А.', lesson: 'Технология нейролингвистичекого программирования', type: 'лек.', parity: '-' },
+    { day: 'Понедельник', number: '7', department: ['Психологии'], group: ['251'], teacher: 'Карелин А.А.', lesson: 'Технология нейролингвистичекого программирования', type: 'пр.', parity: '-' },
+    { day: 'Понедельник', number: '8', department: ['Психологии'], group: ['251'], teacher: 'Карелин А.А.', lesson: 'Технология нейролингвистичекого программирования', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '2', department: ['Психологии'], group: ['261'], teacher: 'Аранович Л.М.', lesson: 'Основы социальной психологии', type: 'пр.', parity: 'чис.' },
     { day: 'Вторник', number: '2', department: ['Психологии'], group: ['262'], teacher: 'Аранович Л.М.', lesson: 'Основы социальной психологии', type: 'пр.', parity: 'знам.'},
     { day: 'Вторник', number: '3', department: ['Психологии'], group: ['261'], teacher: 'Аранович Л.М.', lesson: 'Основы социальной психологии', type: 'пр.', parity: 'чис.'},
     { day: 'Вторник', number: '3', department: ['Психологии'], group: ['262'], teacher: 'Аранович Л.М.', lesson: 'Основы социальной психологии', type: 'пр.', parity: 'знам.'},
-    { day: 'Среда', number: '2', department: ['Психологии'], group: ['261'], teacher: 'Чулисова Ю.А.', lesson: 'Основы права и антикоррупционного поведения', type: 'пр.', parity: 'чис.'},
+    { day: 'Вторник', number: '5', department: ['Психологии'], group: ['163', '164', '167'], teacher: 'Воронова Е.Н.', lesson: 'Профессиональный английский язык', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '6', department: ['Психологии'], group: ['251', '264'], teacher: 'Карелин А.А.', lesson: 'Возрастно-психологическое консультирование', type: 'лек.', parity: '-' },
+    { day: 'Вторник', number: '7', department: ['Психологии'], group: ['251'], teacher: 'Карелин А.А.', lesson: 'Возрастно-психологическое консультирование', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '2', department: ['Психологии'], group: ['261'], teacher: 'Чулисова Ю.А.', lesson: 'Основы права и антикоррупционного поведения', type: 'пр.', parity: 'чис.' },
     { day: 'Среда', number: '2', department: ['Психологии'], group: ['262'], teacher: 'Чулисова Ю.А.', lesson: 'Основы права и антикоррупционного поведения', type: 'пр.', parity: 'знам.'},
     { day: 'Среда', number: '3', department: ['Психологии'], group: ['261'], teacher: 'Чулисова Ю.А.', lesson: 'Основы права и антикоррупционного поведения', type: 'пр.', parity: 'чис.'},
     { day: 'Среда', number: '3', department: ['Психологии'], group: ['262'], teacher: 'Чулисова Ю.А.', lesson: 'Основы права и антикоррупционного поведения', type: 'пр.', parity: 'знам.'},
     { day: 'Среда', number: '4', department: ['Психологии'], group: ['261', '262'], teacher: 'Чулисова Ю.А.', lesson: 'Основы права и антикоррупционного поведения', type: 'лек.', parity: '-'},
     { day: 'Среда', number: '5', department: ['Психологии'], group: ['261', '262'], teacher: 'Белоконь М.В.', lesson: 'Разработка программного обеспечения в профессиональной деятельности психолога', type: 'лек.', parity: '-'},
     { day: 'Четверг', number: '3', department: ['Психологии'], group: ['261', '262'], teacher: 'Аксеновская Л.Н.', lesson: 'Основы социальной психологии', type: 'лек.', parity: '-'},
-    { day: 'Пятница', number: '2', department: ['Психологии'], group: ['261', '262'], teacher: 'Пантелеев А.Ф.', lesson: 'Эмоционально-волевая регуляция деятельности', type: 'лек.', parity: '-'},
+    { day: 'Четверг', number: '4', department: ['Психологии'], group: ['461', '462'], teacher: 'Петрова Л.Г.', lesson: 'Основы психологического просвещения', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '5', department: ['Психологии'], group: ['461', '462'], teacher: 'Петрова Л.Г.', lesson: 'Основы психологического просвещения', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '5', department: ['Психологии'], group: ['164'], teacher: 'Карелин А.А.', lesson: 'Психодиагностика в психологическом консультировании', type: 'лек./пр.', parity: '-' },
+    { day: 'Четверг', number: '6', department: ['Психологии'], group: ['164'], teacher: 'Карелин А.А.', lesson: 'Психологическое консультирование в образовании', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '6', department: ['Психологии'], group: ['164'], teacher: 'Карелин А.А.', lesson: 'Психоаналитический подход в психологическом консультировании', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '7', department: ['Психологии'], group: ['164'], teacher: 'Карелин А.А.', lesson: 'Психологическое консультирование в образовании', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '7', department: ['Психологии'], group: ['164'], teacher: 'Карелин А.А.', lesson: 'Психоаналитический подход в психологическом консультировании', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: ['Психологии'], group: ['261', '262'], teacher: 'Пантелеев А.Ф.', lesson: 'Эмоционально-волевая регуляция деятельности', type: 'лек.', parity: '-' },
     { day: 'Пятница', number: '3', department: ['Психологии'], group: ['261', '262'], teacher: 'Пантелеев А.Ф.', lesson: 'Эмоционально-волевая регуляция деятельности', type: 'лек.', parity: '-'},
     { day: 'Пятница', number: '4', department: ['Психологии'], group: ['261'], teacher: 'Смирнова А.Ю.', lesson: 'Количественные методы в психологии', type: 'лек.', parity: 'чис.'},
     { day: 'Пятница', number: '4', department: ['Психологии'], group: ['262'], teacher: 'Смирнова А.Ю.', lesson: 'Количественные методы в психологии', type: 'лек.', parity: 'знам.'},
-    { day: 'Суббота', number: '3', department: ['Психологии'], group: ['261', '262'], teacher: 'Каткова М.В.', lesson: 'Мифология и религиоведение', type: 'лек.', parity: '-'},
-    { day: 'Суббота', number: '4', department: ['Психологии'], group: ['261'], teacher: 'Каткова М.В.', lesson: 'Мифология и религиоведение', type: 'пр.', parity: 'чис.'},
-    { day: 'Суббота', number: '4', department: ['Психологии'], group: ['262'], teacher: 'Каткова М.В.', lesson: 'Мифология и религиоведение', type: 'пр.', parity: 'знам.'},]);
+    { day: 'Пятница', number: '6', department: ['Психологии'], group: ['265'], teacher: 'Киселев К.А.', lesson: 'Психолого-педагогическая коррекция, психотерапия и психопрофилактика девиантного поведения', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '7', department: ['Психологии'], group: ['265'], teacher: 'Киселев К.А.', lesson: 'Психолого-педагогическая коррекция, психотерапия и психопрофилактика девиантного поведения', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '3', department: ['Психологии'], group: ['261', '262'], teacher: 'Каткова М.В.', lesson: 'Мифология и религиоведение', type: 'лек.', parity: '-' },
+    { day: 'Суббота', number: '3', department: ['Психологии'], group: ['361', '362'], teacher: 'Смирнова А.Ю.', lesson: 'Безопасность жизнедеятельности и психология безопасности', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '4', department: ['Психологии'], group: ['261'], teacher: 'Каткова М.В.', lesson: 'Мифология и религиоведение', type: 'пр.', parity: 'чис.' },
+    { day: 'Суббота', number: '4', department: ['Психологии'], group: ['262'], teacher: 'Каткова М.В.', lesson: 'Мифология и религиоведение', type: 'пр.', parity: 'знам.' },
+    { day: 'Суббота', number: '4', department: ['Психологии'], group: ['361', '362'], teacher: 'Смирнова А.Ю.', lesson: 'Безопасность жизнедеятельности и психология безопасности', type: 'пр.', parity: '-' },]);
 
 template_PolygonFeature([[[885, 631],[1135, 631],[1135, 373],[885, 373],[885, 631]]], '102 (лекционная аудитория им. А.А. Крогиуса)', '102',
-    [{ day: 'Вторник', number: '1', department: ['Психологии'], group: ['161'], teacher: 'Генералова Н.П.', lesson: 'Немецкий язык', type: 'лек./пр.', parity: '-'},]);
+    [{ day: 'Понедельник', number: '2', department: ['Психологии'], group: ['362'], teacher: 'Разогреева В.С.', lesson: 'История и методология психологии XX-XXI вв.', type: 'пр.', parity: 'чис.' },
+    { day: 'Понедельник', number: '2', department: ['Психологии'], group: ['362'], teacher: 'Малюченко Г.Н.', lesson: 'Основы консультативной психологии', type: 'пр.', parity: 'знам' },
+    { day: 'Понедельник', number: '3', department: ['Психологии'], group: ['362'], teacher: 'Разогреева В.С.', lesson: 'История и методология психологии XX-XXI вв.', type: 'пр.', parity: 'чис.' },
+    { day: 'Понедельник', number: '3', department: ['Психологии'], group: ['362'], teacher: 'Малюченко Г.Н.', lesson: 'Основы консультативной психологии', type: 'пр.', parity: 'знам' },
+    { day: 'Понедельник', number: '4', department: ['Психологии'], group: ['361', '362'], teacher: 'Фролова С.В.', lesson: 'История и методология психологии XX-XXI вв.', type: 'лек.', parity: '-' },
+    { day: 'Понедельник', number: '4', department: ['Психологии'], group: ['361', '362'], teacher: 'Фролова С.В.', lesson: 'Основы консультатиной психологии', type: 'лек.', parity: '-' },
+    { day: 'Понедельник', number: '5', department: ['Психологии'], group: ['361', '362'], teacher: 'Фролова С.В.', lesson: 'История и методология психологии XX-XXI вв.', type: 'лек.', parity: '-' },
+    { day: 'Понедельник', number: '5', department: ['Психологии'], group: ['361', '362'], teacher: 'Фролова С.В.', lesson: 'Основы консультатиной психологии', type: 'лек.', parity: '-' },
+    { day: 'Вторник', number: '1', department: ['Психологии'], group: ['161'], teacher: 'Генералова Н.П.', lesson: 'Немецкий язык', type: 'лек./пр.', parity: '-' },
+    { day: 'Вторник', number: '2', department: ['Психологии'], group: ['361', '362'], teacher: 'Букушева А.В.', lesson: 'Использование библиотек Python в профессиональной деятельности (цифровая кафедра)', type: 'лек.', parity: '-' },
+    { day: 'Вторник', number: '3', department: ['Психологии'], group: ['461'], teacher: 'Калистратов П.Ю.', lesson: 'Этноконфликтология', type: 'пр.', parity: 'чис.' },
+    { day: 'Вторник', number: '4', department: ['Психологии'], group: ['461'], teacher: 'Калистратов П.Ю.', lesson: 'Этноконфликтология', type: 'лек.', parity: 'чис.' },
+    { day: 'Вторник', number: '5', department: ['Психологии'], group: ['461', '462'], teacher: 'Романова Н.М.', lesson: 'Психология практической работы юридического психолога', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '6', department: ['Психологии'], group: ['163'], teacher: 'Куликов И.В.', lesson: 'Социальная психология организационной культуры', type: 'лек.', parity: '-' },
+    { day: 'Вторник', number: '7', department: ['Психологии'], group: ['163'], teacher: 'Куликов И.В.', lesson: 'Социальная психология организационной культуры', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '2', department: ['Психологии'], group: ['361', '362'], teacher: 'Гребенюк Л.В.', lesson: 'Безопасность жизнедеятельности и психология безопасности', type: 'лек./пр.', parity: '-' },
+    { day: 'Среда', number: '3', department: ['Психологии'], group: ['361'], teacher: 'Малюченко Г.Н.', lesson: 'Основы психотехнологии тренинга', type: 'лек.', parity: '-' },
+    { day: 'Среда', number: '4', department: ['Психологии'], group: ['361'], teacher: 'Малюченко Г.Н.', lesson: 'Основы психотехнологии тренинга', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '5', department: ['Психологии'], group: ['251', '264'], teacher: 'Фролова С.В.', lesson: 'Супервизорский практикум', type: 'лек.', parity: '-' },
+    { day: 'Среда', number: '6', department: ['Психологии'], group: ['251'], teacher: 'Фролова С.В.', lesson: 'Супервизорский практикум', type: 'пр.', parity: '-' },
+    { day: 'Среда', number: '7', department: ['Психологии'], group: ['251'], teacher: 'Фролова С.В.', lesson: 'Супервизорский практикум', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '3', department: ['Психологии'], group: ['361', '362'], teacher: 'Жижина М.В.', lesson: 'Медиапсихология', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '4', department: ['Психологии'], group: ['361'], teacher: 'Жижина М.В.', lesson: 'Медиапсихология', type: 'пр.', parity: 'чис.' },
+    { day: 'Четверг', number: '4', department: ['Психологии'], group: ['362'], teacher: 'Жижина М.В.', lesson: 'Медиапсихология', type: 'пр.', parity: 'знам.' },
+    { day: 'Четверг', number: '5', department: ['Психологии'], group: ['251', '264'], teacher: 'Фролова С.В.', lesson: 'Научно-исследовательская работа', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '6', department: ['Психологии'], group: ['167'], teacher: 'Фролова С.В.', lesson: 'Психология миграции и приверженности стране', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '6', department: ['Психологии'], group: ['251', '264'], teacher: 'Фролова С.В.', lesson: 'Научно-исследовательская работа', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '7', department: ['Психологии'], group: ['167'], teacher: 'Фролова С.В.', lesson: 'Психология миграции и приверженности стране', type: 'лек.', parity: '-' },
+    { day: 'Четверг', number: '7', department: ['Психологии'], group: ['251', '264'], teacher: 'Фролова С.В.', lesson: 'Научно-исследовательская работа', type: 'пр.', parity: '-' },
+    { day: 'Пятница', number: '2', department: ['Психологии'], group: ['361', '362'], teacher: 'Калистратов П.Ю.', lesson: 'Психометрические основы психодиагностики', type: 'лек.', parity: '-' },
+    { day: 'Пятница', number: '3', department: ['Психологии'], group: ['361', '362'], teacher: 'Калистратов П.Ю.', lesson: 'Психометрические основы психодиагностики', type: 'лек.', parity: '-' },
+    { day: 'Пятница', number: '4', department: ['Психологии'], group: ['361', '362'], teacher: 'Петрова Л.Г.', lesson: 'Психология социальной работы', type: 'лек.', parity: '-' },
+    { day: 'Пятница', number: '5', department: ['Психологии'], group: ['361', '362'], teacher: 'Петрова Л.Г.', lesson: 'Психология социальной работы', type: 'лек.', parity: '-' },
+    { day: 'Пятница', number: '6', department: ['Психологии'], group: ['164'], teacher: 'Малюченко Г.Н.', lesson: 'Индивидуальное психологическое консультирование', type: 'лек.', parity: '-' },
+    { day: 'Пятница', number: '7', department: ['Психологии'], group: ['164'], teacher: 'Малюченко Г.Н.', lesson: 'Индивидуальное психологическое консультирование', type: 'пр.', parity: '-' },
+    { day: 'Суббота', number: '2', department: ['Психологии'], group: ['163'], teacher: 'Шарапов А.А.', lesson: 'Психодиагностика и оценка персонала', type: 'лек.', parity: '-' },
+    { day: 'Суббота', number: '3', department: ['Психологии'], group: ['163'], teacher: 'Шарапов А.А.', lesson: 'Психодиагностика и оценка персонала', type: 'пр.', parity: '-' },]);
 
 template_PolygonFeature([[[1139, 631],[1353, 631],[1353, 373],[1139, 373],[1139, 631]]], '101', '101', 
     [{ day: 'Понедельник', number: '1', department: ['Философский'], group: ['311'], teacher: 'Малкина С.М.', lesson: 'Немецкая классическая философия', type: 'лек.', parity: '-'},
@@ -299,7 +373,9 @@ template_PolygonFeature([[[2022, 635],[2243, 635],[2243, 373],[2022, 373],[2022,
 template_PolygonFeature([[[2246, 635],[2495, 635],[2495, 373],[2246, 373],[2246, 635]]], '134 (аудитория им. С.Л. Франка, компьютерный класс)', '134', 
     [{ day: 'Вторник', number: '1', department: ['Психологии'], group: ['261'], teacher: 'Лазунина Е.А.', lesson: 'Память, мышление, речь', type: 'лаб.', parity: 'чис.'},
     { day: 'Вторник', number: '1', department: ['Психологии'], group: ['262'], teacher: 'Лазунина Е.А.', lesson: 'Память, мышление, речь', type: 'лаб.', parity: 'знам.'},
-    { day: 'Четверг', number: '1', department: ['Психологии'], group: ['261'], teacher: 'Лазунина Е.А.', lesson: 'Память, мышление, речь', type: 'лаб.', parity: 'чис.'},
+    { day: 'Вторник', number: '3', department: ['Психологии'], group: ['361'], teacher: 'Букушева А.В.', lesson: 'Использование библиотек Python в профессиональной деятельности (цифровая кафедра)', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '4', department: ['Психологии'], group: ['362'], teacher: 'Букушева А.В.', lesson: 'Использование библиотек Python в профессиональной деятельности (цифровая кафедра)', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '1', department: ['Психологии'], group: ['261'], teacher: 'Лазунина Е.А.', lesson: 'Память, мышление, речь', type: 'лаб.', parity: 'чис.' },
     { day: 'Четверг', number: '1', department: ['Психологии'], group: ['262'], teacher: 'Лазунина Е.А.', lesson: 'Память, мышление, речь', type: 'лаб.', parity: 'знам.'},
     { day: 'Четверг', number: '2', department: ['ФМиЕНД'], group: ['411', '441'], teacher: 'Пикулик О.В.', lesson: 'Управление цифровой трансформацией образования (цифровая кафедра)', type: 'лаб.', parity: '-'},
     { day: 'Четверг', number: '3', department: ['ФМиЕНД'], group: ['341', '351'], teacher: 'Пикулик О.В.', lesson: 'Управление цифровой трансформацией образования (цифровая кафедра)', type: 'лаб.', parity: '-'},
@@ -316,7 +392,10 @@ template_PolygonFeature([[[2498, 635],[2749, 635],[2749, 373],[2498, 373],[2498,
     { day: 'Вторник', number: '5', department: ['ФМиЕНД'], group: ['120'], teacher: 'Плешкевич Е.А.', lesson: 'Методика организации и проведения педагогического эксперимента', type: 'пр.', parity: 'чис.'},
     { day: 'Вторник', number: '5', department: ['ФМиЕНД'], group: ['120'], teacher: 'Плешкевич Е.А.', lesson: 'Методика организации и проведения педагогического эксперимента', type: 'лек.', parity: 'знам.'},
     { day: 'Среда', number: '1', department: ['Психологии'], group: ['161'], teacher: 'Лазунина Е.А.', lesson: 'Сенсорно-перцептивная сфера личности и внимание', type: 'пр.', parity: '-'},
-    { day: 'Пятница', number: '1', department: ['Философский'], group: ['341', '351'], teacher: 'Кабанова Л.В.', lesson: '1С Предприятие для решения задач в профессиональной деятельности', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '4', department: ['Психологии'], group: ['362'], teacher: 'Рогачко Е.С.', lesson: 'Использование библиотек Python в профессиональной деятельности (цифровая кафедра)', type: 'пр.', parity: '-' },
+    { day: 'Четверг', number: '2', department: ['Психологии'], group: ['361'], teacher: 'Чернышова Г.Ю.', lesson: 'Использование методов машинного обучения в управлении профессиональной деятельностью (цифровая кафдера)', type: 'пр.', parity: 'чис.' },
+    { day: 'Четверг', number: '2', department: ['Психологии'], group: ['362'], teacher: 'Чернышова Г.Ю.', lesson: 'Использование методов машинного обучения в управлении профессиональной деятельностью (цифровая кафдера)', type: 'пр.', parity: 'знам.' },
+    { day: 'Пятница', number: '1', department: ['Философский'], group: ['341', '351'], teacher: 'Кабанова Л.В.', lesson: '1С Предприятие для решения задач в профессиональной деятельности', type: 'пр.', parity: '-' },
     { day: 'Пятница', number: '5', department: ['Психологии'], group: ['261'], teacher: 'Баталин В.В.', lesson: 'Введение в информационные технологии', type: 'лаб.', parity: 'чис.'},
     { day: 'Пятница', number: '5', department: ['Психологии'], group: ['262'], teacher: 'Баталин В.В.', lesson: 'Введение в информационные технологии', type: 'лаб.', parity: 'знам.'},]);
 
@@ -386,6 +465,8 @@ target: "map",
         projection: proj,
         center: initialCenter,
         zoom: 0, // начальный зум
+        minZoom: 0.98, // минимальный зум
+        maxZoom: 4, // максимальный зум
     }),
 });
 
@@ -523,6 +604,7 @@ function showScheduleModal(description, schedule, filters = {}) {
     document.body.appendChild(modal);
     return modal;
 }
+
 function fill_filter() { // заполняем всплывающие списки фильтров
     const filterFields = ['department', 'group', 'teacher', 'lesson', 'type', 'parity'];
     const allSchedules = [];
@@ -585,17 +667,10 @@ function apply_filter() {
     // собираем значения фильтров из формы
     const filters = getFilters();
 
-    // получаем description и schedule объекта, который сейчас открыт
     if (openModal) {
-        const description = openModal.id.replace('schedule-modal-', '');
-        const feature = polygonFeatures.get(description);
-        const schedule = feature.get('schedule');
-
         // закрываем старое окно
         document.body.removeChild(openModal);
-
-        // открываем новое окно с фильтрами
-        openModal = showScheduleModal(description, schedule, filters);
+        openModal = null; // cбрасываем переменную openModal
     }
 }
 
@@ -615,30 +690,18 @@ function getFilters() {
 }
 
 function filterFeatures(description, schedule, filters) {
-    if (!schedule || schedule.length === 0) { // если расписания у объекта нет, возвращаем пустой массив
-        return [];
-    }
+    if (!schedule || schedule.length === 0) return [];
 
     return schedule.filter(item => {
         for (const filterName in filters) {
             const filterValue = filters[filterName];
+            const itemValue = item[filterName];
 
-            if (filterName === 'group') {
-                // обработка фильтра group (который массив)
-                if (Array.isArray(item.group)) {
-                    if (!item.group.includes(filterValue)) {
-                        return false;
-                    }
-                } else {
-                    if (item.group !== filterValue) {
-                        return false;
-                    }
-                }
+            // для всех фильтров проверяем, является ли значение массивом
+            if (Array.isArray(itemValue)) {
+                if (!itemValue.includes(filterValue)) return false;
             } else {
-                // обработка других фильтров (которые не являются массивами)
-                if (item[filterName] !== filterValue) {
-                    return false;
-                }
+                if (itemValue !== filterValue) return false;
             }
         }
         return true;
@@ -651,5 +714,11 @@ document.getElementById('reset-filters').addEventListener('click', function () {
     });
     applyFiltersButton.disabled = true; // блокирует кнопку сброса
     filterFeatures({}); // сбрасываем фильтры
+
+    if (openModal) {
+        // закрываем старое окно
+        document.body.removeChild(openModal);
+        openModal = null; // cбрасываем переменную openModal
+    }
 
 });

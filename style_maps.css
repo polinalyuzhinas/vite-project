@@ -15,8 +15,8 @@ body {
     height: 80vh; /* 80% от высоты окна браузера */
     margin: 0; /* убрать отступы */
     position: absolute;
-    top: 5vw; /* 5% от ширины окна брузера*/
-    left: 45vw; /* 35% от ширины окна браузера */
+    top: 7vw; /* 7% от ширины окна брузера*/
+    left: 45vw; /* 45% от ширины окна браузера */
     border: 1px solid black; /* рамочка */
 }
 
@@ -42,17 +42,17 @@ body {
 }
 
 #filter-form {
+    position: relative;
     top: 1%; 
-    overflow-x: auto; /* добавляем горизонтальную полосу прокрутки, если не помещаются */
     position: fixed;
     left: 45%;
     z-index: 1000; /* важно, чтобы фильтры и выпадающие списки были поверх карты */
 }
 
-#filter-form select {
-    display: inline-block; /* размещаем элементы в строку */
-    width: 200px;
-}
+    #filter-form select {
+        display: inline-block; /* размещаем элементы в строку */
+        width: 200px;
+    }
 
 .modal-content {
     position: fixed;
@@ -101,10 +101,10 @@ body {
         padding: 8px; /* отступы вокруг текста */
     }
 
-       .schedule-menu th:nth-child(1) { width: 3%; }
+       .schedule-menu th:nth-child(1) { width: 4%; text-align: center; }
         .schedule-menu th:nth-child(2) { width: 23%; }
         .schedule-menu th:nth-child(3) { width: 12%; }
         .schedule-menu th:nth-child(4) { width: 25%; }
-        .schedule-menu th:nth-child(5) { width: 42%; }
-        .schedule-menu th:nth-child(6) { width: 8%; text-align: center; }
+        .schedule-menu th:nth-child(5) { width: 40%; }
+        .schedule-menu th:nth-child(6) { width: 10%; text-align: center; }
         .schedule-menu th:nth-child(7) { width: 10%; text-align: center;}

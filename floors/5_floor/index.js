@@ -152,6 +152,8 @@ target: "map",
         projection: proj,
         center: initialCenter,
         zoom: 0, // начальный зум
+        minZoom: 0.98, // минимальный зум
+        maxZoom: 4, // максимальный зум
     }),
 });
 
@@ -354,17 +356,10 @@ function apply_filter() {
     // собираем значения фильтров из формы
     const filters = getFilters();
 
-    // получаем description и schedule объекта, который сейчас открыт
     if (openModal) {
-        const description = openModal.id.replace('schedule-modal-', '');
-        const feature = polygonFeatures.get(description);
-        const schedule = feature.get('schedule');
-
         // закрываем старое окно
         document.body.removeChild(openModal);
-
-        // открываем новое окно с фильтрами
-        openModal = showScheduleModal(description, schedule, filters);
+        openModal = null; // cбрасываем переменную openModal
     }
 }
 
@@ -384,30 +379,18 @@ function getFilters() {
 }
 
 function filterFeatures(description, schedule, filters) {
-    if (!schedule || schedule.length === 0) { // если расписания у объекта нет, возвращаем пустой массив
-        return [];
-    }
+    if (!schedule || schedule.length === 0) return [];
 
     return schedule.filter(item => {
         for (const filterName in filters) {
             const filterValue = filters[filterName];
+            const itemValue = item[filterName];
 
-            if (filterName === 'group') {
-                // обработка фильтра group (который массив)
-                if (Array.isArray(item.group)) {
-                    if (!item.group.includes(filterValue)) {
-                        return false;
-                    }
-                } else {
-                    if (item.group !== filterValue) {
-                        return false;
-                    }
-                }
+            // для всех фильтров проверяем, является ли значение массивом
+            if (Array.isArray(itemValue)) {
+                if (!itemValue.includes(filterValue)) return false;
             } else {
-                // обработка других фильтров (которые не являются массивами)
-                if (item[filterName] !== filterValue) {
-                    return false;
-                }
+                if (itemValue !== filterValue) return false;
             }
         }
         return true;
@@ -421,4 +404,9 @@ document.getElementById('reset-filters').addEventListener('click', function () {
     applyFiltersButton.disabled = true; // блокирует кнопку сброса
     filterFeatures({}); // сбрасываем фильтры
 
+    if (openModal) {
+        // закрываем старое окно
+        document.body.removeChild(openModal);
+        openModal = null; // cбрасываем переменную openModal
+    }
 });

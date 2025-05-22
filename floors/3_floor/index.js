@@ -100,7 +100,7 @@ template_PolygonFeature([[[637, 1320],[801, 1320],[801, 1136],[637, 1136],[637, 
 template_PolygonFeature([[[2581, 1726],[2740, 1726],[2740, 1525],[2581, 1525],[2581, 1726]]], 'туалет женский', 'toilet2');
 
 // аудитории левого крыла
-template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [178, 1949]]], '310 (аудитория им. А. М. Богомолова)', '310',
+template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [178, 1949]]], '310 (лекционная аудитория им. А. М. Богомолова)', '310',
     [{ day: 'Понедельник', number: '1', department: ['КНиИТ'], group: ['331', '311'], teacher: 'Молчанов В.А.', lesson: 'Прикладная универсальная алгебра', type: 'лек.', parity: '-'},
     { day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['221', '241'], teacher: 'Кудрина Е.В.', lesson: 'Структуры данных и алгоритмы', type: 'лек.', parity: '-'},
     { day: 'Понедельник', number: '3', department: ['КНиИТ'], group: ['111', '151'], teacher: 'Грецова А.П.', lesson: 'Введение в специальность', type: 'пр.', parity: 'чис.'},
@@ -126,7 +126,7 @@ template_PolygonFeature([[[178, 1949], [686, 1949], [686, 1551], [178, 1551], [1
 
 template_PolygonFeature([[[318, 1546],[492, 1546],[492, 1429],[318, 1429],[318, 1546]]], '309', '309');
 
-template_PolygonFeature([[[239, 1409], [306, 1409], [306, 1325], [239, 1325], [239, 1409]]], '300 (находится между 3 и 4 этажами)', '300',
+template_PolygonFeature([[[239, 1409], [306, 1409], [306, 1325], [239, 1325], [239, 1409]]], '300 (компьютерный класс, <br> находится между 3 и 4 этажами)', '300',
     [{ day: 'Понедельник', number: '1', department: ['КНиИТ'], group: ['131', '132', '111', '151'], teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
     { day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['211', '231', '251'], teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'пр.', parity: '-'},
     { day: 'Понедельник', number: '3', department: ['ФМиЕНД'], group: ['421'], teacher: 'Векслер В.А.', lesson: 'Преподавание робототехники в образовательной организации (с 21.02)', type: 'лек.', parity: '-'},
@@ -253,7 +253,7 @@ template_PolygonFeature([[[1247, 1097], [1458, 1097], [1458, 778], [1247, 778], 
     { day: 'Суббота', number: '2', department: ['КНиИТ'], group: ['431'], teacher: 'Никитина А.С.', lesson: 'Основы построения защищенных баз данных 2 гр.', type: 'пр.', parity: '-'},
     { day: 'Суббота', number: '4', department: ['КНиИТ'], group: ['431'], teacher: 'Никитина А.С.', lesson: 'Теория псевдослучайных генераторов 1 гр.', type: 'пр.', parity: '-'}]);
 
-template_PolygonFeature([[[632, 631], [918, 631], [918, 373], [632, 373], [632, 631]]], '304', '304',
+template_PolygonFeature([[[632, 631], [918, 631], [918, 373], [632, 373], [632, 631]]], '304 (лекционная аудитория)', '304',
     [{ day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['151'], teacher: 'Молчанов В.А.', lesson: 'Математическая логика и теория алгоритмов', type: 'пр.', parity: 'чис.'},
     { day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['111', '181'], teacher: 'Молчанов В.А.', lesson: 'Математическая логика и теория алгоритмов', type: 'пр.', parity: 'знам.'},
     { day: 'Понедельник', number: '3', department: ['КНиИТ'], group: ['211', '251'], teacher: 'Миронов С.В.', lesson: 'Компьютерная графика', type: 'лек.', parity: '-'},
@@ -279,7 +279,7 @@ template_PolygonFeature([[[632, 631], [918, 631], [918, 373], [632, 373], [632, 
     { day: 'Пятница', number: '2', department: ['КНиИТ'], group: ['311', '351'], teacher: 'Купцов П.В.', lesson: 'Параллельное и распределенное программирование', type: 'лек.', parity: '-' },
     { day: 'Пятница', number: '3', department: ['КНиИТ'], group: ['131', '132'], teacher: 'Мещерякова О.В.', lesson: 'Аппаратные средства вычислительной техники', type: 'лек.', parity: '-' }]);
 
-template_PolygonFeature([[[921, 631], [1163, 631], [1163, 373], [921, 373], [921, 631]]], '303', '303',
+template_PolygonFeature([[[921, 631], [1163, 631], [1163, 373], [921, 373], [921, 631]]], '303 (лекционная аудитория)', '303',
     [{ day: 'Понедельник', number: '1', department: ['КНиИТ'], group: ['251'], teacher: 'Сафрончик М.И.', lesson: 'НИР', type: 'пр.', parity: 'чис.'},
     { day: 'Понедельник', number: '1', department: ['КНиИТ'], group: ['221'], teacher: 'Станкевич Е.П.', lesson: 'НИР гр. САУ', type: 'пр.', parity: 'знам.'},
     { day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['311', '351'], teacher: 'Иванова А.С.', lesson: 'Технологии программирования', type: 'лек.', parity: '-'},
@@ -344,7 +344,7 @@ template_PolygonFeature([[[1364, 635], [1525, 635], [1525, 373], [1364, 373], [1
     [{ day: 'Среда', number: '7', department: ['КНиИТ'], group: ['294'], teacher: 'Молчанов В.А.', lesson: 'Математическая логика, алгебра и дискретная математика', type: 'лек.', parity: '-' },
      { day: 'Суббота', number: '2', department: ['КНиИТ'], group: ['292', '294', '494'], teacher: 'Абросимов М.Б.', lesson: 'Научно-исследовательская деятельность, направленная на подготовку диссертации к защите', type: 'пр.', parity: '-' }]);
 
-template_PolygonFeature([[[1528, 635], [1815, 635], [1815, 373], [1528, 373], [1528, 635]]], '333', '333',
+template_PolygonFeature([[[1528, 635], [1815, 635], [1815, 373], [1528, 373], [1528, 635]]], '333 (лекционная аудитория)', '333',
     [{ day: 'Понедельник', number: '1', department: ['КНиИТ'], group: ['121'], teacher: 'Крусс Ю.С.', lesson: 'Алгебра и геометрия', type: 'лек.', parity: '-'},
     { day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['121'], teacher: 'Лобов А.А.', lesson: 'Математическая логика и теория алгоритмов', type: 'лек.', parity: '-'},
     { day: 'Понедельник', number: '3', department: ['КНиИТ'], group: ['231'], teacher: 'Стрыгина С.В.', lesson: 'Основы права и антикоррупционного поведения', type: 'пр.', parity: '-'},
@@ -384,7 +384,7 @@ template_PolygonFeature([[[1818, 635],[1995, 635],[1995, 373],[1818, 373],[1818,
 template_PolygonFeature([[[1998, 635],[2230, 635],[2230, 373],[1998, 373],[1998, 635]]], '330', '330', 
     [{ day: 'Понедельник', number: '1', department: ['ФМиЕНД'], group: ['121'], teacher: 'Векслер В.А.', lesson: 'Компьютерная графика', type: 'лек.', parity: 'чис.'},]);
 
-template_PolygonFeature([[[2233, 635], [2504, 635], [2504, 373], [2233, 373], [2233, 635]]], '329', '329',
+template_PolygonFeature([[[2233, 635], [2504, 635], [2504, 373], [2233, 373], [2233, 635]]], '329 (компьютерный класс)', '329',
     [{ day: 'Вторник', number: '4', department: ['КНиИТ'], group: ['241'], teacher: 'Лапшева Е.Е.', lesson: 'Библиотеки машинного и глубокого обучения в ПД 3 гр. (цифровая кафедра)', type: 'пр.', parity: '-'},    
     { day: 'Вторник', number: '5', department: ['ФМиЕНД'], group: ['321'], teacher: 'Смирнов Д.А.', lesson: 'Языки программирования в школьном курсе информатики', type: 'пр.', parity: '-'},
     { day: 'Пятница', number: '3', department: ['КНиИТ'], group: ['431'], teacher: 'Лапшева Е.Е.', lesson: 'Библиотеки машинного и глубокого обучения в ПД (цифровая кафедра)', type: 'лек.', parity: '-'},
@@ -393,14 +393,14 @@ template_PolygonFeature([[[2233, 635], [2504, 635], [2504, 373], [2233, 373], [2
     { day: 'Суббота', number: '4', department: ['КНиИТ'], group: ['321'], teacher: 'Лапшева Е.Е.', lesson: 'Библиотеки машинного и глубокого обучения в ПД 2 гр. (цифровая кафедра)', type: 'пр.', parity: '-' },
     { day: 'Суббота', number: '4', department: ['КНиИТ'], group: ['381'], teacher: 'Лапшева Е.Е.', lesson: 'Библиотеки машинного и глубокого обучения в ПД (цифровая кафедра)', type: 'пр.', parity: '-' }]);
 
-template_PolygonFeature([[[2507, 635],[2749, 635],[2749, 373],[2507, 373],[2507, 635]]], '328', '328', 
+template_PolygonFeature([[[2507, 635],[2749, 635],[2749, 373],[2507, 373],[2507, 635]]], '328 (компьютерный класс)', '328', 
     [{ day: 'Вторник', number: '4', department: ['КНиИТ'], group: ['241'], teacher: 'Лапшева Е.Е.', lesson: 'Библиотеки машинного и глубокого обучения в ПД 1,2 гр. (цифровая кафедра)', type: 'пр.', parity: '-'},
     { day: 'Вторник', number: '5', department: ['ФМиЕНД'], group: ['351'], teacher: 'Векслер В.А.', lesson: 'Интеллектуальный анализ образовательных данных и учебная аналитика (цифровая кафедра)', type: 'лаб.', parity: '-'},
     { day: 'Среда', number: '1', department: 'Философский', group: ['311', '331'], teacher: 'Белоконь М.В.', lesson: '1С Предприятие для решения задач в профессиональной деятельности', type: 'пр.', parity: '-'},
     { day: 'Четверг', number: '4', department: ['ФМиЕНД'], group: ['341'], teacher: 'Старко Е.С.', lesson: 'Информационные технологии в педагогическом образовании (с 11.04.25)', type: 'лек.', parity: '-'},
     { day: 'Пятница', number: '6', department: ['ФМиЕНД'], group: ['341'], teacher: 'Старко Е.С.', lesson: 'Информационные технологии в педагогическом образовании (с 11.04.25)', type: 'пр.', parity: '-'},]);
 
-template_PolygonFeature([[[1915, 1097],[2163, 1097],[2163, 778],[1915, 778],[1915, 1097]]], '315', '315');
+template_PolygonFeature([[[1915, 1097],[2163, 1097],[2163, 778],[1915, 778],[1915, 1097]]], '315 (лекционная аудитория)', '315');
 template_PolygonFeature([[[2166, 1097],[2300, 1097],[2300, 778],[2166, 778],[2166, 1097]]], '316 (учебная лаборатория прикладной психологии образования)', '316');
 template_PolygonFeature([[[2303, 1097],[2488, 1097],[2488, 778],[2303, 778],[2303, 1097]]], '317', '317');
 template_PolygonFeature([[[2894, 565],[3193, 565],[3193, 251],[2863, 251],[2863, 373],[2894, 373],[2894, 565]]], '327 (кафедры <br> коррекционной педагогики, <br> технологического <br> образования)', '327');
@@ -441,7 +441,7 @@ template_PolygonFeature([[[1424, 1676],[1897, 1676],[1897, 1370],[1424, 1370],[1
     { day: 'Пятница', number: '3', department: ['Философский'], group: ['331', '341', '351'], teacher: 'Краснова И.В.', lesson: 'Прикладная физическая культура', type: 'пр.', parity: '-'},
     { day: 'Пятница', number: '3', department: ['ФМиЕНД'], group: ['241'], teacher: 'Краснова И.В.', lesson: 'Общая физическая подготовка', type: 'пр.', parity: '-'},
     { day: 'Пятница', number: '4', department: ['ФМиЕНД'], group: ['241'], teacher: 'Краснова И.В.', lesson: 'Общая физическая подготовка', type: 'пр.', parity: '-'},
-    { day: 'Суббота', number: '2', department: ['Психологии'], group: ['261', '262'], teacher: 'Григорьев Е.В.', lesson: 'Общая физическая подготовка', type: 'пр.', parity: '-'},]);
+    { day: 'Суббота', number: '2', department: ['Психологии'], group: ['261', '262', '361', '362'], teacher: 'Григорьев Е.В.', lesson: 'Общая физическая подготовка', type: 'пр.', parity: '-'},]);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
@@ -462,6 +462,8 @@ target: "map",
         projection: proj,
         center: initialCenter,
         zoom: 0, // начальный зум
+        minZoom: 0.98, // минимальный зум
+        maxZoom: 4, // максимальный зум
     }),
 });
 
@@ -664,17 +666,10 @@ function apply_filter() {
     // собираем значения фильтров из формы
     const filters = getFilters();
 
-    // получаем description и schedule объекта, который сейчас открыт
     if (openModal) {
-        const description = openModal.id.replace('schedule-modal-', '');
-        const feature = polygonFeatures.get(description);
-        const schedule = feature.get('schedule');
-
         // закрываем старое окно
         document.body.removeChild(openModal);
-
-        // открываем новое окно с фильтрами
-        openModal = showScheduleModal(description, schedule, filters);
+        openModal = null; // cбрасываем переменную openModal
     }
 }
 
@@ -694,30 +689,18 @@ function getFilters() {
 }
 
 function filterFeatures(description, schedule, filters) {
-    if (!schedule || schedule.length === 0) { // если расписания у объекта нет, возвращаем пустой массив
-        return [];
-    }
+    if (!schedule || schedule.length === 0) return [];
 
     return schedule.filter(item => {
         for (const filterName in filters) {
             const filterValue = filters[filterName];
+            const itemValue = item[filterName];
 
-            if (filterName === 'group') {
-                // обработка фильтра group (который массив)
-                if (Array.isArray(item.group)) {
-                    if (!item.group.includes(filterValue)) {
-                        return false;
-                    }
-                } else {
-                    if (item.group !== filterValue) {
-                        return false;
-                    }
-                }
+            // для всех фильтров проверяем, является ли значение массивом
+            if (Array.isArray(itemValue)) {
+                if (!itemValue.includes(filterValue)) return false;
             } else {
-                // обработка других фильтров (которые не являются массивами)
-                if (item[filterName] !== filterValue) {
-                    return false;
-                }
+                if (itemValue !== filterValue) return false;
             }
         }
         return true;
@@ -731,4 +714,9 @@ document.getElementById('reset-filters').addEventListener('click', function () {
     applyFiltersButton.disabled = true; // блокирует кнопку сброса
     filterFeatures({}); // сбрасываем фильтры
 
+    if (openModal) {
+        // закрываем старое окно
+        document.body.removeChild(openModal);
+        openModal = null; // cбрасываем переменную openModal
+    }
 });

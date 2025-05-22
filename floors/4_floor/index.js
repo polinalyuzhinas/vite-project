@@ -109,7 +109,7 @@ template_PolygonFeature([[[178, 1949],[686, 1949],[686, 1551],[178, 1551],[178, 
 
 template_PolygonFeature([[[318, 1546],[492, 1546],[492, 1429],[318, 1429],[318, 1546]]], '410', '410');
 
-template_PolygonFeature([[[239, 1409], [306, 1409], [306, 1325], [239, 1325], [239, 1409]]], '300 (находится между 3 и 4 этажами)', '300',
+template_PolygonFeature([[[239, 1409], [306, 1409], [306, 1325], [239, 1325], [239, 1409]]], '300 (компьютерный класс, <br> находится между 3 и 4 этажами)', '300',
     [{ day: 'Понедельник', number: '1', department: ['КНиИТ'], group: ['131', '132', '111', '151'], teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 4 гр.', type: 'пр.', parity: '-'},
     { day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['211', '231', '251'], teacher: 'Косарева С.А.', lesson: 'Английский язык (переводчики) 5 гр.', type: 'пр.', parity: '-'},
     { day: 'Понедельник', number: '3', department: ['ФМиЕНД'], group: ['421'], teacher: 'Векслер В.А.', lesson: 'Преподавание робототехники в образовательной организации (с 21.02)', type: 'лек.', parity: '-'},
@@ -152,7 +152,7 @@ template_PolygonFeature([[[178, 782],[475, 782],[475, 685],[178, 685],[178, 782]
 template_PolygonFeature([[[178, 682],[475, 682],[475, 481],[178, 481],[178, 682]]], '406 (научно-образовательный центр экономического факультета)', '406');
 template_PolygonFeature([[[178, 478],[475, 478],[475, 610],[633, 610],[633, 374],[511, 374],[511, 255],[178, 255],[178, 478]]], '405 (деканат экономического факультета)', '405');
 
-template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 1097]]], '413 (учебная лаборатория Базальт СПО)', '413',
+template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 1097]]], '413 (учебная лаборатория Базальт СПО, компьютерный класс)', '413',
     [{ day: 'Понедельник', number: '2', department: ['ФМиЕНД'], group: ['121'], teacher: 'Курчатова Н.Ю.', lesson: 'Педагогика', type: 'лек.', parity: '-'},
     { day: 'Понедельник', number: '3', department: ['ФМиЕНД'], group: ['121'], teacher: 'Гришечко А.В.', lesson: 'Педагогика', type: 'пр.', parity: 'знам.'},
     { day: 'Понедельник', number: '5', department: ['КНиИТ'], group: ['421'], teacher: 'Синельников Е.А.', lesson: 'Системы реального времени 1 гр.', type: 'пр.', parity: '-'},
@@ -175,7 +175,7 @@ template_PolygonFeature([[[886, 1097],[1073, 1097],[1073, 778],[886, 778],[886, 
     { day: 'Суббота', number: '2', department: ['КНиИТ'], group: ['231'], teacher: 'Баталин В.В.', lesson: 'Компьютерные сети 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Суббота', number: '3', department: ['КНиИТ'], group: ['441'], teacher: 'Синельников Е.А.', lesson: 'Системы реального времени 1 гр.', type: 'пр.', parity: '-' }]);
 
-template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[1076, 1097]]], '414 (учебная лаборатория Совкомбанк)', '414',
+template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[1076, 1097]]], '414 (учебная лаборатория Совкомбанк, компьютерный класс)', '414',
     [{ day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['211', '231', '251'], teacher: 'Карпец Е.В.', lesson: 'Английский язык (переводчики) 2 гр.', type: 'пр.', parity: '-'},
     { day: 'Понедельник', number: '3', department: ['КНиИТ'], group: ['421'], teacher: 'Тананко И.Е.', lesson: 'Моделирование 2 гр.', type: 'пр.', parity: '-'},
     { day: 'Понедельник', number: '5', department: ['КНиИТ'], group: ['121'], teacher: 'Латышева Е.В.', lesson: 'Инженерная графика 3 гр.', type: 'пр.', parity: '-'},
@@ -203,7 +203,7 @@ template_PolygonFeature([[[1076, 1097],[1244, 1097],[1244, 778],[1076, 778],[107
     { day: 'Суббота', number: '4', department: ['КНиИТ'], group: ['241'], teacher: 'Мишин А.Д.', lesson: 'Программирование на языке Java 2 гр.', type: 'пр.', parity: '-' },
     { day: 'Суббота', number: '5', department: ['КНиИТ'], group: ['421'], teacher: 'Барабанов Н.А.', lesson: 'Системы и сети передачи информации 2 гр.', type: 'пр.', parity: '-' }]);
 
-template_PolygonFeature([[[1247, 1097],[1458, 1097],[1458, 778],[1247, 778],[1247, 1097]]], '415 (учебная лаборатория искусственного интеллекта, машинного обучения)', '415',
+template_PolygonFeature([[[1247, 1097],[1458, 1097],[1458, 778],[1247, 778],[1247, 1097]]], '415 (учебная лаборатория искусственного интеллекта, машинного обучения, <br> компьютерный класс)', '415',
     [{ day: 'Понедельник', number: '2', department: ['КНиИТ'], group: ['431'], teacher: 'Кондратова Ю.Н.', lesson: 'Использование методов машинного обучения в УПД (цифровая кафедра)', type: 'пр.', parity: 'знам.'},
     { day: 'Понедельник', number: '3', department: ['КНиИТ'], group: ['271'], teacher: 'Иванов А.С.', lesson: 'Интеллектуальные системы', type: 'пр.', parity: '-'},
     { day: 'Понедельник', number: '4', department: ['КНиИТ'], group: ['271'], teacher: 'Иванов А.С.', lesson: 'Интеллектуальные системы', type: 'пр.', parity: '-'}, 
@@ -212,6 +212,7 @@ template_PolygonFeature([[[1247, 1097],[1458, 1097],[1458, 778],[1247, 778],[124
     { day: 'Вторник', number: '3', department: ['КНиИТ'], group: ['131'], teacher: 'Романов В.А.', lesson: 'Информационные технологии и программирование 2 гр.', type: 'пр.', parity: '-'},
     { day: 'Вторник', number: '4', department: ['КНиИТ'], group: ['231'], teacher: 'Грищенко А.А.', lesson: 'Языки программирования 3 гр.', type: 'пр.', parity: '-'},
     { day: 'Вторник', number: '5', department: ['КНиИТ'], group: ['411'], teacher: 'Станкевич Е.П.', lesson: 'Моделирование 2 гр.', type: 'пр.', parity: '-' },
+    { day: 'Вторник', number: '5', department: ['Психологии'], group: ['163', '164', '167'], teacher: 'Ларионова Е.В.', lesson: 'Профессиональный английский язык', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '1', department: ['КНиИТ'], group: ['341'], teacher: 'Батраева И.А.', lesson: 'Базы данных 1 гр.', type: 'пр.', parity: '-' },
     { day: 'Среда', number: '1', department: ['ФМиЕНД'], group: ['421'], teacher: 'Векслер В.А.', lesson: 'Цифровая образовательная среда (с 21.02)', type: 'лаб.', parity: 'чис.'},
     { day: 'Среда', number: '1', department: ['ФМиЕНД'], group: ['421'], teacher: 'Векслер В.А.', lesson: 'Цифровая образовательная среда (с 21.02)', type: 'пр.', parity: 'знам.'},
@@ -439,6 +440,8 @@ target: "map",
         projection: proj,
         center: initialCenter,
         zoom: 0, // начальный зум
+        minZoom: 0.98, // минимальный зум
+        maxZoom: 4, // максимальный зум
     }),
 });
 
@@ -637,17 +640,10 @@ function apply_filter() {
     // собираем значения фильтров из формы
     const filters = getFilters();
 
-    // получаем description и schedule объекта, который сейчас открыт
     if (openModal) {
-        const description = openModal.id.replace('schedule-modal-', '');
-        const feature = polygonFeatures.get(description);
-        const schedule = feature.get('schedule');
-
         // закрываем старое окно
         document.body.removeChild(openModal);
-
-        // открываем новое окно с фильтрами
-        openModal = showScheduleModal(description, schedule, filters);
+        openModal = null; // cбрасываем переменную openModal
     }
 }
 
@@ -667,30 +663,18 @@ function getFilters() {
 }
 
 function filterFeatures(description, schedule, filters) {
-    if (!schedule || schedule.length === 0) { // если расписания у объекта нет, возвращаем пустой массив
-        return [];
-    }
+    if (!schedule || schedule.length === 0) return [];
 
     return schedule.filter(item => {
         for (const filterName in filters) {
             const filterValue = filters[filterName];
+            const itemValue = item[filterName];
 
-            if (filterName === 'group') {
-                // обработка фильтра group (который массив)
-                if (Array.isArray(item.group)) {
-                    if (!item.group.includes(filterValue)) {
-                        return false;
-                    }
-                } else {
-                    if (item.group !== filterValue) {
-                        return false;
-                    }
-                }
+            // для всех фильтров проверяем, является ли значение массивом
+            if (Array.isArray(itemValue)) {
+                if (!itemValue.includes(filterValue)) return false;
             } else {
-                // обработка других фильтров (которые не являются массивами)
-                if (item[filterName] !== filterValue) {
-                    return false;
-                }
+                if (itemValue !== filterValue) return false;
             }
         }
         return true;
@@ -704,4 +688,9 @@ document.getElementById('reset-filters').addEventListener('click', function () {
     applyFiltersButton.disabled = true; // блокирует кнопку сброса
     filterFeatures({}); // сбрасываем фильтры
 
+    if (openModal) {
+        // закрываем старое окно
+        document.body.removeChild(openModal);
+        openModal = null; // cбрасываем переменную openModal
+    }
 });
