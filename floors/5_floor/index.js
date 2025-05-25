@@ -130,8 +130,46 @@ template_PolygonFeature([[[2894, 1318],[3193, 1318],[3193, 932],[2894, 932],[289
 template_PolygonFeature([[[2894, 1550],[3310, 1550],[3310, 1320],[2894, 1320],[2894, 1550]]], '521/522', '521');
 template_PolygonFeature([[[2894, 1628],[3193, 1628],[3193, 1552],[2894, 1552],[2894, 1628]]], '520', '520');
 template_PolygonFeature([[[2894, 1717],[3193, 1717],[3193, 1630],[2894, 1630],[2894, 1717]]], '519', '519');
-template_PolygonFeature([[[2894, 1832],[3315, 1832],[3315, 1719],[2894, 1719],[2894, 1832]]], '518', '518');
-template_PolygonFeature([[[2894, 1948],[3315, 1948],[3315, 1832],[2894, 1832],[2894, 1948]]], '517', '517');
+
+template_PolygonFeature([[[2894, 1832],[3315, 1832],[3315, 1719],[2894, 1719],[2894, 1832]]], '518', '518', 
+    [{ day: 'Понедельник', number: '1', department: ['Экономический'], group: ['141'], teacher: 'Алексеева Д.А.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '1', department: ['Экономический'], group: ['241'], teacher: 'Фурсов А.Л.', lesson: 'Управление персоналом организации', type: 'лек.', parity: '-'},
+    { day: 'Понедельник', number: '2', department: ['Экономический'], group: ['241'], teacher: 'Фурсов А.Л.', lesson: 'Управление персоналом организации', type: 'пр.', parity: 'знам.'},
+    { day: 'Понедельник', number: '3', department: ['Экономический'], group: ['112'], teacher: 'Шебалдин В.Р.', lesson: 'Математический анализ', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '4', department: ['Экономический'], group: ['121'], teacher: 'Алавина Е.М.', lesson: 'Кураторский час', type: 'лек.', parity: 'знам.'},
+    { day: 'Вторник', number: '3', department: ['Экономический'], group: ['412'], teacher: 'Соловых С.Н.', lesson: 'Правовая среда современного бизнеса', type: 'лек.', parity: '-'},
+    { day: 'Вторник', number: '4', department: ['Экономический'], group: ['212', '213'], teacher: 'Тугушева Р.Р.', lesson: 'Макроэкономика', type: 'пр.', parity: '-'},
+    { day: 'Вторник', number: '5', department: ['Экономический'], group: ['121'], teacher: 'Исайкина М.А.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '1', department: ['Экономический'], group: ['141'], teacher: 'Алексеева Д.А.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '5', department: ['Экономический'], group: ['112'], teacher: 'Исайкина М.А.', lesson: 'Английский язык (1 гр.)', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '2', department: ['Экономический'], group: ['212'], teacher: 'Балаш О.С.', lesson: 'Статистика', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '5', department: ['Экономический'], group: ['121'], teacher: 'Исайкина М.А.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '1', department: ['Экономический'], group: ['111'], teacher: 'Исайкина М.А.', lesson: 'Английский язык (1 гр.)', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '2', department: ['Экономический'], group: ['111'], teacher: 'Исайкина М.А.', lesson: 'Английский язык (1 гр.)', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '3', department: ['Экономический'], group: ['212'], teacher: 'Исайкина М.А.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '4', department: ['Экономический'], group: ['112'], teacher: 'Исайкина М.А.', lesson: 'Английский язык (1 гр.)', type: 'пр.', parity: '-'},
+    { day: 'Пятница', number: '4', department: ['Экономический'], group: ['212'], teacher: 'Исайкина М.А.', lesson: 'Английский язык', type: 'пр.', parity: '-'},]);
+
+template_PolygonFeature([[[2894, 1948],[3315, 1948],[3315, 1832],[2894, 1832],[2894, 1948]]], '517', '517', 
+    [{ day: 'Понедельник', number: '2', department: ['Экономический'], group: ['322'], teacher: 'Бгашев М.В.', lesson: 'Производственный менеджмент', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '3', department: ['Экономический'], group: ['321'], teacher: 'Бгашев М.В.', lesson: 'Производственный менеджмент', type: 'пр.', parity: '-'},
+    { day: 'Понедельник', number: '4', department: ['Экономический'], group: ['111'], teacher: 'Оберт Т.Б.', lesson: 'Кураторский час', type: 'лек.', parity: 'чис.'},
+    { day: 'Вторник', number: '4', department: ['Экономический'], group: ['241'], teacher: 'Землянухина Н.С.', lesson: 'Рынок труда', type: 'лек.', parity: '-'},
+    { day: 'Вторник', number: '5', department: ['Экономический'], group: ['241'], teacher: 'Землянухина Н.С.', lesson: 'Рынок труда', type: 'пр.', parity: '-'},
+    { day: 'Вторник', number: '6', department: ['Экономический'], group: ['341'], teacher: 'Кузнецов П.С.', lesson: 'Оплата труда персонала', type: 'лек.', parity: '-'},
+    { day: 'Вторник', number: '7', department: ['Экономический'], group: ['341'], teacher: 'Кузнецов П.С.', lesson: 'Оплата труда персонала', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '2', department: ['Экономический'], group: ['341'], teacher: 'Калашникова С.П.', lesson: 'Маркетинг персонала', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '2', department: ['Экономический'], group: ['313'], teacher: 'Коробов Е.А.', lesson: 'Анализ и оценка риска', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '3', department: ['Экономический'], group: ['341'], teacher: 'Калашникова С.П.', lesson: 'Маркетинг', type: 'пр.', parity: 'чис.'},
+    { day: 'Среда', number: '3', department: ['Экономический'], group: ['341'], teacher: 'Землянухина Н.С.', lesson: 'Спецсеминар', type: 'пр.', parity: 'знам.'},
+    { day: 'Среда', number: '4', department: ['Экономический'], group: ['241'], teacher: 'Бгашев М.В.', lesson: 'Экономика управления персоналом', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '6', department: ['Экономический'], group: ['151'], teacher: 'Голубева С.С.', lesson: 'Финансовый и управленческий учёт', type: 'лек.', parity: '-'},
+    { day: 'Среда', number: '7', department: ['Экономический'], group: ['151'], teacher: 'Голубева С.С.', lesson: 'Финансовый и управленческий учёт', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '2', department: ['Экономический'], group: ['241'], teacher: 'Милованов Д.И.', lesson: 'Статистика', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '3', department: ['Экономический'], group: ['241'], teacher: 'Юсупова С.М.', lesson: 'Организация и нормирование труда', type: 'лек.', parity: '-'},
+    { day: 'Четверг', number: '4', department: ['Экономический'], group: ['241'], teacher: 'Юсупова С.М.', lesson: 'Организация и нормирование труда', type: 'пр.', parity: '-'},
+    { day: 'Суббота', number: '3', department: ['Экономический'], group: ['341'], teacher: 'Кузнецов П.С.', lesson: 'Основы кадровой политики и кадрового планирования', type: 'лек.', parity: '-'},
+    { day: 'Суббота', number: '4', department: ['Экономический'], group: ['341'], teacher: 'Кузнецов П.С.', lesson: 'Основы кадровой политики и кадрового планирования', type: 'пр.', parity: '-'},]);
 
 const popup = new Overlay({ // всплывающая надпись
     element: document.createElement('div'),  // создаем div-элемент для Popup
