@@ -112,7 +112,6 @@ function create_map(image_url) {
     return map;
 }
 
-
 // обработчик события наведения курсора мыши
 function pointermove(map, defaultStyle, highlightStyle, popup) {
     
@@ -162,9 +161,9 @@ function pointermove(map, defaultStyle, highlightStyle, popup) {
     });
 }
 
-function click(map, get_filters, showScheduleModal) {
-    let openModal = null; // глобальная переменная для отслеживания открытого расписания
+let openModal = null; // глобальная переменная для отслеживания открытого расписания
 
+function click(map, get_filters, showScheduleModal) {
     map.on('click', function (evt) {
         const feature = map.forEachFeatureAtPixel(evt.pixel, function (feature) { return feature; });
 
@@ -309,15 +308,34 @@ function setup_filter(apply_filter) {
     });
 }
 
-function apply_filter(click) {
-    // собираем значения фильтров из формы
-    const filters = get_filters();
+function apply_filter(click, show_schedule) { // Добавим show_schedule как аргумент
+    const applyFiltersButton = document.getElementById('apply-filters');
 
-    if (openModal) {
-        // закрываем старое окно
-        document.body.removeChild(openModal);
-        openModal = null; // cбрасываем переменную openModal
-    }
+    applyFiltersButton.addEventListener('click', function () {
+        // Собираем значения фильтров из формы
+        const filters = get_filters();
+
+        // Закрываем старое окно
+        if (openModal) {
+            document.body.removeChild(openModal);
+            openModal = null; // Сбрасываем переменную openModal
+        }
+
+        // Находим feature, для которого было открыто расписание.
+        let currentFeature = null;
+        vectorSource.getFeatures().forEach(feature => {
+            if (feature.get('description') === click.description) {
+                currentFeature = feature;
+            }
+        });
+
+        // Открываем новое отфильтрованное окно.
+        if (currentFeature) {
+            const description = currentFeature.get('description');
+            const schedule = currentFeature.get('schedule');
+            openModal = show_schedule(description, schedule, filters); // Используем show_schedule
+        }
+    });
 }
 
 function get_filters() {
@@ -355,11 +373,12 @@ function filter_features(description, schedule, filters) {
 }
 
 function reset_filters(apply_filter, filter_features) {
+    const applyFiltersButton = document.getElementById('apply-filters');
     document.getElementById('reset-filters').addEventListener('click', function () { // настройка кнопки сброса фильтров
         document.querySelectorAll('#filter-form select').forEach(select => {
             select.value = "";
         });
-        applyFiltersButton.disabled = true; // блокирует кнопку сброса
+        applyFiltersButton.disabled = true;
         filter_features({}); // сбрасываем фильтры
 
         if (openModal) {
@@ -391,5 +410,6 @@ export {
     reset_filters,
     show_schedule,
     apply_filter,
-    vectorLayer //  экспортируем vectorLayer, чтобы добавить его на карту
+    vectorLayer, //  экспортируем vectorLayer, чтобы добавить его на карту
+    openModal
 };

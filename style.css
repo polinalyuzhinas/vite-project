@@ -1,17 +1,26 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1;
-    font-weight: 400;
-  }
-  
-  @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
-    }
-  }
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /* шрифты */
+    line-height: 1.5; /* междустрочный интервал */
+    font-weight: normal; /* толщина шрифта (в данном случае стандартная) */
+    color: #213547; /* цвет шрифта */
+    background-color: #ffffff; /* цвет фона (белый) */
+}
 
-  ul.no-bullets {
-    list-style: none;
-  }
-  
+h1 {
+  margin-left: 2%; /* отступ слева */
+  margin-top: 2%; /* отступ сверху */
+}
+
+ul.no-bullets {
+  list-style-type: none; /* убираем маркеры списка */
+}
+
+.no-bullets li {
+  margin-top: 3%; /* интервал между элементами списка (отступ сверху) */
+}
+
+.no-bullets a {
+  text-decoration: none; /* убираем подчеркивание у ссылок */
+  color: rgb(20, 34, 82); /* цвет текста */
+  font-size: x-large; /* размер шрифта */
+}

@@ -19,7 +19,8 @@ import {
     reset_filters,
     show_schedule,
     apply_filter,
-    vectorLayer
+    vectorLayer,
+    openModal
 } from '/index.js';;
 
 

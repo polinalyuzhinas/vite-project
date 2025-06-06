@@ -19,7 +19,8 @@ import {
     reset_filters,
     show_schedule,
     apply_filter,
-    vectorLayer
+    vectorLayer,
+    openModal
 } from '/index.js';;
 
 // лестницы
@@ -304,7 +305,7 @@ template_polygon_feature([[[1521, 635],[1816, 635],[1816, 373],[1521, 373],[1521
     { day: 'Среда', number: '5', department: ['Экономический'], group: ['271'], teacher: 'Черемисинов Г.А.', lesson: 'Государственное регулирование экономики', type: 'лек.', parity: 'чис.'},
     { day: 'Среда', number: '5', department: ['Экономический'], group: ['271'], teacher: 'Черемисинов Г.А.', lesson: 'Теория инновационного развития и конкурентных преимуществ', type: 'лек.', parity: 'знам.'},
     { day: 'Среда', number: '6', department: ['Экономический'], group: ['271'], teacher: 'Черемисинов Г.А.', lesson: 'Государственное регулирование экономики', type: 'пр.', parity: '-'},
-    { day: 'Среда', number: '7', department: ['Экономический'], group: ['271'], teacher: 'Черемисинов Г.А.', lesson: 'Научно-исследовательский семинар "Экономика инновационного развития"', type: 'пр', parity: '-'},
+    { day: 'Среда', number: '7', department: ['Экономический'], group: ['271'], teacher: 'Черемисинов Г.А.', lesson: 'Научно-исследовательский семинар "Экономика инновационного развития"', type: 'пр.', parity: '-'},
     { day: 'Среда', number: '8', department: ['Экономический'], group: ['271'], teacher: 'Черемисинов Г.А.', lesson: 'Теория инновационного развития и конкурентных преимуществ', type: 'пр.', parity: '-'},
     { day: 'Четверг', number: '1', department: ['Экономический'], group: ['311'], teacher: 'Пантелеев Д.С.', lesson: 'Введение в ERP системы (цифровая кафедра)', type: 'пр.', parity: 'чис.'},
     { day: 'Четверг', number: '1', department: ['Экономический'], group: ['311'], teacher: 'Файзлиев А.Р.', lesson: 'Анализ данных в бизнес-аналитике', type: 'лек.', parity: 'знам.'},
@@ -358,7 +359,7 @@ template_polygon_feature([[[2894, 1717],[3193, 1717],[3193, 1630],[2894, 1630],[
 template_polygon_feature([[[2894, 1628],[3193, 1628],[3193, 1552],[2894, 1552],[2894, 1628]]], '423', '423', 
     [{ day: 'Вторник', number: '3', department: ['Экономический'], group: ['312'], teacher: 'Коробов Е.А.', lesson: 'Анализ и оценка риска', type: 'пр.', parity: '-'},
     { day: 'Вторник', number: '3', department: ['Экономический'], group: ['141'], teacher: 'Алексеева Д.А.', lesson: 'Английский язык', type: 'пр.', parity: 'знам.'},
-    { day: 'Вторник', number: '4', department: ['Экономический'], group: ['141'], teacher: 'Алексеева Д.А.', lesson: 'Английский язык', type: 'лек.', parity: 'лек.'},
+    { day: 'Вторник', number: '4', department: ['Экономический'], group: ['141'], teacher: 'Алексеева Д.А.', lesson: 'Английский язык', type: 'пр.', parity: 'чис.'},
     { day: 'Вторник', number: '5', department: ['Экономический'], group: ['121'], teacher: 'Павлова О.В.', lesson: 'Английский язык (2 гр.)', type: 'пр.', parity: '-'},
     { day: 'Четверг', number: '2', department: ['Экономический'], group: ['112'], teacher: 'Уколова М.В.', lesson: 'Английский язык (2 гр.)', type: 'пр.', parity: '-'},
     { day: 'Четверг', number: '5', department: ['Экономический'], group: ['121'], teacher: 'Павлова О.В.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
@@ -586,12 +587,12 @@ template_polygon_feature([[[1998, 635],[2230, 635],[2230, 373],[1998, 373],[1998
     { day: 'Суббота', number: '3', department: ['Экономический'], group: ['312'], teacher: 'Фенин К.В.', lesson: 'Основы научно-исследовательской работы', type: 'пр.', parity: 'знам.'},]);
 
 template_polygon_feature([[[1819, 635],[1995, 635],[1995, 373],[1819, 373],[1819, 635]]], '432', '432', 
-    [{ day: 'Вторник', number: '3', department: ['Экономический'], group: ['112'], teacher: 'Уколова М.В.', lesson: 'Английский язык (2 гр.)', type: 'пр', parity: '-'},
-    { day: 'Вторник', number: '4', department: ['Экономический'], group: ['412'], teacher: 'Соловых С.Н.', lesson: 'Правовая среда современного бизнеса', type: 'пр', parity: '-'},
-    { day: 'Среда', number: '4', department: ['Экономический'], group: ['211'], teacher: 'Шелюгина А.О.', lesson: 'Английский язык', type: 'пр', parity: '-'},
-    { day: 'Среда', number: '5', department: ['Экономический'], group: ['211'], teacher: 'Шелюгина А.О.', lesson: 'Английский язык', type: 'пр', parity: '-'},
-    { day: 'Четверг', number: '1', department: ['Экономический'], group: ['111', '112', '121', '141'], teacher: 'Артамонова И.Н.', lesson: 'Немецкий язык', type: 'пр', parity: '-'},
-    { day: 'Четверг', number: '2', department: ['Экономический'], group: ['111', '112', '121', '141'], teacher: 'Артамонова И.Н.', lesson: 'Немецкий язык', type: 'пр', parity: '-'},
+    [{ day: 'Вторник', number: '3', department: ['Экономический'], group: ['112'], teacher: 'Уколова М.В.', lesson: 'Английский язык (2 гр.)', type: 'пр.', parity: '-'},
+    { day: 'Вторник', number: '4', department: ['Экономический'], group: ['412'], teacher: 'Соловых С.Н.', lesson: 'Правовая среда современного бизнеса', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '4', department: ['Экономический'], group: ['211'], teacher: 'Шелюгина А.О.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
+    { day: 'Среда', number: '5', department: ['Экономический'], group: ['211'], teacher: 'Шелюгина А.О.', lesson: 'Английский язык', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '1', department: ['Экономический'], group: ['111', '112', '121', '141'], teacher: 'Артамонова И.Н.', lesson: 'Немецкий язык', type: 'пр.', parity: '-'},
+    { day: 'Четверг', number: '2', department: ['Экономический'], group: ['111', '112', '121', '141'], teacher: 'Артамонова И.Н.', lesson: 'Немецкий язык', type: 'пр.', parity: '-'},
     { day: 'Пятница', number: '1', department: ['Экономический'], group: ['111'], teacher: 'Уколова М.В.', lesson: 'Английский язык (2 гр.)', type: 'пр.', parity: '-'},
     { day: 'Пятница', number: '2', department: ['Экономический'], group: ['111'], teacher: 'Уколова М.В.', lesson: 'Английский язык (2 гр.)', type: 'пр.', parity: '-'},]);
 

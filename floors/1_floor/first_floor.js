@@ -19,7 +19,8 @@ import {
     reset_filters,
     show_schedule,
     apply_filter,
-    vectorLayer
+    vectorLayer,
+    openModal
 } from '/index.js';;
 
 // лестницы
@@ -384,14 +385,14 @@ template_polygon_feature([[[2418, 1095],[2488, 1095],[2488, 883],[2418, 883],[24
 template_polygon_feature([[[1916, 880],[2488, 880],[2488, 779],[1916, 779],[1916, 880]]], 'служебный коридор', 'hallway');
 
 // специальные помещения 
-template_polygon_feature([[[1356, 613],[1455, 613],[1455, 373],[1356, 373],[1356, 613]]], 'охрана (тут можно попросить ключи)', 'secutity');
+template_polygon_feature([[[1356, 569],[1455, 569],[1455, 373],[1356, 373],[1356, 569]]], 'охрана (тут можно попросить ключи)', 'secutity');
 template_polygon_feature([[[1598, 1396],[1777, 1396],[1777, 1294],[1598, 1294],[1598, 1396]]], 'буфет (закрыт)', 'cafeteria');
 template_polygon_feature([[[1458, 1350],[1595, 1350],[1595, 1293],[1780, 1293],[1780, 1348],[1915, 1348],[1915, 1096],[1458, 1096],[1458, 1350]]], '"точка кипения"', 'cafeteriahall');
 template_polygon_feature([[[633, 368],[1455, 368],[1455, 208],[633, 208],[633, 368]]], 'гардероб', 'closet1');
 template_polygon_feature([[[1917, 372],[2740, 372],[2740, 210],[1917, 210],[1917, 372]]], 'гардероб (не работает)', 'closet2');
 template_polygon_feature([[[1218, 1959],[2161, 1959],[2161, 1399],[1218, 1399],[1218, 1959]]], 'актовый зал', 'assemblyhall');
 
-const map = create_map('first_floor.png');
+const map = create_map('first_floor.svg');
 
 const popup = create_popup();
 map.addOverlay(popup);
