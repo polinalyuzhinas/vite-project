@@ -42,7 +42,7 @@ template_polygon_feature([[[1558, 1203],[1815, 1203],[1815, 1435],[1558, 1435],[
     { day: 'Четверг', number: '4', department: ['Экономический'], group: ['112', '113'], teacher: 'Лёвин С.В.', lesson: 'История России', type: 'пр.', parity: 'знам.'},]);
 
 
-const map = create_map('seventh_floor.png');
+const map = create_map('seventh_floor.svg');
 
 const popup = create_popup();
 map.addOverlay(popup);

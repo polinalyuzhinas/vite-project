@@ -95,7 +95,7 @@ template_polygon_feature([[[2894, 1717],[3193, 1717],[3193, 1637],[2894, 1637],[
 template_polygon_feature([[[2894, 1832],[3087, 1832],[3087, 1948],[3315, 1948],[3315, 1724],[2894, 1724],[2894, 1832]]], '623 (отдел по техническому <br> учёту объектов <br> недвижимости)', '623');
 template_polygon_feature([[[2894, 1948],[3084, 1948],[3084, 1834],[2894, 1834],[2894, 1948]]], '622', '622');
 
-const map = create_map('sixth_floor.png');
+const map = create_map('sixth_floor.svg');
 
 const popup = create_popup();
 map.addOverlay(popup);

@@ -349,7 +349,7 @@ template_polygon_feature([[[2894, 1948], [3315, 1948], [3315, 1719], [2894, 1719
     { day: 'Вторник', number: '6', department: ['ФМиЕНД'], group: ['120'], teacher: 'Кабанова Л.В.', lesson: 'Современные проблемы развития информатики как науки', type: 'лек.', parity: '-'},
     { day: 'Пятница', number: '1', department: ['КНиИТ'], group: ['231'], teacher: 'Жаркова А.В.', lesson: 'Ознакомительная практика', type: 'пр.', parity: 'знам.' }]);
 
-const map = create_map('second_floor.png');
+const map = create_map('second_floor.svg');
 
 const popup = create_popup();
 map.addOverlay(popup);

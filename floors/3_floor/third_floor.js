@@ -398,7 +398,7 @@ template_polygon_feature([[[1424, 1676],[1897, 1676],[1897, 1370],[1424, 1370],[
     { day: 'Пятница', number: '4', department: ['Экономический'], group: ['113', '221'], teacher: 'Воротилова Н.Н.', lesson: 'Прикладная физическая культура', type: 'пр.', parity: '-'},
     { day: 'Суббота', number: '2', department: ['Психологии'], group: ['261', '262', '361', '362'], teacher: 'Григорьев Е.В.', lesson: 'Общая физическая подготовка', type: 'пр.', parity: '-'},]);
 
-const map = create_map('third_floor.png');
+const map = create_map('third_floor.svg');
 
 const popup = create_popup();
 map.addOverlay(popup);

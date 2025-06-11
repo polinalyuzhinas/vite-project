@@ -600,7 +600,7 @@ template_polygon_feature([[[1819, 635],[1995, 635],[1995, 373],[1819, 373],[1819
 template_polygon_feature([[[1680, 1465],[1820, 1465],[1820, 1230],[1680, 1230],[1680, 1465]]], 'раздевалка мужская', 'lockerroommale');
 template_polygon_feature([[[1538, 1465], [1677, 1465], [1677, 1230], [1538, 1230], [1538, 1465]]], 'раздевалка женская', 'lockerroomfemale');
 
-const map = create_map('fourth_floor.png');
+const map = create_map('fourth_floor.svg');
 
 const popup = create_popup();
 map.addOverlay(popup);

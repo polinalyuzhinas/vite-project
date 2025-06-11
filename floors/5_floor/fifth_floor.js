@@ -117,7 +117,7 @@ template_polygon_feature([[[2894, 1948],[3315, 1948],[3315, 1832],[2894, 1832],[
     { day: 'Суббота', number: '3', department: ['Экономический'], group: ['341'], teacher: 'Кузнецов П.С.', lesson: 'Основы кадровой политики и кадрового планирования', type: 'лек.', parity: '-'},
     { day: 'Суббота', number: '4', department: ['Экономический'], group: ['341'], teacher: 'Кузнецов П.С.', lesson: 'Основы кадровой политики и кадрового планирования', type: 'пр.', parity: '-'},]);
 
-const map = create_map('fifth_floor.png');
+const map = create_map('fifth_floor.svg');
 
 const popup = create_popup();
 map.addOverlay(popup);
