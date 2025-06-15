@@ -13,7 +13,6 @@ import {
     proj,
     vectorSource,
     fill_filter,
-    setup_filter,
     get_filters,
     filter_features,
     reset_filters,
@@ -359,6 +358,6 @@ click(map, get_filters, show_schedule);
 
 fill_filter(vectorSource);
 
-setup_filter(apply_filter);
+apply_filter(click, show_schedule);
 
-reset_filters(apply_filter, filter_features);
+reset_filters(filter_features);
