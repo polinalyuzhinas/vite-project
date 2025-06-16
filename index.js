@@ -198,7 +198,7 @@ function show_schedule(description, schedule, id, filters = {}) {
         // cоздаем таблицу для каждого дня
         for (const day in scheduleByDay) {
             tablesHTML += `
-                <div class="schedule-day">
+                <div>
                     <h1>${day}</h1>
                     <table>
                         <thead>
@@ -216,7 +216,7 @@ function show_schedule(description, schedule, id, filters = {}) {
                             ${scheduleByDay[day].map(item => `<tr><td>${item.number}</td>
                                 <td>${item.department.join('\n')}</td><td>${item.group.join(', ')}</td>
                                 <td>${item.teacher}</td><td>${item.lesson}</td><td>${item.type}</td>
-                                <td>${item.parity}</td></tr>`)}
+                                <td>${item.parity}</td></tr>`).join('')}
                         </tbody>
                     </table>
                 </div>

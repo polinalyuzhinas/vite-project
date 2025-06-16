@@ -28,28 +28,22 @@
   white-space: nowrap; /* предотвращает перенос длинных слов */
 }
 
-.popup-content {
-    background-color: rgb(247, 255, 255);
-}
-
 #filter-form {
-    position: relative;
-    top: 1%; 
     position: fixed;
+    top: 1%; 
     left: 45%;
     z-index: 10; /* важно, чтобы фильтры и выпадающие списки были поверх карты */
 }
 
     #filter-form select {
         display: inline-block; /* размещаем элементы в строку */
-        width: 32%;
+        width: 18em;
         margin-bottom: 10px;
     }
 
 .modal-content {
     position: fixed;
     width: 43%;
-    font-size: 1.15rem;
     max-height: 95vh;
     background-color: rgb(247, 255, 255);
     padding: 8px;
@@ -58,8 +52,10 @@
 }
 
 .modal-content h1 {
-    text-align:center;
+    text-align: center;
     font-size: inherit; /* наследуем размер шрифта из :root */
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
 
 .modal-content p {
