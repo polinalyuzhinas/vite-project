@@ -9,10 +9,9 @@
 #map {
     width: 53%;
     height: 80%;
-    margin: 0;
     position: absolute;
-    top: 12%;
-    left: 45%;
+    top: 15%;
+    left: 46%;
     border: 1px solid #213547;
 }
 
@@ -31,14 +30,13 @@
 #filter-form {
     position: fixed;
     top: 1%; 
-    left: 45%;
+    left: 46%;
     z-index: 10; /* важно, чтобы фильтры и выпадающие списки были поверх карты */
 }
 
     #filter-form select {
         display: inline-block; /* размещаем элементы в строку */
-        width: 18em;
-        margin-bottom: 10px;
+        width: 10rem;
     }
 
 .modal-content {
