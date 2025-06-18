@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "ol": "^10.5.0",
-    "proj4": "^2.15.0"
+    "proj4": "^2.15.0",
+    "user": "file:"
   },
   "name": "user",
   "version": "1.0.0",
