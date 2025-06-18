@@ -67,16 +67,13 @@
     table-layout: fixed; /* ширина таблиц должна быть одинаковая */
     border: 1px solid #213547;
     border-collapse: collapse; /* соседние ячейки таблицы соединены */
-    white-space: normal;
     word-wrap: break-word;
-    padding: 8px; /* отступы вокруг текста */
     text-align: left;
 }
 
     .modal-content th {
         padding: 8px;
         border: 1px solid #213547;
-        text-align: left;
     }
 
     .modal-content td {
